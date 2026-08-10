@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM de Vendas - Dr. Central</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #f0f4f9;
+            padding: 24px;
+            color: #1e293b;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            padding: 28px 32px;
+        }
+
+        /* HEADER - sem os cards */
+        .crm-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #e9edf4;
+            padding-bottom: 16px;
+        }
+
+        .crm-header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .crm-header-left h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0b1a33;
+        }
+
+        .crm-header-left h1 i {
+            color: #2563eb;
+            margin-right: 8px;
+        }
+
+        .crm-badge {
+            background: #dbeafe;
+            color: #1e40af;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 30px;
+        }
+
+        /* O restante do CSS permanece IDÊNTICO ao anterior */
+        .upload-area {
+            background: #f8faff;
+            border: 2px dashed #cbd5e1;
+            border-radius: 14px;
+            padding: 28px 20px;
+            text-align: center;
+            margin-bottom: 28px;
+            transition: all 0.3s;
+        }
+
+        .upload-area.dragover {
+            border-color: #2563eb;
+            background: #eff6ff;
+        }
+
+        .upload-area i {
+            font-size: 36px;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .upload-area p {
+            font-size: 15px;
+            color: #475569;
+        }
+
+        .upload-area .btn-upload {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        .upload-area .btn-upload:hover {
+            background: #1d4ed8;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .file-info {
+            font-size: 13px;
+            color: #2563eb;
+            margin-top: 6px;
+        }
+
+        .segment-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 22px;
+            padding: 8px 0;
+        }
+
+        .segment-btn {
+            background: #f1f5f9;
+            border: 1px solid #dce2ec;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .segment-btn i {
+            font-size: 14px;
+        }
+
+        .segment-btn:hover {
+            background: #e2e8f0;
+        }
+
+        .segment-btn.primary {
+            background: #2563eb;
+            color: #fff;
+            border-color: #2563eb;
+        }
+
+        .segment-btn.primary:hover {
+            background: #1d4ed8;
+        }
+
+        .segment-btn .badge {
+            background: rgba(255,255,255,0.8);
+            color: #1e293b;
+            border-radius: 20px;
+            padding: 0 10px;
+            font-size: 11px;
+            margin-left: 4px;
+        }
+
+        .segment-btn.primary .badge {
+            background: rgba(255,255,255,0.25);
+            color: #fff;
+        }
+
+        .filters-panel {
+            background: #f8fafc;
+            border: 1px solid #e9edf4;
+            border-radius: 14px;
+            padding: 18px 20px;
+            margin-bottom: 22px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 14px 18px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .filter-group label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #334155;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .filter-group label i {
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 6px 10px;
+            border: 1px solid #dce2ec;
+            border-radius: 8px;
+            font-size: 13px;
+            background: #fff;
+            width: 100%;
+        }
+
+        .filter-group .range-inputs {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .filter-group .range-inputs input {
+            width: 70px;
+        }
+
+        .filter-actions {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            grid-column: span 1;
+        }
+
+        .filter-actions button {
+            padding: 6px 16px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+        }
+
+        .filter-actions .btn-primary {
+            background: #2563eb;
+            color: #fff;
+        }
+
+        .filter-actions .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .filter-actions .btn-secondary {
+            background: #e9edf4;
+            color: #1e293b;
+        }
+
+        .filter-actions .btn-secondary:hover {
+            background: #d5dee9;
+        }
+
+        .multi-select-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .multi-select-container .selected-display {
+            background: #fff;
+            border: 1px solid #dce2ec;
+            border-radius: 8px;
+            padding: 6px 10px;
+            cursor: pointer;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            min-height: 36px;
+            align-items: center;
+        }
+
+        .multi-select-container .selected-display .placeholder {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .multi-select-container .selected-display .tag {
+            background: #dbeafe;
+            color: #1e40af;
+            border-radius: 20px;
+            padding: 2px 10px;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .multi-select-container .selected-display .tag i {
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+        .multi-select-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #dce2ec;
+            border-radius: 8px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 10;
+            padding: 8px 4px;
+            margin-top: 4px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .multi-select-dropdown.open {
+            display: block;
+        }
+
+        .multi-select-dropdown label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: 0.1s;
+            font-weight: 400;
+            color: #1e293b;
+        }
+
+        .multi-select-dropdown label:hover {
+            background: #f1f5f9;
+        }
+
+        .multi-select-dropdown input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #2563eb;
+        }
+
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 32px;
+            background: #f8fafc;
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: 1px solid #e9edf4;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        .stats-row .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .stats-row .stat-item i {
+            color: #2563eb;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .toolbar-left {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .toolbar-right {
+            display: flex;
+            gap: 10px;
+        }
+
+        .toolbar button {
+            padding: 6px 16px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+        }
+
+        .toolbar .btn-export {
+            background: #2563eb;
+            color: #fff;
+        }
+
+        .toolbar .btn-export:hover {
+            background: #1d4ed8;
+        }
+
+        .toolbar .btn-copy {
+            background: #e9edf4;
+            color: #1e293b;
+        }
+
+        .toolbar .btn-copy:hover {
+            background: #d5dee9;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 14px;
+            border: 1px solid #e9edf4;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        thead {
+            background: #f1f5f9;
+        }
+
+        th {
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            color: #1e293b;
+            white-space: nowrap;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        td {
+            padding: 8px 14px;
+            border-bottom: 1px solid #eef2f7;
+            vertical-align: middle;
+        }
+
+        tr:hover td {
+            background: #f8faff;
+        }
+
+        .empty-row td {
+            text-align: center;
+            padding: 40px 20px;
+            color: #94a3b8;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0b1a33;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.3s;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+            .filters-panel {
+                grid-template-columns: 1fr 1fr;
+            }
+            .filter-actions {
+                grid-column: span 2;
+            }
+            .crm-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .segment-bar {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .filters-panel {
+                grid-template-columns: 1fr;
+            }
+            .filter-actions {
+                grid-column: span 1;
+            }
+            .toolbar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .toolbar-right {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- HEADER CRM - SEM CARDS -->
+    <div class="crm-header">
+        <div class="crm-header-left">
+            <h1><i class="fas fa-bullseye"></i> Prospecção Dr. Central</h1>
+            <span class="crm-badge"><i class="fas fa-rocket"></i> Vendas</span>
+        </div>
+        <!-- Cards removidos -->
+    </div>
+
+    <!-- UPLOAD -->
+    <div class="upload-area" id="uploadArea">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <p><strong>Carregue sua base de pacientes</strong> (CSV)</p>
+        <button class="btn-upload" id="uploadBtn"><i class="fas fa-file-csv"></i> Selecionar CSV</button>
+        <input type="file" id="fileInput" accept=".csv">
+        <div class="file-info" id="fileInfo"></div>
+    </div>
+
+    <!-- SEGMENTOS -->
+    <div class="segment-bar" id="segmentBar">
+        <button class="segment-btn primary" data-segment="perfil_ideal"><i class="fas fa-crown"></i> Perfil Ideal <span class="badge" id="badge_perfil_ideal">0</span></button>
+        <button class="segment-btn" data-segment="alto_ticket"><i class="fas fa-coins"></i> Alto Ticket <span class="badge" id="badge_alto_ticket">0</span></button>
+        <button class="segment-btn" data-segment="frequentes_exames"><i class="fas fa-flask"></i> Frequentes em Exames <span class="badge" id="badge_frequentes_exames">0</span></button>
+        <button class="segment-btn" data-segment="jovem_potencial"><i class="fas fa-rocket"></i> Jovem Potencial <span class="badge" id="badge_jovem_potencial">0</span></button>
+        <button class="segment-btn" data-segment="inativos"><i class="fas fa-clock"></i> Inativos <span class="badge" id="badge_inativos">0</span></button>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="filters-panel" id="filtersContainer">
+        <div class="filter-group">
+            <label><i class="fas fa-search"></i> Busca</label>
+            <input type="text" id="searchInput" placeholder="Nome, telefone, código...">
+        </div>
+
+        <div class="filter-group">
+            <label><i class="fas fa-tag"></i> Faixa Etária</label>
+            <select id="faixaFilter"><option value="">Todas</option></select>
+        </div>
+
+        <div class="filter-group">
+            <label><i class="fas fa-venus-mars"></i> Sexo</label>
+            <select id="sexoFilter"><option value="">Todos</option></select>
+        </div>
+
+        <div class="filter-group">
+            <label><i class="fas fa-stethoscope"></i> Especialidades</label>
+            <div class="multi-select-container" id="especialidadeContainer">
+                <div class="selected-display" id="especialidadeDisplay">
+                    <span class="placeholder">Selecione uma ou mais</span>
+                </div>
+                <div class="multi-select-dropdown" id="especialidadeDropdown"></div>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <label><i class="fas fa-clock"></i> Dias inativos</label>
+            <div class="range-inputs">
+                <input type="number" id="diasMin" placeholder="Mín" min="0">
+                <span>até</span>
+                <input type="number" id="diasMax" placeholder="Máx" min="0">
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <label><i class="fas fa-dollar-sign"></i> Valor total gasto</label>
+            <div class="range-inputs">
+                <input type="number" id="valorMin" placeholder="Mín" min="0" step="0.01">
+                <span>até</span>
+                <input type="number" id="valorMax" placeholder="Máx" min="0" step="0.01">
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <label><i class="fas fa-hashtag"></i> Qtd. Consultas</label>
+            <div class="range-inputs">
+                <input type="number" id="qtdMin" placeholder="Mín" min="0">
+                <span>até</span>
+                <input type="number" id="qtdMax" placeholder="Máx" min="0">
+            </div>
+        </div>
+
+        <div class="filter-actions">
+            <button class="btn-primary" id="applyFiltersBtn"><i class="fas fa-filter"></i> Aplicar</button>
+            <button class="btn-secondary" id="clearFiltersBtn"><i class="fas fa-undo"></i> Limpar</button>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-row" id="statsContainer">
+        <div class="stat-item"><i class="fas fa-user"></i> Total: <span id="totalCount">0</span></div>
+        <div class="stat-item"><i class="fas fa-filter"></i> Filtrados: <span id="filteredCount">0</span></div>
+        <div class="stat-item"><i class="fas fa-phone"></i> Telefones: <span id="phoneCount">0</span></div>
+    </div>
+
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+        <div class="toolbar-left">
+            <span id="resultCount">Mostrando 0 registros</span>
+        </div>
+        <div class="toolbar-right">
+            <button class="btn-copy" id="copyPhonesBtn"><i class="fas fa-copy"></i> Copiar Telefones</button>
+            <button class="btn-export" id="exportCsvBtn"><i class="fas fa-file-export"></i> Exportar CSV</button>
+        </div>
+    </div>
+
+    <!-- TABELA -->
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Faixa</th>
+                    <th>Sexo</th>
+                    <th>Telefone</th>
+                    <th>Consultas</th>
+                    <th>Última</th>
+                    <th>Dias</th>
+                    <th>Total Gasto</th>
+                    <th>Ticket Médio</th>
+                    <th>Especialidade mais utilizada</th>
+                    <th>Clínica mais utilizada</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr class="empty-row"><td colspan="13">Nenhum dado carregado. Faça upload do CSV.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMsg">Ação concluída</span></div>
+
+<script>
+    // ============================================================
+    // CÓDIGO JAVASCRIPT (IDÊNTICO AO ANTERIOR, SEM OS CARDS)
+    // ============================================================
+    let allData = [];
+    let filteredData = [];
+
+    const fileInput = document.getElementById('fileInput');
+    const uploadArea = document.getElementById('uploadArea');
+    const uploadBtn = document.getElementById('uploadBtn');
+    const fileInfo = document.getElementById('fileInfo');
+
+    const searchInput = document.getElementById('searchInput');
+    const faixaFilter = document.getElementById('faixaFilter');
+    const sexoFilter = document.getElementById('sexoFilter');
+    const especialidadeContainer = document.getElementById('especialidadeContainer');
+    const especialidadeDisplay = document.getElementById('especialidadeDisplay');
+    const especialidadeDropdown = document.getElementById('especialidadeDropdown');
+    const diasMin = document.getElementById('diasMin');
+    const diasMax = document.getElementById('diasMax');
+    const valorMin = document.getElementById('valorMin');
+    const valorMax = document.getElementById('valorMax');
+    const qtdMin = document.getElementById('qtdMin');
+    const qtdMax = document.getElementById('qtdMax');
+
+    const applyBtn = document.getElementById('applyFiltersBtn');
+    const clearBtn = document.getElementById('clearFiltersBtn');
+    const tableBody = document.getElementById('tableBody');
+    const totalCount = document.getElementById('totalCount');
+    const filteredCount = document.getElementById('filteredCount');
+    const phoneCount = document.getElementById('phoneCount');
+    const resultCount = document.getElementById('resultCount');
+
+    const copyPhonesBtn = document.getElementById('copyPhonesBtn');
+    const exportCsvBtn = document.getElementById('exportCsvBtn');
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+
+    let selectedEspecialidades = new Set();
+
+    function showToast(msg, icon = 'fa-check-circle') {
+        toastMsg.textContent = msg;
+        toast.querySelector('i').className = `fas ${icon}`;
+        toast.classList.add('show');
+        clearTimeout(toast._timeout);
+        toast._timeout = setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    function parseCSV(text) {
+        const lines = text.split(/\r?\n/).filter(line => line.trim() !== '');
+        if (lines.length === 0) return [];
+        const header = lines[0].split(',').map(h => h.trim());
+        const data = [];
+        for (let i = 1; i < lines.length; i++) {
+            const values = lines[i].split(',').map(v => v.trim());
+            if (values.length < header.length) continue;
+            const obj = {};
+            header.forEach((key, idx) => {
+                let val = values[idx] || '';
+                if (!isNaN(val) && val !== '') {
+                    if (val.includes('.')) obj[key] = parseFloat(val);
+                    else obj[key] = parseInt(val, 10);
+                } else {
+                    obj[key] = val;
+                }
+            });
+            data.push(obj);
+        }
+        return data;
+    }
+
+    function populateSelect(select, values, allLabel = 'Todas') {
+        const current = select.value;
+        select.innerHTML = `<option value="">${allLabel}</option>`;
+        const unique = [...new Set(values)].filter(v => v && v.trim() !== '').sort();
+        unique.forEach(v => {
+            const opt = document.createElement('option');
+            opt.value = v;
+            opt.textContent = v;
+            select.appendChild(opt);
+        });
+        if (current && [...select.options].some(o => o.value === current)) {
+            select.value = current;
+        }
+    }
+
+    function populateEspecialidades(values) {
+        const unique = [...new Set(values)].filter(v => v && v.trim() !== '').sort();
+        especialidadeDropdown.innerHTML = '';
+        unique.forEach(v => {
+            const label = document.createElement('label');
+            const cb = document.createElement('input');
+            cb.type = 'checkbox';
+            cb.value = v;
+            cb.addEventListener('change', () => {
+                if (cb.checked) selectedEspecialidades.add(v);
+                else selectedEspecialidades.delete(v);
+                updateEspecialidadeDisplay();
+            });
+            label.appendChild(cb);
+            label.appendChild(document.createTextNode(v));
+            especialidadeDropdown.appendChild(label);
+        });
+        selectedEspecialidades.forEach(val => {
+            const cb = especialidadeDropdown.querySelector(`input[value="${val}"]`);
+            if (cb) cb.checked = true;
+        });
+        updateEspecialidadeDisplay();
+    }
+
+    function updateEspecialidadeDisplay() {
+        especialidadeDisplay.innerHTML = '';
+        if (selectedEspecialidades.size === 0) {
+            const span = document.createElement('span');
+            span.className = 'placeholder';
+            span.textContent = 'Selecione uma ou mais';
+            especialidadeDisplay.appendChild(span);
+        } else {
+            const arr = Array.from(selectedEspecialidades);
+            arr.forEach(val => {
+                const tag = document.createElement('span');
+                tag.className = 'tag';
+                tag.innerHTML = `${val} <i class="fas fa-times" data-val="${val}"></i>`;
+                tag.querySelector('i').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    selectedEspecialidades.delete(val);
+                    const cb = especialidadeDropdown.querySelector(`input[value="${val}"]`);
+                    if (cb) cb.checked = false;
+                    updateEspecialidadeDisplay();
+                });
+                especialidadeDisplay.appendChild(tag);
+            });
+        }
+    }
+
+    especialidadeDisplay.addEventListener('click', () => {
+        especialidadeDropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+        if (!especialidadeContainer.contains(e.target)) {
+            especialidadeDropdown.classList.remove('open');
+        }
+    });
+
+    const segmentConfigs = {
+        perfil_ideal: {
+            label: 'Perfil Ideal',
+            filters: {
+                sexo: 'F',
+                faixa: ['SENIOR', 'MEDIA IDADE'],
+                qtdMin: 2,
+                valorMin: 200
+            }
+        },
+        alto_ticket: {
+            label: 'Alto Ticket',
+            filters: {
+                valorMin: 500,
+                qtdMin: 3
+            }
+        },
+        frequentes_exames: {
+            label: 'Frequentes em Exames',
+            filters: {
+                consulta: 'EXAMES',
+                qtdMin: 4
+            }
+        },
+        jovem_potencial: {
+            label: 'Jovem Potencial',
+            filters: {
+                faixa: ['JOVEM'],
+                qtdMin: 3,
+                valorMin: 150
+            }
+        },
+        inativos: {
+            label: 'Inativos',
+            filters: {
+                diasMin: 90,
+                qtdMax: 2
+            }
+        }
+    };
+
+    function applySegment(segmentKey) {
+        const cfg = segmentConfigs[segmentKey];
+        if (!cfg) return;
+        const f = cfg.filters;
+        clearFilters(false);
+        if (f.sexo) sexoFilter.value = f.sexo;
+        if (f.faixa) {
+            if (Array.isArray(f.faixa)) {
+                if (f.faixa.includes('SENIOR')) faixaFilter.value = 'SENIOR';
+                else if (f.faixa.includes('MEDIA IDADE')) faixaFilter.value = 'MEDIA IDADE';
+                else faixaFilter.value = '';
+            } else {
+                faixaFilter.value = f.faixa;
+            }
+        }
+        if (f.consulta) {
+            selectedEspecialidades.clear();
+            selectedEspecialidades.add(f.consulta);
+            updateEspecialidadeDisplay();
+            const cb = especialidadeDropdown.querySelector(`input[value="${f.consulta}"]`);
+            if (cb) cb.checked = true;
+        }
+        if (f.qtdMin !== undefined) qtdMin.value = f.qtdMin;
+        if (f.qtdMax !== undefined) qtdMax.value = f.qtdMax;
+        if (f.valorMin !== undefined) valorMin.value = f.valorMin;
+        if (f.valorMax !== undefined) valorMax.value = f.valorMax;
+        if (f.diasMin !== undefined) diasMin.value = f.diasMin;
+        if (f.diasMax !== undefined) diasMax.value = f.diasMax;
+
+        applyFilters();
+        showToast(`Segmento "${cfg.label}" aplicado (${filteredData.length} leads)`, 'fa-bullseye');
+    }
+
+    function applyFilters() {
+        const search = searchInput.value.trim().toLowerCase();
+        const faixa = faixaFilter.value;
+        const sexo = sexoFilter.value;
+        const especialidades = Array.from(selectedEspecialidades);
+        const dMin = diasMin.value !== '' ? parseInt(diasMin.value, 10) : null;
+        const dMax = diasMax.value !== '' ? parseInt(diasMax.value, 10) : null;
+        const vMin = valorMin.value !== '' ? parseFloat(valorMin.value) : null;
+        const vMax = valorMax.value !== '' ? parseFloat(valorMax.value) : null;
+        const qMin = qtdMin.value !== '' ? parseInt(qtdMin.value, 10) : null;
+        const qMax = qtdMax.value !== '' ? parseInt(qtdMax.value, 10) : null;
+
+        filteredData = allData.filter(row => {
+            if (search) {
+                const nome = (row['PACIENTE NOME'] || '').toLowerCase();
+                const telefone = (row['TELEFONE'] || '').toString();
+                const cod = (row['COD PACIENTE'] || '').toString();
+                if (!nome.includes(search) && !telefone.includes(search) && !cod.includes(search)) return false;
+            }
+            if (faixa && row['FAIXA IDADE'] !== faixa) return false;
+            if (sexo && row['SEXO'] !== sexo) return false;
+            if (especialidades.length > 0) {
+                const consulta = row['CONSULTA MAIS USADA'] || '';
+                if (!especialidades.includes(consulta)) return false;
+            }
+            const dias = row['TEMPO DESDE ULTIMA CONSULTA'];
+            if (dMin !== null && (dias === undefined || dias < dMin)) return false;
+            if (dMax !== null && (dias === undefined || dias > dMax)) return false;
+            const valor = row['VALOR TOTAL GASTO'];
+            if (vMin !== null && (valor === undefined || valor < vMin)) return false;
+            if (vMax !== null && (valor === undefined || valor > vMax)) return false;
+            const qtd = row['QTD CONSULTAS'];
+            if (qMin !== null && (qtd === undefined || qtd < qMin)) return false;
+            if (qMax !== null && (qtd === undefined || qtd > qMax)) return false;
+            return true;
+        });
+
+        renderTable();
+        updateStats();
+        updateBadges();
+    }
+
+    function clearFilters(render = true) {
+        searchInput.value = '';
+        faixaFilter.value = '';
+        sexoFilter.value = '';
+        selectedEspecialidades.clear();
+        updateEspecialidadeDisplay();
+        especialidadeDropdown.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+        diasMin.value = '';
+        diasMax.value = '';
+        valorMin.value = '';
+        valorMax.value = '';
+        qtdMin.value = '';
+        qtdMax.value = '';
+        if (render) applyFilters();
+    }
+
+    function updateStats() {
+        totalCount.textContent = allData.length;
+        filteredCount.textContent = filteredData.length;
+        const phones = filteredData.map(r => r['TELEFONE']).filter(p => p && p.toString().trim() !== '');
+        phoneCount.textContent = phones.length;
+        resultCount.textContent = `Mostrando ${filteredData.length} registros`;
+    }
+
+    function renderTable() {
+        if (filteredData.length === 0) {
+            tableBody.innerHTML = `<tr class="empty-row"><td colspan="13">Nenhum registro encontrado.</td></tr>`;
+            return;
+        }
+        let html = '';
+        filteredData.forEach(row => {
+            const cod = row['COD PACIENTE'] || '';
+            const nome = row['PACIENTE NOME'] || '';
+            const idade = row['IDADE'] ?? '';
+            const faixa = row['FAIXA IDADE'] || '';
+            const sexo = row['SEXO'] || '';
+            const tel = row['TELEFONE'] || '';
+            const qtd = row['QTD CONSULTAS'] ?? '';
+            const ultima = row['ULTIMA CONSULTA'] || '';
+            const dias = row['TEMPO DESDE ULTIMA CONSULTA'] ?? '';
+            const total = row['VALOR TOTAL GASTO'] ?? '';
+            const ticket = row['TICKET MEDIO'] ?? '';
+            const consulta = row['CONSULTA MAIS USADA'] || '';
+            const clinica = row['CLINICA PREFERIDA'] || '';
+
+            html += `<tr>
+                <td>${cod}</td>
+                <td><strong>${nome}</strong></td>
+                <td>${idade}</td>
+                <td>${faixa}</td>
+                <td>${sexo}</td>
+                <td>${tel}</td>
+                <td>${qtd}</td>
+                <td>${ultima}</td>
+                <td>${dias}</td>
+                <td>${typeof total === 'number' ? total.toFixed(2) : total}</td>
+                <td>${typeof ticket === 'number' ? ticket.toFixed(2) : ticket}</td>
+                <td>${consulta}</td>
+                <td>${clinica}</td>
+            </tr>`;
+        });
+        tableBody.innerHTML = html;
+    }
+
+    function updateBadges() {
+        const counts = {};
+        for (const key of Object.keys(segmentConfigs)) {
+            const cfg = segmentConfigs[key];
+            const f = cfg.filters;
+            let temp = allData.filter(row => {
+                if (f.sexo && row['SEXO'] !== f.sexo) return false;
+                if (f.faixa) {
+                    if (Array.isArray(f.faixa)) {
+                        if (!f.faixa.includes(row['FAIXA IDADE'])) return false;
+                    } else {
+                        if (row['FAIXA IDADE'] !== f.faixa) return false;
+                    }
+                }
+                if (f.consulta && row['CONSULTA MAIS USADA'] !== f.consulta) return false;
+                const qtd = row['QTD CONSULTAS'];
+                if (f.qtdMin !== undefined && (qtd === undefined || qtd < f.qtdMin)) return false;
+                if (f.qtdMax !== undefined && (qtd === undefined || qtd > f.qtdMax)) return false;
+                const valor = row['VALOR TOTAL GASTO'];
+                if (f.valorMin !== undefined && (valor === undefined || valor < f.valorMin)) return false;
+                if (f.valorMax !== undefined && (valor === undefined || valor > f.valorMax)) return false;
+                const dias = row['TEMPO DESDE ULTIMA CONSULTA'];
+                if (f.diasMin !== undefined && (dias === undefined || dias < f.diasMin)) return false;
+                if (f.diasMax !== undefined && (dias === undefined || dias > f.diasMax)) return false;
+                return true;
+            });
+            counts[key] = temp.length;
+        }
+        for (const key of Object.keys(counts)) {
+            const badge = document.getElementById(`badge_${key}`);
+            if (badge) badge.textContent = counts[key];
+        }
+    }
+
+    function loadDataFromCSV(text) {
+        allData = parseCSV(text);
+        if (allData.length === 0) {
+            showToast('Nenhum dado encontrado no CSV', 'fa-exclamation-triangle');
+            return;
+        }
+        populateSelect(faixaFilter, allData.map(r => r['FAIXA IDADE']));
+        populateSelect(sexoFilter, allData.map(r => r['SEXO']));
+        populateEspecialidades(allData.map(r => r['CONSULTA MAIS USADA']));
+        applyFilters();
+        showToast(`${allData.length} registros carregados`, 'fa-check-circle');
+        fileInfo.textContent = `✅ ${allData.length} registros carregados`;
+    }
+
+    uploadBtn.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => loadDataFromCSV(ev.target.result);
+        reader.readAsText(file, 'UTF-8');
+    });
+
+    uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('dragover'); });
+    uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('dragover'));
+    uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadArea.classList.remove('dragover');
+        const file = e.dataTransfer.files[0];
+        if (file && file.name.endsWith('.csv')) {
+            const reader = new FileReader();
+            reader.onload = (ev) => loadDataFromCSV(ev.target.result);
+            reader.readAsText(file, 'UTF-8');
+        } else {
+            showToast('Carregue um arquivo CSV', 'fa-exclamation-triangle');
+        }
+    });
+
+    applyBtn.addEventListener('click', applyFilters);
+    clearBtn.addEventListener('click', () => clearFilters(true));
+    searchInput.addEventListener('keyup', (e) => { if (e.key === 'Enter') applyFilters(); });
+
+    document.querySelectorAll('[data-segment]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const seg = btn.dataset.segment;
+            applySegment(seg);
+        });
+    });
+
+    function exportFilteredCSV() {
+        if (filteredData.length === 0) {
+            showToast('Nenhum dado para exportar', 'fa-exclamation-triangle');
+            return;
+        }
+        const headers = Object.keys(filteredData[0]);
+        const rows = filteredData.map(row => headers.map(h => row[h] ?? '').join(','));
+        const csv = [headers.join(','), ...rows].join('\n');
+        const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'prospects_dr_central.csv';
+        link.click();
+        URL.revokeObjectURL(link.href);
+        showToast('CSV exportado!', 'fa-file-export');
+    }
+    exportCsvBtn.addEventListener('click', exportFilteredCSV);
+
+    function copyPhones() {
+        const phones = filteredData
+            .map(r => r['TELEFONE'])
+            .filter(p => p && p.toString().trim() !== '')
+            .map(p => p.toString().trim())
+            .join('; ');
+        if (!phones) { showToast('Nenhum telefone para copiar', 'fa-exclamation-triangle'); return; }
+        navigator.clipboard.writeText(phones).then(() => {
+            showToast(`${filteredData.length} telefones copiados!`, 'fa-copy');
+        }).catch(() => {
+            const textarea = document.createElement('textarea');
+            textarea.value = phones;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            showToast(`${filteredData.length} telefones copiados!`, 'fa-copy');
+        });
+    }
+    copyPhonesBtn.addEventListener('click', copyPhones);
+
+    console.log('CRM de Vendas Dr. Central pronto.');
+</script>
+</body>
+</html>
