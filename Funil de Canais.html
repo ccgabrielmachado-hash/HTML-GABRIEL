@@ -456,7 +456,9 @@
 
     <!-- RODAPÉ -->
     <div class="footer">
-        <span>Dados atualizados · Comparação interativa</span>
+        <span>
+    Dados atualizados em <strong id="ultimaAtualizacao"></strong>
+</span>
         <span class="source">
             <i class="fa-regular fa-database"></i> Central de Consultas
             <img src="https://drcentral.com.br/wp-content/uploads/2026/07/images-2-1.jpg" alt="Central de Consultas" />
@@ -871,12 +873,23 @@ function renderizarFunilVoz(containerId, dados, mes) {
     }
 
     // ============================================================
+    // FUNÇÃO PARA EXIBIR DATA/HORA FIXA (SUBSTITUÍDA PELO PYTHON)
+    // ============================================================
+    function atualizarDataAtualizacao() {
+        // Esta função será sobrescrita pelo script Python com a data/hora da execução.
+        // O Python substituirá o conteúdo do <strong id="ultimaAtualizacao">.
+        // Portanto, esta função não faz nada para evitar conflito.
+        // O rodapé já terá a data fixa inserida diretamente no HTML.
+    }
+
+    // ============================================================
     // INICIALIZAÇÃO E EVENTOS
     // ============================================================
     document.addEventListener('DOMContentLoaded', function() {
         // Abas
         const tabs = document.querySelectorAll('.tab-btn');
         const contents = document.querySelectorAll('.tab-content');
+        // Não chama mais atualizarDataAtualizacao() para não sobrescrever a data fixa
         tabs.forEach(tab => {
             tab.addEventListener('click', function() {
                 tabs.forEach(t => t.classList.remove('active'));
