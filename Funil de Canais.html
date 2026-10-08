@@ -129,12 +129,12 @@
         .bar-fill.pink { background: linear-gradient(90deg, #db2777, #f472b6); }
 
         .step-icon { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; flex-shrink: 0; }
-        .step-icon.recebidas { background: #0d9488; }
+        .step-icon.atendimentos { background: #0d9488; }
+        .step-icon.envios { background: #8b5cf6; }
+        .step-icon.agendamento { background: #7c3aed; }
         .step-icon.consulta { background: #059669; }
         .step-icon.exame { background: #d97706; }
         .step-icon.odonto { background: #dc2626; }
-        .step-icon.outros { background: #f59e0b; }
-        .step-icon.agendamento { background: #7c3aed; }
         .step-icon.phone-recebidas { background: #0d9488; }
         .step-icon.phone-atendidas { background: #2563eb; }
         .step-icon.phone-agendamentos { background: #7c3aed; }
@@ -296,32 +296,449 @@
     // ============================================================
     // DADOS PRINCIPAIS — POR MÊS
     //
-    // WHATS — alimentado pela query da Central de Consultas (BZ_IALUI_WHATS):
-    //   recebidas         <- TOTAL_ATENDIMENTOS
-    //   consultas         <- CONSULTAS
-    //   exames            <- EXAMES
-    //   odonto            <- ODONTO
-    //   outros            <- OUTROS
-    //   transbordoHumano  <- TRANSBORDO_HUMANO (guardado, não exibido)
-    //   agendamentos      <- outra query (CRM)
+    // WHATS — funil:
+    //   atendimentos      <- MANUAL
+    //   agendamentos      <- QUERY (total)
+    //   agendaConsultas   <- QUERY (tipo=CONSULTA)
+    //   agendaExames      <- QUERY (tipo=EXAME)
+    //   agendaOdonto      <- QUERY (tipo=ODONTO)
     //
-    // VOZ — dividido em 2 fontes:
-    //   [Query URA]      recebidas, atendidas, perda, ligacoes1515, ligacoes6080
-    //   [Outra query]    agendamentos, agendaConsultas, agendaExames, agendaOdonto
+    // VOZ — funil:
+    //   [Query URA]    recebidas, atendidas, perda, ligacoes1515, ligacoes6080
+    //   [Agendamentos] agendamentos, agendaConsultas, agendaExames, agendaOdonto
     //
     // SITE — pendente (GA / GTM)
-    //   acessos, cliquesAgendamento, agendamentos
     // ============================================================
     const dadosMensais = {
+  "2025-01": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 19636,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2025-02": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 15792,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2025-03": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 25659,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2025-04": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 33722,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2025-05": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 39911,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2025-06": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 35680,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2025-07": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 41936,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2025-08": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 40735,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2025-09": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 40191,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2025-10": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 50762,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2025-11": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 34772,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2025-12": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 33127,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2026-01": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 48666,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2026-02": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 37031,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2026-03": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 44539,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2026-04": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 30676,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
+  "2026-05": {
+    "whats": {
+      "atendimentos": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "voz": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "perda": 0,
+      "ligacoes1515": 0,
+      "ligacoes6080": 0,
+      "agendamentos": 0,
+      "agendaConsultas": 0,
+      "agendaExames": 0,
+      "agendaOdonto": 0
+    },
+    "site": {
+      "acessos": 36363,
+      "cliquesAgendamento": 0,
+      "agendamentos": 0
+    }
+  },
   "2026-06": {
     "whats": {
-      "recebidas": 51044,
-      "consultas": 27535,
-      "exames": 14540,
-      "odonto": 3170,
-      "outros": 5799,
+      "atendimentos": 51044,
       "agendamentos": 10544,
-      "transbordoHumano": 0,
       "agendaConsultas": 8879,
       "agendaExames": 1102,
       "agendaOdonto": 563
@@ -338,20 +755,15 @@
       "agendaOdonto": 984
     },
     "site": {
-      "acessos": 0,
+      "acessos": 39354,
       "cliquesAgendamento": 0,
       "agendamentos": 0
     }
   },
   "2026-07": {
     "whats": {
-      "recebidas": 59770,
-      "consultas": 30672,
-      "exames": 16130,
-      "odonto": 3220,
-      "outros": 9748,
+      "atendimentos": 59770,
       "agendamentos": 11497,
-      "transbordoHumano": 0,
       "agendaConsultas": 9625,
       "agendaExames": 1170,
       "agendaOdonto": 702
@@ -368,20 +780,15 @@
       "agendaOdonto": 897
     },
     "site": {
-      "acessos": 0,
+      "acessos": 40981,
       "cliquesAgendamento": 0,
       "agendamentos": 0
     }
   },
   "2026-08": {
     "whats": {
-      "recebidas": 0,
-      "consultas": 0,
-      "exames": 0,
-      "odonto": 0,
-      "outros": 0,
+      "atendimentos": 45866,
       "agendamentos": 12094,
-      "transbordoHumano": 0,
       "agendaConsultas": 10132,
       "agendaExames": 1292,
       "agendaOdonto": 670
@@ -398,20 +805,15 @@
       "agendaOdonto": 790
     },
     "site": {
-      "acessos": 0,
+      "acessos": 41913,
       "cliquesAgendamento": 0,
       "agendamentos": 0
     }
   },
   "2026-09": {
     "whats": {
-      "recebidas": 0,
-      "consultas": 0,
-      "exames": 0,
-      "odonto": 0,
-      "outros": 0,
+      "atendimentos": 43602,
       "agendamentos": 12815,
-      "transbordoHumano": 0,
       "agendaConsultas": 10782,
       "agendaExames": 1348,
       "agendaOdonto": 684
@@ -428,20 +830,15 @@
       "agendaOdonto": 777
     },
     "site": {
-      "acessos": 0,
+      "acessos": 43144,
       "cliquesAgendamento": 0,
       "agendamentos": 0
     }
   },
   "2026-10": {
     "whats": {
-      "recebidas": 0,
-      "consultas": 0,
-      "exames": 0,
-      "odonto": 0,
-      "outros": 0,
+      "atendimentos": 0,
       "agendamentos": 2925,
-      "transbordoHumano": 0,
       "agendaConsultas": 2415,
       "agendaExames": 370,
       "agendaOdonto": 140
@@ -458,20 +855,15 @@
       "agendaOdonto": 146
     },
     "site": {
-      "acessos": 0,
+      "acessos": 9867,
       "cliquesAgendamento": 0,
       "agendamentos": 0
     }
   },
   "2026-11": {
     "whats": {
-      "recebidas": 0,
-      "consultas": 0,
-      "exames": 0,
-      "odonto": 0,
-      "outros": 0,
+      "atendimentos": 0,
       "agendamentos": 0,
-      "transbordoHumano": 0,
       "agendaConsultas": 0,
       "agendaExames": 0,
       "agendaOdonto": 0
@@ -495,13 +887,8 @@
   },
   "2026-12": {
     "whats": {
-      "recebidas": 0,
-      "consultas": 0,
-      "exames": 0,
-      "odonto": 0,
-      "outros": 0,
+      "atendimentos": 0,
       "agendamentos": 0,
-      "transbordoHumano": 0,
       "agendaConsultas": 0,
       "agendaExames": 0,
       "agendaOdonto": 0
@@ -540,29 +927,58 @@
     }
 
     // ============================================================
-    // FUNIL WHATSAPP
+    // FUNIL WHATSAPP (5 etapas)
+    //  1. Atendimentos     (MANUAL)
+    //  2. Agendamentos     (QUERY)
+    //  3. Consultas        (QUERY · CONSULTA)
+    //  4. Exames           (QUERY · EXAME)
+    //  5. Odonto           (QUERY · ODONTO)
     // ============================================================
-    function renderizarFunilWhats(containerId, dados, panelIndex) {
+    function renderizarFunilWhats(containerId, dados) {
         const container = document.getElementById(containerId);
         if (!container) return;
         const w = dados.whats;
 
+        const totalAgend = w.agendamentos || 0;
+        const pctAgend       = w.atendimentos > 0 ? (w.agendamentos / w.atendimentos * 100) : 0;
+        const pctConsulta    = totalAgend > 0 ? (w.agendaConsultas / totalAgend * 100) : 0;
+        const pctExame       = totalAgend > 0 ? (w.agendaExames    / totalAgend * 100) : 0;
+        const pctOdonto      = totalAgend > 0 ? (w.agendaOdonto    / totalAgend * 100) : 0;
+
         const steps = [
-            { label: 'Mensagens Recebidas', value: w.recebidas, icon: 'recebidas', barClass: 'teal', percent: 100 },
-            { label: 'Consultas', value: w.consultas, icon: 'consulta', barClass: 'green', percent: (w.recebidas > 0 ? (w.consultas / w.recebidas * 100) : 0), extra: `<span class="step-percent">${(w.recebidas > 0 ? (w.consultas / w.recebidas * 100).toFixed(1) : '0')}% das Mensagens Recebidas</span>` },
-            { label: 'Exames', value: w.exames, icon: 'exame', barClass: 'amber', percent: (w.recebidas > 0 ? (w.exames / w.recebidas * 100) : 0), extra: `<span class="step-percent">${(w.recebidas > 0 ? (w.exames / w.recebidas * 100).toFixed(1) : '0')}% das Mensagens Recebidas</span>` },
-            { label: 'Odontologia', value: w.odonto, icon: 'odonto', barClass: 'red', percent: (w.recebidas > 0 ? (w.odonto / w.recebidas * 100) : 0), extra: `<span class="step-percent">${(w.recebidas > 0 ? (w.odonto / w.recebidas * 100).toFixed(1) : '0')}% das Mensagens Recebidas</span>` },
-            { label: 'Outros Assuntos', value: w.outros, icon: 'outros', barClass: 'orange', percent: (w.recebidas > 0 ? (w.outros / w.recebidas * 100) : 0), extra: `<span class="step-percent">${(w.recebidas > 0 ? (w.outros / w.recebidas * 100).toFixed(1) : '0')}% das Mensagens Recebidas</span>` },
-            { label: 'Agendamentos', value: w.agendamentos, icon: 'agendamento', barClass: 'purple', percent: (w.recebidas > 0 ? (w.agendamentos / w.recebidas * 100) : 0), extra: `<span class="step-percent">${(w.recebidas > 0 ? (w.agendamentos / w.recebidas * 100).toFixed(1) : '0')}% das Mensagens Recebidas</span>` }
+            {
+                label: 'Atendimentos', value: w.atendimentos,
+                icon: 'atendimentos', barClass: 'teal', percent: 100,
+                extra: `<span class="step-percent">100% (topo do funil)</span>`
+            },
+            {
+                label: 'Agendamentos', value: w.agendamentos,
+                icon: 'agendamento', barClass: 'purple', percent: pctAgend,
+                extra: `<span class="step-percent">${pctAgend.toFixed(1)}% dos Atendimentos</span>`
+            },
+            {
+                label: 'Consultas', value: w.agendaConsultas,
+                icon: 'consulta', barClass: 'green', percent: pctConsulta,
+                extra: `<span class="step-percent">${pctConsulta.toFixed(1)}% dos Agendamentos</span>`
+            },
+            {
+                label: 'Exames', value: w.agendaExames,
+                icon: 'exame', barClass: 'amber', percent: pctExame,
+                extra: `<span class="step-percent">${pctExame.toFixed(1)}% dos Agendamentos</span>`
+            },
+            {
+                label: 'Odontologia', value: w.agendaOdonto,
+                icon: 'odonto', barClass: 'red', percent: pctOdonto,
+                extra: `<span class="step-percent">${pctOdonto.toFixed(1)}% dos Agendamentos</span>`
+            }
         ];
 
         const iconMap = {
-            'recebidas':'fa-regular fa-inbox',
+            'atendimentos':'fa-regular fa-inbox',
+            'agendamento':'fa-regular fa-calendar-check',
             'consulta':'fa-regular fa-stethoscope',
             'exame':'fa-regular fa-flask',
-            'odonto':'fa-regular fa-tooth',
-            'outros':'fa-regular fa-tag',
-            'agendamento':'fa-regular fa-calendar-check'
+            'odonto':'fa-regular fa-tooth'
         };
 
         container.innerHTML = steps.map(s => {
@@ -583,13 +999,8 @@
 
     // ============================================================
     // FUNIL VOZ
-    //  1ª etapa = Chamadas Recebidas  (query URA)
-    //  2ª etapa = Atendidos           (query URA)
-    //  3ª etapa = Agendamentos (total) (outra query)
-    //  4ª/5ª/6ª = Consulta/Exame/Odonto (outra query)
-    //  7ª etapa = Perda               (query URA)
     // ============================================================
-    function renderizarFunilVoz(containerId, dados, mes) {
+    function renderizarFunilVoz(containerId, dados) {
         const container = document.getElementById(containerId);
         if (!container) return;
         const v = dados.voz;
@@ -719,15 +1130,15 @@
         const dados = dadosMensais[mes];
         if (!dados) {
             const zero = {
-                whats: { recebidas: 0, consultas: 0, exames: 0, odonto: 0, outros: 0, agendamentos: 0, transbordoHumano: 0 },
+                whats: { atendimentos: 0, agendamentos: 0, agendaConsultas: 0, agendaExames: 0, agendaOdonto: 0 },
                 voz: { recebidas: 0, atendidas: 0, perda: 0, ligacoes1515: 0, ligacoes6080: 0, agendamentos: 0, agendaConsultas: 0, agendaExames: 0, agendaOdonto: 0 },
                 site: { acessos: 0, cliquesAgendamento: 0, agendamentos: 0 }
             };
             if (tipo === 'whats') {
-                renderizarFunilWhats(`whatsappFunnel${panelIndex}`, zero, panelIndex);
+                renderizarFunilWhats(`whatsappFunnel${panelIndex}`, zero);
                 document.getElementById(`whatsTitle${panelIndex}`).textContent = nomeMes(mes) + ' (sem dados)';
             } else if (tipo === 'voz') {
-                renderizarFunilVoz(`vozFunnel${panelIndex}`, zero, mes);
+                renderizarFunilVoz(`vozFunnel${panelIndex}`, zero);
                 document.getElementById(`vozTitle${panelIndex}`).textContent = nomeMes(mes) + ' (sem dados)';
             } else if (tipo === 'site') {
                 renderizarFunilSite(`siteFunnel${panelIndex}`, zero, panelIndex);
@@ -737,10 +1148,10 @@
         }
 
         if (tipo === 'whats') {
-            renderizarFunilWhats(`whatsappFunnel${panelIndex}`, dados, panelIndex);
+            renderizarFunilWhats(`whatsappFunnel${panelIndex}`, dados);
             document.getElementById(`whatsTitle${panelIndex}`).textContent = nomeMes(mes);
         } else if (tipo === 'voz') {
-            renderizarFunilVoz(`vozFunnel${panelIndex}`, dados, mes);
+            renderizarFunilVoz(`vozFunnel${panelIndex}`, dados);
             document.getElementById(`vozTitle${panelIndex}`).textContent = nomeMes(mes);
         } else if (tipo === 'site') {
             renderizarFunilSite(`siteFunnel${panelIndex}`, dados, panelIndex);
