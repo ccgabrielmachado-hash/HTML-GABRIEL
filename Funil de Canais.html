@@ -209,14 +209,14 @@
             <div class="funnel-panel" id="whatsPanel1">
                 <div class="panel-header">
                     <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="whatsTitle1">Mês 1</span></span>
-                    <div class="panel-selector"><input type="month" id="whatsMonth1" min="2025-01" value="2026-06" /></div>
+                    <div class="panel-selector"><input type="month" id="whatsMonth1" min="2025-01" /></div>
                 </div>
                 <div class="funnel" id="whatsappFunnel1"></div>
             </div>
             <div class="funnel-panel" id="whatsPanel2">
                 <div class="panel-header">
                     <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="whatsTitle2">Mês 2</span></span>
-                    <div class="panel-selector"><input type="month" id="whatsMonth2" min="2025-01" value="2026-07" /></div>
+                    <div class="panel-selector"><input type="month" id="whatsMonth2" min="2025-01" /></div>
                 </div>
                 <div class="funnel" id="whatsappFunnel2"></div>
             </div>
@@ -228,14 +228,14 @@
             <div class="funnel-panel" id="vozPanel1">
                 <div class="panel-header">
                     <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="vozTitle1">Mês 1</span></span>
-                    <div class="panel-selector"><input type="month" id="vozMonth1" min="2025-01" value="2026-06" /></div>
+                    <div class="panel-selector"><input type="month" id="vozMonth1" min="2025-01" /></div>
                 </div>
                 <div class="funnel" id="vozFunnel1"></div>
             </div>
             <div class="funnel-panel" id="vozPanel2">
                 <div class="panel-header">
                     <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="vozTitle2">Mês 2</span></span>
-                    <div class="panel-selector"><input type="month" id="vozMonth2" min="2025-01" value="2026-07" /></div>
+                    <div class="panel-selector"><input type="month" id="vozMonth2" min="2025-01" /></div>
                 </div>
                 <div class="funnel" id="vozFunnel2"></div>
             </div>
@@ -247,14 +247,14 @@
             <div class="funnel-panel" id="sitePanel1">
                 <div class="panel-header">
                     <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="siteTitle1">Mês 1</span></span>
-                    <div class="panel-selector"><input type="month" id="siteMonth1" min="2025-01" value="2026-06" /></div>
+                    <div class="panel-selector"><input type="month" id="siteMonth1" min="2025-01" /></div>
                 </div>
                 <div class="funnel" id="siteFunnel1"></div>
             </div>
             <div class="funnel-panel" id="sitePanel2">
                 <div class="panel-header">
                     <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="siteTitle2">Mês 2</span></span>
-                    <div class="panel-selector"><input type="month" id="siteMonth2" min="2025-01" value="2026-07" /></div>
+                    <div class="panel-selector"><input type="month" id="siteMonth2" min="2025-01" /></div>
                 </div>
                 <div class="funnel" id="siteFunnel2"></div>
             </div>
@@ -272,11 +272,6 @@
 </div>
 
 <script>
-    // ============================================================
-    // SITE — campos:
-    //   acessos, iniciado, agenda, identificacao, cadastro, confirmado
-    //   agendamentos (total) + agendaConsultas + agendaExames + agendaOdonto
-    // ============================================================
     const dadosMensais = {
   "2025-01": {
     "whats": {
@@ -1160,15 +1155,6 @@
         }).join('');
     }
 
-    // ============================================================
-    // FUNIL SITE — 6 etapas
-    //  1. Acessos
-    //  2. Iniciou Agendamento (com sub-etapas inline)
-    //  3. Agendamentos (total)
-    //  4. Consultas
-    //  5. Exames
-    //  6. Odontologia
-    // ============================================================
     function renderizarFunilSite(containerId, dados) {
         const container = document.getElementById(containerId);
         if (!container) return;
@@ -1189,7 +1175,6 @@
         const pctExame    = calc(s.agendaExames,    totalAgend);
         const pctOdonto   = calc(s.agendaOdonto,    totalAgend);
 
-        // Sub-etapas inline do "Iniciou"
         const subIniciado = [
             { label: 'Agenda',        value: s.agenda,        pct: pctAgenda   },
             { label: 'Identificação', value: s.identificacao, pct: pctIdentif  },
@@ -1216,7 +1201,6 @@
         };
 
         container.innerHTML = `
-            <!-- 1. Acessos -->
             <div class="funnel-step site-step">
                 <div class="step-icon site-acessos"><i class="${iconMap['site-acessos']}"></i></div>
                 <div class="step-info">
@@ -1227,7 +1211,6 @@
                 </div>
             </div>
 
-            <!-- 2. Iniciou -->
             <div class="funnel-step site-step">
                 <div class="step-main">
                     <div class="step-icon site-iniciado"><i class="${iconMap['site-iniciado']}"></i></div>
@@ -1241,7 +1224,6 @@
                 <div class="substeps-inline">${substepsHTML}</div>
             </div>
 
-            <!-- 3. Agendamentos (total) -->
             <div class="funnel-step site-step">
                 <div class="step-icon site-agendamentos"><i class="${iconMap['site-agendamentos']}"></i></div>
                 <div class="step-info">
@@ -1252,7 +1234,6 @@
                 </div>
             </div>
 
-            <!-- 4. Consultas -->
             <div class="funnel-step site-step">
                 <div class="step-icon consulta"><i class="${iconMap['site-consulta']}"></i></div>
                 <div class="step-info">
@@ -1263,7 +1244,6 @@
                 </div>
             </div>
 
-            <!-- 5. Exames -->
             <div class="funnel-step site-step">
                 <div class="step-icon exame"><i class="${iconMap['site-exame']}"></i></div>
                 <div class="step-info">
@@ -1274,7 +1254,6 @@
                 </div>
             </div>
 
-            <!-- 6. Odontologia -->
             <div class="funnel-step site-step">
                 <div class="step-icon odonto"><i class="${iconMap['site-odonto']}"></i></div>
                 <div class="step-info">
@@ -1305,7 +1284,28 @@
         else if (tipo === 'site') { renderizarFunilSite(`siteFunnel${panelIndex}`, dados); document.getElementById(`siteTitle${panelIndex}`).textContent = nomeMes(mes); }
     }
 
+    // ============================================================
+    // Calcula mês atual e mês anterior automaticamente
+    // ============================================================
+    function getMesesAtualEAnterior() {
+        const hoje = new Date();
+        const ano = hoje.getFullYear();
+        const mes = hoje.getMonth(); // 0 = Janeiro ... 11 = Dezembro
+
+        // Mês atual
+        const atual = `${ano}-${String(mes + 1).padStart(2, '0')}`;
+
+        // Mês anterior
+        let anoAnt = ano;
+        let mesAnt = mes - 1;
+        if (mesAnt < 0) { mesAnt = 11; anoAnt = ano - 1; }
+        const anterior = `${anoAnt}-${String(mesAnt + 1).padStart(2, '0')}`;
+
+        return { atual, anterior };
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
+        // Abas
         const tabs = document.querySelectorAll('.tab-btn');
         const contents = document.querySelectorAll('.tab-content');
         tabs.forEach(tab => {
@@ -1318,12 +1318,16 @@
             });
         });
 
+        // Seletores
         const wm1 = document.getElementById('whatsMonth1');
         const wm2 = document.getElementById('whatsMonth2');
         const vm1 = document.getElementById('vozMonth1');
         const vm2 = document.getElementById('vozMonth2');
         const sm1 = document.getElementById('siteMonth1');
         const sm2 = document.getElementById('siteMonth2');
+
+        // Garante atributo min correto
+        [wm1, wm2, vm1, vm2, sm1, sm2].forEach(el => { if (el) el.min = '2025-01'; });
 
         function setupSelector(selector, tipo, index) {
             selector.addEventListener('change', function() {
@@ -1335,12 +1339,24 @@
         setupSelector(vm1, 'voz', 1);   setupSelector(vm2, 'voz', 2);
         setupSelector(sm1, 'site', 1);  setupSelector(sm2, 'site', 2);
 
-        atualizarPainel('whats', 1, '2026-06');
-        atualizarPainel('whats', 2, '2026-07');
-        atualizarPainel('voz', 1, '2026-06');
-        atualizarPainel('voz', 2, '2026-07');
-        atualizarPainel('site', 1, '2026-06');
-        atualizarPainel('site', 2, '2026-07');
+        // ============================================================
+        // Define mês anterior (painel 1) e mês atual (painel 2)
+        // em TODAS as abas
+        // ============================================================
+        const { atual, anterior } = getMesesAtualEAnterior();
+
+        // Ajusta os inputs de mês
+        wm1.value = anterior;  wm2.value = atual;
+        vm1.value = anterior;  vm2.value = atual;
+        sm1.value = anterior;  sm2.value = atual;
+
+        // Renderiza os painéis
+        atualizarPainel('whats', 1, anterior);
+        atualizarPainel('whats', 2, atual);
+        atualizarPainel('voz', 1, anterior);
+        atualizarPainel('voz', 2, atual);
+        atualizarPainel('site', 1, anterior);
+        atualizarPainel('site', 2, atual);
     });
 </script>
 
