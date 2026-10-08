@@ -56,15 +56,6 @@
         .funnel-panel .panel-selector input[type="month"]:hover { border-color: #3b82f6; }
         .funnel-panel .panel-selector input[type="month"]:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
 
-        .metric-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
-        .metric-card { background: #f8fafc; border-radius: 14px; padding: 14px 16px; border: 1px solid #e6edf4; text-align: center; transition: 0.2s ease; }
-        .metric-card:hover { background: #f1f5f9; border-color: #b8c9dd; }
-        .metric-card .metric-value { font-size: 26px; font-weight: 800; color: #0b1a33; letter-spacing: -0.5px; }
-        .metric-card .metric-label { font-size: 12px; font-weight: 500; color: #5a6f8c; margin-top: 2px; }
-        .metric-card .metric-icon { font-size: 18px; color: #3b82f6; margin-right: 6px; }
-        .metric-card.blue .metric-value { color: #3b82f6; }
-        .metric-card.purple .metric-value { color: #8b5cf6; }
-
         .funnel-panel .funnel { display: flex; flex-direction: column; gap: 10px; }
         .funnel-step {
             display: flex; align-items: center; gap: 20px; background: #f8fafc;
@@ -88,10 +79,6 @@
         .funnel-step.voice-step:nth-child(5) { width: 76%; margin-left: 12%; }
         .funnel-step.voice-step:nth-child(6) { width: 70%; margin-left: 15%; }
         .funnel-step.voice-step:nth-child(7) { width: 64%; margin-left: 18%; }
-
-        .funnel-step.site-step:nth-child(1) { width: 100%; margin-left: 0; }
-        .funnel-step.site-step:nth-child(2) { width: 82%; margin-left: 9%; }
-        .funnel-step.site-step:nth-child(3) { width: 64%; margin-left: 18%; }
 
         .funnel-step .step-main { display: flex; align-items: center; gap: 20px; width: 100%; }
         .funnel-step .step-icon { flex-shrink: 0; }
@@ -127,10 +114,10 @@
         .bar-fill.cyan { background: linear-gradient(90deg, #0891b2, #22d3ee); }
         .bar-fill.orange { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
         .bar-fill.pink { background: linear-gradient(90deg, #db2777, #f472b6); }
+        .bar-fill.indigo { background: linear-gradient(90deg, #4f46e5, #818cf8); }
 
         .step-icon { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; flex-shrink: 0; }
         .step-icon.atendimentos { background: #0d9488; }
-        .step-icon.envios { background: #8b5cf6; }
         .step-icon.agendamento { background: #7c3aed; }
         .step-icon.consulta { background: #059669; }
         .step-icon.exame { background: #d97706; }
@@ -143,8 +130,11 @@
         .step-icon.phone-odonto { background: #dc2626; }
         .step-icon.phone-perda { background: #ef4444; }
         .step-icon.site-acessos { background: #3b82f6; }
-        .step-icon.site-cliques { background: #8b5cf6; }
-        .step-icon.site-agendamentos { background: #059669; }
+        .step-icon.site-iniciado { background: #8b5cf6; }
+        .step-icon.site-agenda { background: #0891b2; }
+        .step-icon.site-identif { background: #4f46e5; }
+        .step-icon.site-cadastro { background: #db2777; }
+        .step-icon.site-confirmado { background: #059669; }
 
         .footer { margin-top: 36px; padding-top: 20px; border-top: 1px solid #e6edf4; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #5a6f8c; flex-wrap: wrap; gap: 12px; }
         .footer .source { display: flex; align-items: center; gap: 10px; }
@@ -196,18 +186,14 @@
             <div class="funnel-panel" id="whatsPanel1">
                 <div class="panel-header">
                     <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="whatsTitle1">Mês 1</span></span>
-                    <div class="panel-selector">
-                        <input type="month" id="whatsMonth1" min="2026-06" value="2026-06" />
-                    </div>
+                    <div class="panel-selector"><input type="month" id="whatsMonth1" min="2026-06" value="2026-06" /></div>
                 </div>
                 <div class="funnel" id="whatsappFunnel1"></div>
             </div>
             <div class="funnel-panel" id="whatsPanel2">
                 <div class="panel-header">
                     <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="whatsTitle2">Mês 2</span></span>
-                    <div class="panel-selector">
-                        <input type="month" id="whatsMonth2" min="2026-06" value="2026-07" />
-                    </div>
+                    <div class="panel-selector"><input type="month" id="whatsMonth2" min="2026-06" value="2026-07" /></div>
                 </div>
                 <div class="funnel" id="whatsappFunnel2"></div>
             </div>
@@ -220,18 +206,14 @@
             <div class="funnel-panel" id="vozPanel1">
                 <div class="panel-header">
                     <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="vozTitle1">Mês 1</span></span>
-                    <div class="panel-selector">
-                        <input type="month" id="vozMonth1" min="2026-06" value="2026-06" />
-                    </div>
+                    <div class="panel-selector"><input type="month" id="vozMonth1" min="2026-06" value="2026-06" /></div>
                 </div>
                 <div class="funnel" id="vozFunnel1"></div>
             </div>
             <div class="funnel-panel" id="vozPanel2">
                 <div class="panel-header">
                     <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="vozTitle2">Mês 2</span></span>
-                    <div class="panel-selector">
-                        <input type="month" id="vozMonth2" min="2026-06" value="2026-07" />
-                    </div>
+                    <div class="panel-selector"><input type="month" id="vozMonth2" min="2026-06" value="2026-07" /></div>
                 </div>
                 <div class="funnel" id="vozFunnel2"></div>
             </div>
@@ -244,38 +226,14 @@
             <div class="funnel-panel" id="sitePanel1">
                 <div class="panel-header">
                     <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="siteTitle1">Mês 1</span></span>
-                    <div class="panel-selector">
-                        <input type="month" id="siteMonth1" min="2026-06" value="2026-06" />
-                    </div>
-                </div>
-                <div class="metric-cards" id="siteMetrics1">
-                    <div class="metric-card blue">
-                        <div class="metric-value" id="siteAcessos1">0</div>
-                        <div class="metric-label"><i class="fa-regular fa-eye metric-icon"></i>Acessos</div>
-                    </div>
-                    <div class="metric-card purple">
-                        <div class="metric-value" id="siteCliques1">0</div>
-                        <div class="metric-label"><i class="fa-regular fa-hand-pointer metric-icon"></i>Cliques em Agendamentos</div>
-                    </div>
+                    <div class="panel-selector"><input type="month" id="siteMonth1" min="2025-01" value="2026-06" /></div>
                 </div>
                 <div class="funnel" id="siteFunnel1"></div>
             </div>
             <div class="funnel-panel" id="sitePanel2">
                 <div class="panel-header">
                     <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="siteTitle2">Mês 2</span></span>
-                    <div class="panel-selector">
-                        <input type="month" id="siteMonth2" min="2026-06" value="2026-07" />
-                    </div>
-                </div>
-                <div class="metric-cards" id="siteMetrics2">
-                    <div class="metric-card blue">
-                        <div class="metric-value" id="siteAcessos2">0</div>
-                        <div class="metric-label"><i class="fa-regular fa-eye metric-icon"></i>Acessos</div>
-                    </div>
-                    <div class="metric-card purple">
-                        <div class="metric-value" id="siteCliques2">0</div>
-                        <div class="metric-label"><i class="fa-regular fa-hand-pointer metric-icon"></i>Cliques em Agendamentos</div>
-                    </div>
+                    <div class="panel-selector"><input type="month" id="siteMonth2" min="2025-01" value="2026-07" /></div>
                 </div>
                 <div class="funnel" id="siteFunnel2"></div>
             </div>
@@ -296,18 +254,13 @@
     // ============================================================
     // DADOS PRINCIPAIS — POR MÊS
     //
-    // WHATS — funil:
-    //   atendimentos      <- MANUAL
-    //   agendamentos      <- QUERY (total)
-    //   agendaConsultas   <- QUERY (tipo=CONSULTA)
-    //   agendaExames      <- QUERY (tipo=EXAME)
-    //   agendaOdonto      <- QUERY (tipo=ODONTO)
-    //
-    // VOZ — funil:
-    //   [Query URA]    recebidas, atendidas, perda, ligacoes1515, ligacoes6080
-    //   [Agendamentos] agendamentos, agendaConsultas, agendaExames, agendaOdonto
-    //
-    // SITE — pendente (GA / GTM)
+    // SITE — 6 etapas (GA4):
+    //   acessos        <- sessoes
+    //   iniciado       <- etapa1_iniciado
+    //   agenda         <- etapa2_agenda
+    //   identificacao  <- etapa3_identif
+    //   cadastro       <- etapa4_cadastro
+    //   confirmado     <- etapa5_confirmado
     // ============================================================
     const dadosMensais = {
   "2025-01": {
@@ -331,8 +284,11 @@
     },
     "site": {
       "acessos": 19636,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 0,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 0
     }
   },
   "2025-02": {
@@ -356,8 +312,11 @@
     },
     "site": {
       "acessos": 15792,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 0,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 0
     }
   },
   "2025-03": {
@@ -381,8 +340,11 @@
     },
     "site": {
       "acessos": 25659,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 0,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 0
     }
   },
   "2025-04": {
@@ -406,8 +368,11 @@
     },
     "site": {
       "acessos": 33722,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 0,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 0
     }
   },
   "2025-05": {
@@ -431,8 +396,11 @@
     },
     "site": {
       "acessos": 39911,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 0,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 0
     }
   },
   "2025-06": {
@@ -456,8 +424,11 @@
     },
     "site": {
       "acessos": 35680,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 0,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 0
     }
   },
   "2025-07": {
@@ -481,8 +452,11 @@
     },
     "site": {
       "acessos": 41936,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 0,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 0
     }
   },
   "2025-08": {
@@ -506,8 +480,11 @@
     },
     "site": {
       "acessos": 40735,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 0,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 0
     }
   },
   "2025-09": {
@@ -531,8 +508,11 @@
     },
     "site": {
       "acessos": 40191,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 5688,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 844
     }
   },
   "2025-10": {
@@ -556,8 +536,11 @@
     },
     "site": {
       "acessos": 50762,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 12495,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 1893
     }
   },
   "2025-11": {
@@ -581,8 +564,11 @@
     },
     "site": {
       "acessos": 34772,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 2550,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 307
     }
   },
   "2025-12": {
@@ -606,8 +592,11 @@
     },
     "site": {
       "acessos": 33127,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 8039,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 1169
     }
   },
   "2026-01": {
@@ -631,8 +620,11 @@
     },
     "site": {
       "acessos": 48666,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 15211,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 5981
     }
   },
   "2026-02": {
@@ -656,8 +648,11 @@
     },
     "site": {
       "acessos": 37031,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 12417,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 1836
     }
   },
   "2026-03": {
@@ -681,8 +676,11 @@
     },
     "site": {
       "acessos": 44539,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 16217,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 2178
     }
   },
   "2026-04": {
@@ -706,8 +704,11 @@
     },
     "site": {
       "acessos": 30676,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 14739,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 1810
     }
   },
   "2026-05": {
@@ -731,8 +732,11 @@
     },
     "site": {
       "acessos": 36363,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 17871,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 2064
     }
   },
   "2026-06": {
@@ -756,8 +760,11 @@
     },
     "site": {
       "acessos": 39354,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 14185,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 2263
     }
   },
   "2026-07": {
@@ -781,8 +788,11 @@
     },
     "site": {
       "acessos": 40981,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 12566,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 2546
     }
   },
   "2026-08": {
@@ -806,8 +816,11 @@
     },
     "site": {
       "acessos": 41913,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 11073,
+      "agenda": 4366,
+      "identificacao": 3274,
+      "cadastro": 2818,
+      "confirmado": 2647
     }
   },
   "2026-09": {
@@ -831,8 +844,11 @@
     },
     "site": {
       "acessos": 43144,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 8734,
+      "agenda": 3534,
+      "identificacao": 2674,
+      "cadastro": 2056,
+      "confirmado": 1917
     }
   },
   "2026-10": {
@@ -856,8 +872,11 @@
     },
     "site": {
       "acessos": 9867,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 1751,
+      "agenda": 733,
+      "identificacao": 564,
+      "cadastro": 449,
+      "confirmado": 408
     }
   },
   "2026-11": {
@@ -881,8 +900,11 @@
     },
     "site": {
       "acessos": 0,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 0,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 0
     }
   },
   "2026-12": {
@@ -906,8 +928,11 @@
     },
     "site": {
       "acessos": 0,
-      "cliquesAgendamento": 0,
-      "agendamentos": 0
+      "iniciado": 0,
+      "agenda": 0,
+      "identificacao": 0,
+      "cadastro": 0,
+      "confirmado": 0
     }
   }
 };
@@ -928,11 +953,6 @@
 
     // ============================================================
     // FUNIL WHATSAPP (5 etapas)
-    //  1. Atendimentos     (MANUAL)
-    //  2. Agendamentos     (QUERY)
-    //  3. Consultas        (QUERY · CONSULTA)
-    //  4. Exames           (QUERY · EXAME)
-    //  5. Odonto           (QUERY · ODONTO)
     // ============================================================
     function renderizarFunilWhats(containerId, dados) {
         const container = document.getElementById(containerId);
@@ -946,31 +966,11 @@
         const pctOdonto      = totalAgend > 0 ? (w.agendaOdonto    / totalAgend * 100) : 0;
 
         const steps = [
-            {
-                label: 'Atendimentos', value: w.atendimentos,
-                icon: 'atendimentos', barClass: 'teal', percent: 100,
-                extra: `<span class="step-percent">100% (topo do funil)</span>`
-            },
-            {
-                label: 'Agendamentos', value: w.agendamentos,
-                icon: 'agendamento', barClass: 'purple', percent: pctAgend,
-                extra: `<span class="step-percent">${pctAgend.toFixed(1)}% dos Atendimentos</span>`
-            },
-            {
-                label: 'Consultas', value: w.agendaConsultas,
-                icon: 'consulta', barClass: 'green', percent: pctConsulta,
-                extra: `<span class="step-percent">${pctConsulta.toFixed(1)}% dos Agendamentos</span>`
-            },
-            {
-                label: 'Exames', value: w.agendaExames,
-                icon: 'exame', barClass: 'amber', percent: pctExame,
-                extra: `<span class="step-percent">${pctExame.toFixed(1)}% dos Agendamentos</span>`
-            },
-            {
-                label: 'Odontologia', value: w.agendaOdonto,
-                icon: 'odonto', barClass: 'red', percent: pctOdonto,
-                extra: `<span class="step-percent">${pctOdonto.toFixed(1)}% dos Agendamentos</span>`
-            }
+            { label: 'Atendimentos', value: w.atendimentos, icon: 'atendimentos', barClass: 'teal', percent: 100, extra: `<span class="step-percent">100% (topo do funil)</span>` },
+            { label: 'Agendamentos', value: w.agendamentos, icon: 'agendamento', barClass: 'purple', percent: pctAgend, extra: `<span class="step-percent">${pctAgend.toFixed(1)}% dos Atendimentos</span>` },
+            { label: 'Consultas', value: w.agendaConsultas, icon: 'consulta', barClass: 'green', percent: pctConsulta, extra: `<span class="step-percent">${pctConsulta.toFixed(1)}% dos Agendamentos</span>` },
+            { label: 'Exames', value: w.agendaExames, icon: 'exame', barClass: 'amber', percent: pctExame, extra: `<span class="step-percent">${pctExame.toFixed(1)}% dos Agendamentos</span>` },
+            { label: 'Odontologia', value: w.agendaOdonto, icon: 'odonto', barClass: 'red', percent: pctOdonto, extra: `<span class="step-percent">${pctOdonto.toFixed(1)}% dos Agendamentos</span>` }
         ];
 
         const iconMap = {
@@ -1034,7 +1034,6 @@
 
         container.innerHTML = steps.map((s, index) => {
             const percent = Math.min(s.percent, 100);
-
             if (index === 0) {
                 return `
                     <div class="funnel-step voice-step" onclick="toggleChamadas(this)">
@@ -1060,7 +1059,6 @@
                     </div>
                 `;
             }
-
             return `
                 <div class="funnel-step voice-step">
                     <div class="step-icon ${s.icon}"><i class="${iconMap[s.icon]}"></i></div>
@@ -1076,41 +1074,82 @@
     }
 
     // ============================================================
-    // FUNIL SITE
+    // FUNIL SITE (6 etapas — GA4)
+    //  1. Acessos
+    //  2. Iniciado
+    //  3. Agenda
+    //  4. Identificação
+    //  5. Cadastro
+    //  6. Confirmado
     // ============================================================
-    function renderizarFunilSite(containerId, dados, panelIndex) {
+    function renderizarFunilSite(containerId, dados) {
         const container = document.getElementById(containerId);
         if (!container) return;
         const s = dados.site;
 
-        document.getElementById(`siteAcessos${panelIndex}`).textContent = s.acessos.toLocaleString('pt-BR');
-        document.getElementById(`siteCliques${panelIndex}`).textContent = s.cliquesAgendamento.toLocaleString('pt-BR');
+        const acessos = s.acessos || 0;
+        const calc = (v) => acessos > 0 ? (v / acessos * 100) : 0;
+        const calcStep = (v, base) => base > 0 ? (v / base * 100) : 0;
 
-        const pctClique  = s.acessos > 0 ? (s.cliquesAgendamento / s.acessos * 100) : 0;
-        const pctAgend   = s.cliquesAgendamento > 0 ? (s.agendamentos / s.cliquesAgendamento * 100) : 0;
-        const pctAgendAc = s.acessos > 0 ? (s.agendamentos / s.acessos * 100) : 0;
+        const pctIniciado = calc(s.iniciado);
+        const pctAgenda   = calcStep(s.agenda, s.iniciado);
+        const pctIdentif  = calcStep(s.identificacao, s.agenda);
+        const pctCadastro = calcStep(s.cadastro, s.identificacao);
+        const pctConf     = calcStep(s.confirmado, s.cadastro);
+
+        const pctConfTotal = calc(s.confirmado);
 
         const steps = [
-            { label: 'Acessos ao Site', value: s.acessos, icon: 'site-acessos', barClass: 'blue', percent: 100, extra: `<span class="step-percent">100% (topo do funil)</span>` },
-            { label: 'Cliques em Agendamentos', value: s.cliquesAgendamento, icon: 'site-cliques', barClass: 'purple', percent: pctClique, extra: `<span class="step-percent">${pctClique.toFixed(1)}% dos Acessos</span>` },
-            { label: 'Agendamentos', value: s.agendamentos, icon: 'site-agendamentos', barClass: 'green', percent: pctAgend, extra: `
-                <span class="step-percent">${pctAgend.toFixed(1)}% dos Cliques</span>
-                <div class="step-split">
-                    <span class="step-split-item"><span class="label"><i class="fa-regular fa-percent"></i> Conversão total</span><span class="value">${pctAgendAc.toFixed(1)}%</span></span>
-                </div>
-            ` }
+            {
+                label: 'Acessos ao Site', value: acessos,
+                icon: 'site-acessos', barClass: 'blue', percent: 100,
+                extra: `<span class="step-percent">100% (topo do funil)</span>`
+            },
+            {
+                label: 'Iniciou Agendamento', value: s.iniciado,
+                icon: 'site-iniciado', barClass: 'purple', percent: pctIniciado,
+                extra: `<span class="step-percent">${pctIniciado.toFixed(1)}% dos Acessos</span>`
+            },
+            {
+                label: 'Escolheu Agenda', value: s.agenda,
+                icon: 'site-agenda', barClass: 'cyan', percent: pctAgenda,
+                extra: `<span class="step-percent">${pctAgenda.toFixed(1)}% dos Iniciados</span>`
+            },
+            {
+                label: 'Identificação', value: s.identificacao,
+                icon: 'site-identif', barClass: 'indigo', percent: pctIdentif,
+                extra: `<span class="step-percent">${pctIdentif.toFixed(1)}% dos que Escolheram Agenda</span>`
+            },
+            {
+                label: 'Cadastro', value: s.cadastro,
+                icon: 'site-cadastro', barClass: 'pink', percent: pctCadastro,
+                extra: `<span class="step-percent">${pctCadastro.toFixed(1)}% dos Identificados</span>`
+            },
+            {
+                label: 'Confirmado', value: s.confirmado,
+                icon: 'site-confirmado', barClass: 'green', percent: pctConf,
+                extra: `
+                    <span class="step-percent">${pctConf.toFixed(1)}% dos Cadastrados</span>
+                    <div class="step-split">
+                        <span class="step-split-item"><span class="label"><i class="fa-regular fa-percent"></i> Conversão total</span><span class="value">${pctConfTotal.toFixed(1)}%</span></span>
+                    </div>
+                `
+            }
         ];
 
         const iconMap = {
             'site-acessos':'fa-solid fa-globe',
-            'site-cliques':'fa-regular fa-hand-pointer',
-            'site-agendamentos':'fa-regular fa-calendar-check'
+            'site-iniciado':'fa-regular fa-hand-pointer',
+            'site-agenda':'fa-regular fa-calendar-alt',
+            'site-identif':'fa-regular fa-id-card',
+            'site-cadastro':'fa-regular fa-file-lines',
+            'site-confirmado':'fa-regular fa-circle-check'
         };
 
         container.innerHTML = steps.map(s => {
             const percent = Math.min(s.percent, 100);
             return `
-                <div class="funnel-step site-step">
+                <div class="funnel-step">
                     <div class="step-icon ${s.icon}"><i class="${iconMap[s.icon]}"></i></div>
                     <div class="step-info">
                         <div class="step-label">${s.label}</div>
@@ -1132,7 +1171,7 @@
             const zero = {
                 whats: { atendimentos: 0, agendamentos: 0, agendaConsultas: 0, agendaExames: 0, agendaOdonto: 0 },
                 voz: { recebidas: 0, atendidas: 0, perda: 0, ligacoes1515: 0, ligacoes6080: 0, agendamentos: 0, agendaConsultas: 0, agendaExames: 0, agendaOdonto: 0 },
-                site: { acessos: 0, cliquesAgendamento: 0, agendamentos: 0 }
+                site: { acessos: 0, iniciado: 0, agenda: 0, identificacao: 0, cadastro: 0, confirmado: 0 }
             };
             if (tipo === 'whats') {
                 renderizarFunilWhats(`whatsappFunnel${panelIndex}`, zero);
@@ -1141,7 +1180,7 @@
                 renderizarFunilVoz(`vozFunnel${panelIndex}`, zero);
                 document.getElementById(`vozTitle${panelIndex}`).textContent = nomeMes(mes) + ' (sem dados)';
             } else if (tipo === 'site') {
-                renderizarFunilSite(`siteFunnel${panelIndex}`, zero, panelIndex);
+                renderizarFunilSite(`siteFunnel${panelIndex}`, zero);
                 document.getElementById(`siteTitle${panelIndex}`).textContent = nomeMes(mes) + ' (sem dados)';
             }
             return;
@@ -1154,7 +1193,7 @@
             renderizarFunilVoz(`vozFunnel${panelIndex}`, dados);
             document.getElementById(`vozTitle${panelIndex}`).textContent = nomeMes(mes);
         } else if (tipo === 'site') {
-            renderizarFunilSite(`siteFunnel${panelIndex}`, dados, panelIndex);
+            renderizarFunilSite(`siteFunnel${panelIndex}`, dados);
             document.getElementById(`siteTitle${panelIndex}`).textContent = nomeMes(mes);
         }
     }
