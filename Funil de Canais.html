@@ -27,12 +27,13 @@
         .header-left .divider { width: 1px; height: 32px; background: #d0d9e6; }
         .header-left .title-group .main-title { font-size: 22px; font-weight: 800; color: #0b1a33; letter-spacing: -0.3px; }
         .header-left .title-group .sub-title { font-size: 13px; font-weight: 500; color: #5a6f8c; }
-        .tab-bar { display: flex; gap: 6px; background: #f0f4fb; border-radius: 18px; padding: 5px; margin-bottom: 32px; border: 1px solid #dce3ed; }
+        .tab-bar { display: flex; gap: 6px; background: #f0f4fb; border-radius: 18px; padding: 5px; margin-bottom: 32px; border: 1px solid #dce3ed; flex-wrap: wrap; }
         .tab-btn {
             flex: 1; padding: 12px 20px; border: none; background: transparent;
             border-radius: 14px; font-size: 15px; font-weight: 600; color: #5a6f8c;
             cursor: pointer; transition: 0.25s ease; display: flex;
             align-items: center; justify-content: center; gap: 10px; font-family: 'Inter', sans-serif;
+            white-space: nowrap;
         }
         .tab-btn i { font-size: 18px; }
         .tab-btn:hover { color: #0b1a33; background: rgba(255,255,255,0.5); }
@@ -80,13 +81,15 @@
         .funnel-step.voice-step:nth-child(6) { width: 70%; margin-left: 15%; }
         .funnel-step.voice-step:nth-child(7) { width: 64%; margin-left: 18%; }
 
-        /* Site — 6 etapas visíveis */
         .funnel-step.site-step:nth-child(1) { width: 100%; margin-left: 0; }
         .funnel-step.site-step:nth-child(2) { width: 94%; margin-left: 3%; flex-direction: column; align-items: stretch; }
         .funnel-step.site-step:nth-child(3) { width: 88%; margin-left: 6%; }
         .funnel-step.site-step:nth-child(4) { width: 82%; margin-left: 9%; }
         .funnel-step.site-step:nth-child(5) { width: 76%; margin-left: 12%; }
         .funnel-step.site-step:nth-child(6) { width: 70%; margin-left: 15%; }
+
+        .funnel-step.clinica-step,
+        .funnel-step.clinica-total { width: 100%; margin-left: 0; }
 
         .funnel-step .step-main { display: flex; align-items: center; gap: 20px; width: 100%; }
         .funnel-step .step-icon { flex-shrink: 0; }
@@ -103,7 +106,6 @@
         .funnel-step .step-bar .bar-fill { height: 100%; border-radius: 99px; transition: width 0.6s ease; }
         .funnel-step .click-hint { font-size: 11px; color: #3b82f6; font-weight: 500; margin-top: 2px; display: flex; align-items: center; gap: 4px; }
 
-        /* Sub-etapas inline (dentro do "Iniciou Agendamento") */
         .substeps-inline {
             display: flex;
             flex-wrap: wrap;
@@ -141,6 +143,7 @@
         .bar-fill.orange { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
         .bar-fill.pink { background: linear-gradient(90deg, #db2777, #f472b6); }
         .bar-fill.indigo { background: linear-gradient(90deg, #4f46e5, #818cf8); }
+        .bar-fill.lime { background: linear-gradient(90deg, #65a30d, #a3e635); }
 
         .step-icon { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; flex-shrink: 0; }
         .step-icon.atendimentos { background: #0d9488; }
@@ -158,6 +161,20 @@
         .step-icon.site-acessos { background: #3b82f6; }
         .step-icon.site-iniciado { background: #8b5cf6; }
         .step-icon.site-agendamentos { background: #7c3aed; }
+
+        .step-icon.clinica-total { background: #4f46e5; }
+        .step-icon.clinica-blue { background: #3b82f6; }
+        .step-icon.clinica-purple { background: #8b5cf6; }
+        .step-icon.clinica-teal { background: #0d9488; }
+        .step-icon.clinica-green { background: #059669; }
+        .step-icon.clinica-amber { background: #d97706; }
+        .step-icon.clinica-red { background: #dc2626; }
+        .step-icon.clinica-cyan { background: #0891b2; }
+        .step-icon.clinica-pink { background: #db2777; }
+        .step-icon.clinica-indigo { background: #4f46e5; }
+
+        .funnel-step.clinica-total { background: #eef2ff; border-color: #c7d2fe; }
+        .funnel-step.clinica-total:hover { background: #e0e7ff; border-color: #a5b4fc; }
 
         .footer { margin-top: 36px; padding-top: 20px; border-top: 1px solid #e6edf4; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #5a6f8c; flex-wrap: wrap; gap: 12px; }
         .footer .source { display: flex; align-items: center; gap: 10px; }
@@ -202,6 +219,7 @@
         <button class="tab-btn active" data-tab="whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
         <button class="tab-btn" data-tab="voz"><i class="fa-solid fa-phone"></i> Voz</button>
         <button class="tab-btn" data-tab="site"><i class="fa-solid fa-globe"></i> Site</button>
+        <button class="tab-btn" data-tab="clinicas"><i class="fa-solid fa-hospital"></i> Clínicas</button>
     </div>
 
     <div id="tab-whatsapp" class="tab-content active">
@@ -257,6 +275,25 @@
                     <div class="panel-selector"><input type="month" id="siteMonth2" min="2025-01" /></div>
                 </div>
                 <div class="funnel" id="siteFunnel2"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-clinicas" class="tab-content">
+        <div class="comparison-grid">
+            <div class="funnel-panel" id="clinicasPanel1">
+                <div class="panel-header">
+                    <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="clinicasTitle1">Mês 1</span></span>
+                    <div class="panel-selector"><input type="month" id="clinicasMonth1" min="2025-01" /></div>
+                </div>
+                <div class="funnel" id="clinicasFunnel1"></div>
+            </div>
+            <div class="funnel-panel" id="clinicasPanel2">
+                <div class="panel-header">
+                    <span class="panel-title"><i class="fa-regular fa-calendar-alt"></i> <span id="clinicasTitle2">Mês 2</span></span>
+                    <div class="panel-selector"><input type="month" id="clinicasMonth2" min="2025-01" /></div>
+                </div>
+                <div class="funnel" id="clinicasFunnel2"></div>
             </div>
         </div>
     </div>
@@ -1043,6 +1080,273 @@
   }
 };
 
+    const dadosClinicas = {
+    "2025-01": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 16693,
+        "assisBrasil3224": 2516,
+        "azenha": 1841,
+        "gravatai": 1320,
+        "alvorada": 701,
+        "canoas": 5360,
+        "cachoeirinha": 1724,
+        "drFlores47": 5622
+    },
+    "2025-02": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 14237,
+        "assisBrasil3224": 1954,
+        "azenha": 1652,
+        "gravatai": 931,
+        "alvorada": 690,
+        "canoas": 4741,
+        "cachoeirinha": 2079,
+        "drFlores47": 4784
+    },
+    "2025-03": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 16689,
+        "assisBrasil3224": 1655,
+        "azenha": 1980,
+        "gravatai": 1304,
+        "alvorada": 606,
+        "canoas": 4466,
+        "cachoeirinha": 2390,
+        "drFlores47": 5290
+    },
+    "2025-04": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 17368,
+        "assisBrasil3224": 2067,
+        "azenha": 1678,
+        "gravatai": 1526,
+        "alvorada": 657,
+        "canoas": 4877,
+        "cachoeirinha": 2263,
+        "drFlores47": 5683
+    },
+    "2025-05": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 16804,
+        "assisBrasil3224": 2264,
+        "azenha": 2519,
+        "gravatai": 1521,
+        "alvorada": 1244,
+        "canoas": 4972,
+        "cachoeirinha": 2771,
+        "drFlores47": 6570
+    },
+    "2025-06": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 14987,
+        "assisBrasil3224": 2226,
+        "azenha": 2259,
+        "gravatai": 607,
+        "alvorada": 735,
+        "canoas": 4033,
+        "cachoeirinha": 2300,
+        "drFlores47": 6235
+    },
+    "2025-07": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 16850,
+        "assisBrasil3224": 3259,
+        "azenha": 2336,
+        "gravatai": 1184,
+        "alvorada": 1140,
+        "canoas": 5208,
+        "cachoeirinha": 2120,
+        "drFlores47": 7323
+    },
+    "2025-08": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 16656,
+        "assisBrasil3224": 3144,
+        "azenha": 2264,
+        "gravatai": 986,
+        "alvorada": 1219,
+        "canoas": 4540,
+        "cachoeirinha": 2000,
+        "drFlores47": 6926
+    },
+    "2025-09": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 17457,
+        "assisBrasil3224": 2396,
+        "azenha": 2022,
+        "gravatai": 789,
+        "alvorada": 1388,
+        "canoas": 4422,
+        "cachoeirinha": 2830,
+        "drFlores47": 5649
+    },
+    "2025-10": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 18296,
+        "assisBrasil3224": 2027,
+        "azenha": 2057,
+        "gravatai": 1090,
+        "alvorada": 1137,
+        "canoas": 5081,
+        "cachoeirinha": 3050,
+        "drFlores47": 5826
+    },
+    "2025-11": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 12660,
+        "assisBrasil3224": 1331,
+        "azenha": 1841,
+        "gravatai": 809,
+        "alvorada": 1029,
+        "canoas": 3675,
+        "cachoeirinha": 2444,
+        "drFlores47": 4991
+    },
+    "2025-12": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 12284,
+        "assisBrasil3224": 1043,
+        "azenha": 1460,
+        "gravatai": 741,
+        "alvorada": 865,
+        "canoas": 2881,
+        "cachoeirinha": 1949,
+        "drFlores47": 4037
+    },
+    "2026-01": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 14240,
+        "assisBrasil3224": 1183,
+        "azenha": 1250,
+        "gravatai": 1065,
+        "alvorada": 1155,
+        "canoas": 3640,
+        "cachoeirinha": 2386,
+        "drFlores47": 4090
+    },
+    "2026-02": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 11692,
+        "assisBrasil3224": 1550,
+        "azenha": 641,
+        "gravatai": 716,
+        "alvorada": 1033,
+        "canoas": 3179,
+        "cachoeirinha": 2030,
+        "drFlores47": 3285
+    },
+    "2026-03": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 14922,
+        "assisBrasil3224": 1745,
+        "azenha": 994,
+        "gravatai": 975,
+        "alvorada": 1237,
+        "canoas": 4357,
+        "cachoeirinha": 2861,
+        "drFlores47": 4687
+    },
+    "2026-04": {
+        "assisBrasil3277": 374,
+        "centralMarcacoes": 13618,
+        "assisBrasil3224": 1416,
+        "azenha": 1037,
+        "gravatai": 789,
+        "alvorada": 999,
+        "canoas": 3771,
+        "cachoeirinha": 2569,
+        "drFlores47": 4291
+    },
+    "2026-05": {
+        "assisBrasil3277": 1765,
+        "centralMarcacoes": 14086,
+        "assisBrasil3224": 1146,
+        "azenha": 1003,
+        "gravatai": 663,
+        "alvorada": 1094,
+        "canoas": 3456,
+        "cachoeirinha": 1874,
+        "drFlores47": 4279
+    },
+    "2026-06": {
+        "assisBrasil3277": 1758,
+        "centralMarcacoes": 14160,
+        "assisBrasil3224": 1222,
+        "azenha": 937,
+        "gravatai": 559,
+        "alvorada": 888,
+        "canoas": 2983,
+        "cachoeirinha": 2204,
+        "drFlores47": 5384
+    },
+    "2026-07": {
+        "assisBrasil3277": 1786,
+        "centralMarcacoes": 13696,
+        "assisBrasil3224": 1846,
+        "azenha": 1247,
+        "gravatai": 960,
+        "alvorada": 1196,
+        "canoas": 3697,
+        "cachoeirinha": 2136,
+        "drFlores47": 6430
+    },
+    "2026-08": {
+        "assisBrasil3277": 1558,
+        "centralMarcacoes": 12790,
+        "assisBrasil3224": 1746,
+        "azenha": 1190,
+        "gravatai": 1054,
+        "alvorada": 1012,
+        "canoas": 3576,
+        "cachoeirinha": 1999,
+        "drFlores47": 6454
+    },
+    "2026-09": {
+        "assisBrasil3277": 1385,
+        "centralMarcacoes": 12716,
+        "assisBrasil3224": 1351,
+        "azenha": 1295,
+        "gravatai": 875,
+        "alvorada": 1017,
+        "canoas": 3442,
+        "cachoeirinha": 2370,
+        "drFlores47": 6660
+    },
+    "2026-10": {
+        "assisBrasil3277": 440,
+        "centralMarcacoes": 4020,
+        "assisBrasil3224": 438,
+        "azenha": 408,
+        "gravatai": 250,
+        "alvorada": 304,
+        "canoas": 1020,
+        "cachoeirinha": 806,
+        "drFlores47": 1733
+    },
+    "2026-11": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 0,
+        "assisBrasil3224": 0,
+        "azenha": 0,
+        "gravatai": 0,
+        "alvorada": 0,
+        "canoas": 0,
+        "cachoeirinha": 0,
+        "drFlores47": 0
+    },
+    "2026-12": {
+        "assisBrasil3277": 0,
+        "centralMarcacoes": 0,
+        "assisBrasil3224": 0,
+        "azenha": 0,
+        "gravatai": 0,
+        "alvorada": 0,
+        "canoas": 0,
+        "cachoeirinha": 0,
+        "drFlores47": 0
+    }
+};
+
     function nomeMes(mes) {
         const nomes = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
         const partes = mes.split('-');
@@ -1266,7 +1570,65 @@
         `;
     }
 
+    function renderizarFunilClinicas(containerId, mes) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        const c = (dadosClinicas[mes]) || {};
+
+        const unidades = [
+            { key: 'assisBrasil3277',  label: 'Assis Brasil 3277',     icon: 'fa-solid fa-hospital',         iconClass: 'clinica-blue',   barClass: 'blue'   },
+            { key: 'centralMarcacoes', label: 'Central de Marcações',  icon: 'fa-solid fa-headset',          iconClass: 'clinica-purple', barClass: 'purple' },
+            { key: 'assisBrasil3224',  label: 'Assis Brasil 3224',     icon: 'fa-solid fa-house-medical',    iconClass: 'clinica-teal',   barClass: 'teal'   },
+            { key: 'azenha',           label: 'Azenha',                icon: 'fa-solid fa-clinic-medical',   iconClass: 'clinica-green',  barClass: 'green'  },
+            { key: 'gravatai',         label: 'Gravataí',              icon: 'fa-solid fa-hospital-user',    iconClass: 'clinica-amber',  barClass: 'amber'  },
+            { key: 'alvorada',         label: 'Alvorada',              icon: 'fa-solid fa-user-doctor',      iconClass: 'clinica-red',    barClass: 'red'    },
+            { key: 'canoas',           label: 'Canoas',                icon: 'fa-solid fa-stethoscope',      iconClass: 'clinica-cyan',   barClass: 'cyan'   },
+            { key: 'cachoeirinha',     label: 'Cachoeirinha',          icon: 'fa-solid fa-notes-medical',    iconClass: 'clinica-pink',   barClass: 'pink'   },
+            { key: 'drFlores47',       label: 'Dr. Flores 47',         icon: 'fa-solid fa-briefcase-medical', iconClass: 'clinica-indigo', barClass: 'indigo' }
+        ];
+
+        const total = unidades.reduce((acc, u) => acc + (c[u.key] || 0), 0);
+
+        let html = `
+            <div class="funnel-step clinica-total">
+                <div class="step-icon clinica-total"><i class="fa-solid fa-hospital"></i></div>
+                <div class="step-info">
+                    <div class="step-label">Total de Agendamentos nas Clínicas</div>
+                    <div class="step-value">${total.toLocaleString('pt-BR')}</div>
+                    <span class="step-percent">100% (topo do funil)</span>
+                    <div class="step-bar"><div class="bar-fill indigo" style="width:100%;"></div></div>
+                </div>
+            </div>
+        `;
+
+        html += unidades.map(u => {
+            const valor = c[u.key] || 0;
+            const pct = total > 0 ? (valor / total * 100) : 0;
+            return `
+                <div class="funnel-step clinica-step">
+                    <div class="step-icon ${u.iconClass}"><i class="${u.icon}"></i></div>
+                    <div class="step-info">
+                        <div class="step-label">${u.label}</div>
+                        <div class="step-value">${valor.toLocaleString('pt-BR')}</div>
+                        <span class="step-percent">${pct.toFixed(1)}% do total</span>
+                        <div class="step-bar"><div class="bar-fill ${u.barClass}" style="width:${Math.min(pct, 100)}%;"></div></div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        container.innerHTML = html;
+    }
+
     function atualizarPainel(tipo, panelIndex, mes) {
+        if (tipo === 'clinicas') {
+            renderizarFunilClinicas(`clinicasFunnel${panelIndex}`, mes);
+            const el = document.getElementById(`clinicasTitle${panelIndex}`);
+            if (el) el.textContent = nomeMes(mes) + (dadosClinicas[mes] ? '' : ' (sem dados)');
+            return;
+        }
+
         const dados = dadosMensais[mes];
         if (!dados) {
             const zero = {
@@ -1284,18 +1646,13 @@
         else if (tipo === 'site') { renderizarFunilSite(`siteFunnel${panelIndex}`, dados); document.getElementById(`siteTitle${panelIndex}`).textContent = nomeMes(mes); }
     }
 
-    // ============================================================
-    // Calcula mês atual e mês anterior automaticamente
-    // ============================================================
     function getMesesAtualEAnterior() {
         const hoje = new Date();
         const ano = hoje.getFullYear();
-        const mes = hoje.getMonth(); // 0 = Janeiro ... 11 = Dezembro
+        const mes = hoje.getMonth();
 
-        // Mês atual
         const atual = `${ano}-${String(mes + 1).padStart(2, '0')}`;
 
-        // Mês anterior
         let anoAnt = ano;
         let mesAnt = mes - 1;
         if (mesAnt < 0) { mesAnt = 11; anoAnt = ano - 1; }
@@ -1305,7 +1662,6 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-        // Abas
         const tabs = document.querySelectorAll('.tab-btn');
         const contents = document.querySelectorAll('.tab-content');
         tabs.forEach(tab => {
@@ -1318,16 +1674,16 @@
             });
         });
 
-        // Seletores
         const wm1 = document.getElementById('whatsMonth1');
         const wm2 = document.getElementById('whatsMonth2');
         const vm1 = document.getElementById('vozMonth1');
         const vm2 = document.getElementById('vozMonth2');
         const sm1 = document.getElementById('siteMonth1');
         const sm2 = document.getElementById('siteMonth2');
+        const cm1 = document.getElementById('clinicasMonth1');
+        const cm2 = document.getElementById('clinicasMonth2');
 
-        // Garante atributo min correto
-        [wm1, wm2, vm1, vm2, sm1, sm2].forEach(el => { if (el) el.min = '2025-01'; });
+        [wm1, wm2, vm1, vm2, sm1, sm2, cm1, cm2].forEach(el => { if (el) el.min = '2025-01'; });
 
         function setupSelector(selector, tipo, index) {
             selector.addEventListener('change', function() {
@@ -1335,28 +1691,32 @@
                 if (mes) atualizarPainel(tipo, index, mes);
             });
         }
-        setupSelector(wm1, 'whats', 1); setupSelector(wm2, 'whats', 2);
-        setupSelector(vm1, 'voz', 1);   setupSelector(vm2, 'voz', 2);
-        setupSelector(sm1, 'site', 1);  setupSelector(sm2, 'site', 2);
+        setupSelector(wm1, 'whats', 1);    setupSelector(wm2, 'whats', 2);
+        setupSelector(vm1, 'voz', 1);      setupSelector(vm2, 'voz', 2);
+        setupSelector(sm1, 'site', 1);     setupSelector(sm2, 'site', 2);
+        setupSelector(cm1, 'clinicas', 1); setupSelector(cm2, 'clinicas', 2);
 
-        // ============================================================
-        // Define mês anterior (painel 1) e mês atual (painel 2)
-        // em TODAS as abas
-        // ============================================================
         const { atual, anterior } = getMesesAtualEAnterior();
 
-        // Ajusta os inputs de mês
         wm1.value = anterior;  wm2.value = atual;
         vm1.value = anterior;  vm2.value = atual;
         sm1.value = anterior;  sm2.value = atual;
+        cm1.value = anterior;  cm2.value = atual;
 
-        // Renderiza os painéis
         atualizarPainel('whats', 1, anterior);
         atualizarPainel('whats', 2, atual);
         atualizarPainel('voz', 1, anterior);
         atualizarPainel('voz', 2, atual);
         atualizarPainel('site', 1, anterior);
         atualizarPainel('site', 2, atual);
+        atualizarPainel('clinicas', 1, anterior);
+        atualizarPainel('clinicas', 2, atual);
+
+        const el = document.getElementById('ultimaAtualizacao');
+        if (el) {
+            const d = new Date();
+            el.textContent = d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+        }
     });
 </script>
 
