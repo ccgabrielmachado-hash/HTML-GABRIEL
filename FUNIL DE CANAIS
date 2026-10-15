@@ -82,11 +82,12 @@
         .funnel-step.voice-step:nth-child(7) { width: 64%; margin-left: 18%; }
 
         .funnel-step.site-step:nth-child(1) { width: 100%; margin-left: 0; }
-        .funnel-step.site-step:nth-child(2) { width: 94%; margin-left: 3%; flex-direction: column; align-items: stretch; }
-        .funnel-step.site-step:nth-child(3) { width: 88%; margin-left: 6%; }
+        .funnel-step.site-step:nth-child(2) { width: 94%; margin-left: 3%; }
+        .funnel-step.site-step:nth-child(3) { width: 88%; margin-left: 6%; flex-direction: column; align-items: stretch; }
         .funnel-step.site-step:nth-child(4) { width: 82%; margin-left: 9%; }
         .funnel-step.site-step:nth-child(5) { width: 76%; margin-left: 12%; }
         .funnel-step.site-step:nth-child(6) { width: 70%; margin-left: 15%; }
+        .funnel-step.site-step:nth-child(7) { width: 64%; margin-left: 18%; }
 
         .funnel-step.clinica-step,
         .funnel-step.clinica-total { width: 100%; margin-left: 0; }
@@ -95,6 +96,24 @@
         .funnel-step .step-icon { flex-shrink: 0; }
         .funnel-step .step-info { flex: 1; }
         .funnel-step .step-label { font-weight: 600; font-size: 15px; color: #0b1a33; }
+
+        /* ✅ Badge "TP" (Tráfego Pago) */
+        .funnel-step .step-label .badge-tp {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            background: #fef3c7;
+            color: #92400e;
+            border: 1px solid #fcd34d;
+            padding: 1px 7px;
+            border-radius: 100px;
+            margin-left: 6px;
+            vertical-align: middle;
+            letter-spacing: 0.4px;
+            cursor: help;
+            text-transform: uppercase;
+        }
+
         .funnel-step .step-value { font-weight: 800; font-size: 24px; color: #0b1a33; letter-spacing: -0.5px; }
         .funnel-step .step-value small { font-weight: 400; font-size: 14px; color: #5a6f8c; margin-left: 4px; }
         .funnel-step .step-percent { font-size: 13px; font-weight: 600; color: #475569; background: #eef2f7; padding: 2px 14px; border-radius: 100px; border: 1px solid #d0d9e6; display: inline-block; margin-top: 4px; }
@@ -159,6 +178,7 @@
         .step-icon.phone-odonto { background: #dc2626; }
         .step-icon.phone-perda { background: #ef4444; }
         .step-icon.site-acessos { background: #3b82f6; }
+        .step-icon.site-acessos-total { background: #6366f1; }
         .step-icon.site-iniciado { background: #8b5cf6; }
         .step-icon.site-agendamentos { background: #7c3aed; }
 
@@ -330,6 +350,7 @@
       "agendaOdonto": 1482
     },
     "site": {
+      "acessosTotal": 96260,
       "acessos": 19636,
       "iniciado": 0,
       "agenda": 0,
@@ -362,6 +383,7 @@
       "agendaOdonto": 1277
     },
     "site": {
+      "acessosTotal": 83382,
       "acessos": 15792,
       "iniciado": 0,
       "agenda": 0,
@@ -394,6 +416,7 @@
       "agendaOdonto": 1245
     },
     "site": {
+      "acessosTotal": 105279,
       "acessos": 25659,
       "iniciado": 0,
       "agenda": 0,
@@ -426,6 +449,7 @@
       "agendaOdonto": 1330
     },
     "site": {
+      "acessosTotal": 116512,
       "acessos": 33722,
       "iniciado": 0,
       "agenda": 0,
@@ -458,6 +482,7 @@
       "agendaOdonto": 1217
     },
     "site": {
+      "acessosTotal": 125706,
       "acessos": 39911,
       "iniciado": 0,
       "agenda": 0,
@@ -490,6 +515,7 @@
       "agendaOdonto": 1009
     },
     "site": {
+      "acessosTotal": 102140,
       "acessos": 35680,
       "iniciado": 0,
       "agenda": 0,
@@ -522,6 +548,7 @@
       "agendaOdonto": 1278
     },
     "site": {
+      "acessosTotal": 114794,
       "acessos": 41936,
       "iniciado": 0,
       "agenda": 0,
@@ -554,6 +581,7 @@
       "agendaOdonto": 1216
     },
     "site": {
+      "acessosTotal": 104718,
       "acessos": 40735,
       "iniciado": 0,
       "agenda": 0,
@@ -586,6 +614,7 @@
       "agendaOdonto": 1038
     },
     "site": {
+      "acessosTotal": 110151,
       "acessos": 40191,
       "iniciado": 5688,
       "agenda": 0,
@@ -618,6 +647,7 @@
       "agendaOdonto": 1060
     },
     "site": {
+      "acessosTotal": 123502,
       "acessos": 50762,
       "iniciado": 12495,
       "agenda": 0,
@@ -650,6 +680,7 @@
       "agendaOdonto": 798
     },
     "site": {
+      "acessosTotal": 105931,
       "acessos": 34772,
       "iniciado": 2550,
       "agenda": 0,
@@ -682,6 +713,7 @@
       "agendaOdonto": 1021
     },
     "site": {
+      "acessosTotal": 88853,
       "acessos": 33127,
       "iniciado": 8039,
       "agenda": 0,
@@ -714,6 +746,7 @@
       "agendaOdonto": 1084
     },
     "site": {
+      "acessosTotal": 104032,
       "acessos": 48666,
       "iniciado": 15211,
       "agenda": 0,
@@ -746,6 +779,7 @@
       "agendaOdonto": 1119
     },
     "site": {
+      "acessosTotal": 94007,
       "acessos": 37031,
       "iniciado": 12417,
       "agenda": 0,
@@ -778,6 +812,7 @@
       "agendaOdonto": 1005
     },
     "site": {
+      "acessosTotal": 114125,
       "acessos": 44539,
       "iniciado": 16217,
       "agenda": 0,
@@ -810,6 +845,7 @@
       "agendaOdonto": 961
     },
     "site": {
+      "acessosTotal": 59085,
       "acessos": 30676,
       "iniciado": 14739,
       "agenda": 0,
@@ -842,6 +878,7 @@
       "agendaOdonto": 998
     },
     "site": {
+      "acessosTotal": 87877,
       "acessos": 36363,
       "iniciado": 17871,
       "agenda": 0,
@@ -874,6 +911,7 @@
       "agendaOdonto": 984
     },
     "site": {
+      "acessosTotal": 93531,
       "acessos": 39354,
       "iniciado": 14185,
       "agenda": 0,
@@ -906,6 +944,7 @@
       "agendaOdonto": 897
     },
     "site": {
+      "acessosTotal": 102976,
       "acessos": 40981,
       "iniciado": 12566,
       "agenda": 0,
@@ -938,6 +977,7 @@
       "agendaOdonto": 790
     },
     "site": {
+      "acessosTotal": 95355,
       "acessos": 41913,
       "iniciado": 11073,
       "agenda": 4366,
@@ -970,6 +1010,7 @@
       "agendaOdonto": 773
     },
     "site": {
+      "acessosTotal": 103291,
       "acessos": 43144,
       "iniciado": 8734,
       "agenda": 3534,
@@ -1002,6 +1043,7 @@
       "agendaOdonto": 323
     },
     "site": {
+      "acessosTotal": 48631,
       "acessos": 18293,
       "iniciado": 3574,
       "agenda": 1536,
@@ -1034,6 +1076,7 @@
       "agendaOdonto": 0
     },
     "site": {
+      "acessosTotal": 0,
       "acessos": 0,
       "iniciado": 0,
       "agenda": 0,
@@ -1066,6 +1109,7 @@
       "agendaOdonto": 0
     },
     "site": {
+      "acessosTotal": 0,
       "acessos": 0,
       "iniciado": 0,
       "agenda": 0,
@@ -1464,17 +1508,19 @@
         if (!container) return;
         const s = dados.site;
 
-        const acessos = s.acessos || 0;
+        const acessosTotal = s.acessosTotal || 0;
+        const acessos      = s.acessos || 0;
         const calc = (v, base) => base > 0 ? (v / base * 100) : 0;
 
-        const pctIniciado   = calc(s.iniciado, acessos);
-        const pctAgenda     = calc(s.agenda, s.iniciado);
-        const pctIdentif    = calc(s.identificacao, s.agenda);
-        const pctCadastro   = calc(s.cadastro, s.identificacao);
-        const pctConf       = calc(s.confirmado, s.cadastro);
-        const pctAgend      = calc(s.agendamentos, s.confirmado);
+        const pctTP          = calc(acessos, acessosTotal);
+        const pctIniciado    = calc(s.iniciado, acessos);
+        const pctAgenda      = calc(s.agenda, s.iniciado);
+        const pctIdentif     = calc(s.identificacao, s.agenda);
+        const pctCadastro    = calc(s.cadastro, s.identificacao);
+        const pctConf        = calc(s.confirmado, s.cadastro);
+        const pctAgend       = calc(s.agendamentos, s.confirmado);
 
-        const totalAgend = s.agendamentos || 0;
+        const totalAgend  = s.agendamentos || 0;
         const pctConsulta = calc(s.agendaConsultas, totalAgend);
         const pctExame    = calc(s.agendaExames,    totalAgend);
         const pctOdonto   = calc(s.agendaOdonto,    totalAgend);
@@ -1497,6 +1543,7 @@
 
         const iconMap = {
             'site-acessos':'fa-solid fa-globe',
+            'site-acessos-total':'fa-solid fa-chart-line',
             'site-iniciado':'fa-regular fa-hand-pointer',
             'site-agendamentos':'fa-regular fa-calendar-check',
             'site-consulta':'fa-regular fa-stethoscope',
@@ -1506,12 +1553,22 @@
 
         container.innerHTML = `
             <div class="funnel-step site-step">
+                <div class="step-icon site-acessos-total"><i class="${iconMap['site-acessos-total']}"></i></div>
+                <div class="step-info">
+                    <div class="step-label">Acessos Total do Site</div>
+                    <div class="step-value">${acessosTotal.toLocaleString('pt-BR')}</div>
+                    <span class="step-percent">100% (topo do funil)</span>
+                    <div class="step-bar"><div class="bar-fill indigo" style="width:100%;"></div></div>
+                </div>
+            </div>
+
+            <div class="funnel-step site-step">
                 <div class="step-icon site-acessos"><i class="${iconMap['site-acessos']}"></i></div>
                 <div class="step-info">
-                    <div class="step-label">Acessos ao Site</div>
+                    <div class="step-label">Acessos ao Site <span class="badge-tp" title="Tráfego Pago — refere-se apenas aos acessos oriundos de mídia paga, não ao total do site">TP</span></div>
                     <div class="step-value">${acessos.toLocaleString('pt-BR')}</div>
-                    <span class="step-percent">100% (topo do funil)</span>
-                    <div class="step-bar"><div class="bar-fill blue" style="width:100%;"></div></div>
+                    <span class="step-percent">${pctTP.toFixed(1)}% do total</span>
+                    <div class="step-bar"><div class="bar-fill blue" style="width:${Math.min(pctTP, 100)}%;"></div></div>
                 </div>
             </div>
 
@@ -1521,7 +1578,7 @@
                     <div class="step-info">
                         <div class="step-label">Iniciou Agendamento</div>
                         <div class="step-value">${(s.iniciado || 0).toLocaleString('pt-BR')}</div>
-                        <span class="step-percent">${pctIniciado.toFixed(1)}% dos Acessos</span>
+                        <span class="step-percent">${pctIniciado.toFixed(1)}% dos Acessos TP</span>
                         <div class="step-bar"><div class="bar-fill purple" style="width:${Math.min(pctIniciado, 100)}%;"></div></div>
                     </div>
                 </div>
@@ -1634,7 +1691,7 @@
             const zero = {
                 whats: { atendimentos: 0, agendamentos: 0, agendaConsultas: 0, agendaExames: 0, agendaOdonto: 0 },
                 voz: { recebidas: 0, atendidas: 0, perda: 0, ligacoes1515: 0, ligacoes6080: 0, agendamentos: 0, agendaConsultas: 0, agendaExames: 0, agendaOdonto: 0 },
-                site: { acessos: 0, iniciado: 0, agenda: 0, identificacao: 0, cadastro: 0, confirmado: 0, agendamentos: 0, agendaConsultas: 0, agendaExames: 0, agendaOdonto: 0 }
+                site: { acessosTotal: 0, acessos: 0, iniciado: 0, agenda: 0, identificacao: 0, cadastro: 0, confirmado: 0, agendamentos: 0, agendaConsultas: 0, agendaExames: 0, agendaOdonto: 0 }
             };
             if (tipo === 'whats') { renderizarFunilWhats(`whatsappFunnel${panelIndex}`, zero); document.getElementById(`whatsTitle${panelIndex}`).textContent = nomeMes(mes) + ' (sem dados)'; }
             else if (tipo === 'voz') { renderizarFunilVoz(`vozFunnel${panelIndex}`, zero); document.getElementById(`vozTitle${panelIndex}`).textContent = nomeMes(mes) + ' (sem dados)'; }
