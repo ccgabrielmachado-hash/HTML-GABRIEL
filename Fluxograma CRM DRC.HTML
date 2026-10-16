@@ -180,17 +180,91 @@
       Para adicionar uma nova régua, siga as instruções nos comentários.
       ============================================================ -->
 
-      <!-- ============================================================
+<!-- ============================================================
       PÁGINA: VISÃO GERAL (sempre presente)
       ============================================================ -->
       <div id="pagina-visao-geral" class="page-content active">
         <h1>Ecossistema de Réguas</h1>
-        <p class="subtitle">Visão das filas de processamento de dados ativos na clínica.</p>
-        <div style="background: white; border:1px solid var(--card-border); padding: 16px; border-radius:12px;">
-          <h3 style="font-size: 14px; margin-bottom: 10px;">📋 Logs Recentes de Agendamentos (Mapeamento de Falhas)</h3>
+        <p class="subtitle">Visão das réguas de relacionamento ativas do Dr. Central.</p>
+
+        <!-- ============================================================
+        STATUS DAS RÉGUAS — POR CATEGORIA
+        ============================================================ -->
+        <div style="background: white; border: 1px solid var(--card-border); padding: 20px; border-radius: 12px; margin-bottom: 24px;">
+          <h3 style="font-size: 14px; margin-bottom: 18px; color: #0f172a;">⚙️ Status das Réguas</h3>
+
+          <!-- NOVO ASSINANTE -->
+          <div style="margin-bottom: 20px;">
+            <div style="font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.5px; margin-bottom: 10px; padding-left: 2px;">🆕 Novo Assinante</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+
+              <div style="border: 1px solid var(--card-border); border-radius: 10px; padding: 12px; display: flex; align-items: center; gap: 10px;">
+                <div style="width: 8px; height: 8px; background: var(--success); border-radius: 50%; box-shadow: 0 0 0 3px rgba(34,197,94,0.15);"></div>
+                <div style="flex: 1;">
+                  <div style="font-size: 12px; font-weight: 700; color: #0f172a;">📋 Follow Up</div>
+                  <div style="font-size: 10px; color: var(--text-muted);">D+1</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ATRAÇÃO & CADASTRO -->
+          <div style="margin-bottom: 20px;">
+            <div style="font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.5px; margin-bottom: 10px; padding-left: 2px;">📥 Atração & Cadastro</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+
+              <div style="border: 1px solid var(--card-border); border-radius: 10px; padding: 12px; display: flex; align-items: center; gap: 10px;">
+                <div style="width: 8px; height: 8px; background: var(--success); border-radius: 50%; box-shadow: 0 0 0 3px rgba(34,197,94,0.15);"></div>
+                <div style="flex: 1;">
+                  <div style="font-size: 12px; font-weight: 700; color: #0f172a;">🚀 Onboarding Dr Central</div>
+                  <div style="font-size: 10px; color: var(--text-muted);">D+0 → D+5</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- RECUPERAÇÃO -->
+          <div>
+            <div style="font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.5px; margin-bottom: 10px; padding-left: 2px;">🔄 Recuperação</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+
+              <div style="border: 1px solid var(--card-border); border-radius: 10px; padding: 12px; display: flex; align-items: center; gap: 10px;">
+                <div style="width: 8px; height: 8px; background: var(--success); border-radius: 50%; box-shadow: 0 0 0 3px rgba(34,197,94,0.15);"></div>
+                <div style="flex: 1;">
+                  <div style="font-size: 12px; font-weight: 700; color: #0f172a;">💰 Cobrança</div>
+                  <div style="font-size: 10px; color: var(--text-muted);">D+4</div>
+                </div>
+              </div>
+
+              <div style="border: 1px solid var(--card-border); border-radius: 10px; padding: 12px; display: flex; align-items: center; gap: 10px;">
+                <div style="width: 8px; height: 8px; background: var(--success); border-radius: 50%; box-shadow: 0 0 0 3px rgba(34,197,94,0.15);"></div>
+                <div style="flex: 1;">
+                  <div style="font-size: 12px; font-weight: 700; color: #0f172a;">🔔 Preventivo</div>
+                  <div style="font-size: 10px; color: var(--text-muted);">D-5</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ============================================================
+        LOGS RECENTES
+        ============================================================ -->
+        <div style="background: white; border: 1px solid var(--card-border); padding: 20px; border-radius: 12px;">
+          <h3 style="font-size: 14px; margin-bottom: 14px; color: #0f172a;">📋 Logs Recentes de Agendamentos (Mapeamento de Falhas)</h3>
+
           <table class="data-table">
             <thead>
-              <tr><th>Paciente</th><th>Status Final do Agendamento</th><th>Data da Consulta</th><th>Ação Disparada Automatizada</th></tr>
+              <tr>
+                <th>Paciente</th>
+                <th>Status Final do Agendamento</th>
+                <th>Data da Consulta</th>
+                <th>Ação Disparada Automatizada</th>
+              </tr>
             </thead>
             <tbody>
               <tr>
@@ -208,8 +282,8 @@
             </tbody>
           </table>
         </div>
-      </div>
 
+      </div>
       <!-- ============================================================
       PÁGINA: BOAS-VINDAS DRC (exemplo de régua)
       ============================================================ -->
@@ -2005,589 +2079,7 @@ Baixe agora e tenha acesso imediato a consultas, exames e descontos exclusivos
       </div>
    
 
-      <!-- ============================================================
-      PÁGINA: ONBOARDING (PÓS-DOWNLOAD DO APP)
-      ============================================================ -->
-      <div id="pagina-email-pre" class="page-content">
-        <h1>Jornada Onboarding: Nutrição do Paciente</h1>
-        <p class="subtitle">
-          Régua de engajamento e reforço de benefícios para pacientes que baixaram o aplicativo Dr. Central.
-        </p>
-
-        <!-- BOXES DE APRESENTAÇÃO -->
-        <div class="architecture-header">
-          <div class="arch-box welcome-teal-box">
-            <h5>🎯 Intuito da Régua</h5>
-            <p>
-              Nutrir o paciente com informações sobre os benefícios do app, incentivar o uso recorrente e fortalecer o vínculo com a marca.
-              <br><strong>Fluxo fixo</strong> – todos os disparos são automáticos, sem condicionais.
-            </p>
-          </div>
-          <div class="arch-box welcome-teal-box">
-            <h5>📧 1º Disparo – E‑mail (D+0)</h5>
-            <p><strong>Educação Avançada</strong><br>E‑mail de boas‑vindas com orientações gerais sobre o app.</p>
-          </div>
-          <div class="arch-box welcome-teal-box" style="border-left-color: #25D366;">
-            <h5>📧 + 📱 2º Disparo – E‑mail + WhatsApp (D+3)</h5>
-            <p><strong>Reconhecimentos e Upskilling</strong><br>Disparo combinado para reconhecer o primeiro uso e ensinar funcionalidades.</p>
-          </div>
-          <div class="arch-box welcome-teal-box" style="border-left-color: var(--central-blue);">
-            <h5>📧 3º Disparo – E‑mail (D+10)</h5>
-            <p><strong>Incentivo Direto</strong><br>E‑mail com cupons e chamadas para ação (agendamento).</p>
-          </div>
-          <div class="arch-box welcome-teal-box" style="border-left-color: #FF9800;">
-            <h5>📱 4º Disparo – SMS (D+15)</h5>
-            <p><strong>Reforçar Valor Real</strong><br>Mensagem curta com link para agendamento e contato do suporte.</p>
-          </div>
-        </div>
-
-        <!-- FLUXOGRAMA -->
-        <div class="flowchart-wrapper">
-          <div class="flow-node trigger" style="border-color: var(--welcome-teal)">
-            <h6>1. Gatilho (Trigger)</h6>
-            <p>Download/Registro do App Concluído</p>
-          </div>
-          <div class="flow-line"></div>
-          <div class="time-delay" style="background:#f0fdfa; color:var(--welcome-teal);">⚡ Disparo Instantâneo (D+0)</div>
-          <div class="flow-line"></div>
-
-          <!-- D0: E-mail -->
-          <div class="flow-node welcome-node">
-            <h6>2. Ação – E‑mail (D+0)</h6>
-            <p>Injetar Template: Educação Avançada</p>
-          </div>
-
-          <div class="flow-line" style="height: 16px;"></div>
-          <div class="time-delay" style="background:#f0fdf4; color:var(--success);">⏳ Aguarda 3 dias (D+3)</div>
-          <div class="flow-line"></div>
-
-          <!-- D+3: E-mail + WhatsApp -->
-          <div class="flow-node email-node" style="border-color: #25D366;">
-            <h6>3. Ação – E‑mail (D+3)</h6>
-            <p>Injetar Template: Reconhecimentos e Upskilling</p>
-          </div>
-          <div class="flow-line" style="height: 8px;"></div>
-          <div class="flow-node action" style="border-color: #25D366;">
-            <h6>4. Ação – WhatsApp (D+3)</h6>
-            <p>Enviar mensagem de reforço e dicas</p>
-          </div>
-
-          <div class="flow-line" style="height: 16px;"></div>
-          <div class="time-delay" style="background:#f0fdf4; color:var(--success);">⏳ Aguarda 7 dias (D+10)</div>
-          <div class="flow-line"></div>
-
-          <!-- D+10: E-mail -->
-          <div class="flow-node email-node">
-            <h6>5. Ação – E‑mail (D+10)</h6>
-            <p>Injetar Template: Incentivo Direto</p>
-          </div>
-
-          <div class="flow-line" style="height: 16px;"></div>
-          <div class="time-delay" style="background:#f0fdf4; color:var(--success);">⏳ Aguarda 5 dias (D+15)</div>
-          <div class="flow-line"></div>
-
-          <!-- D+15: SMS -->
-          <div class="flow-node" style="border-color: #FF9800;">
-            <h6>6. Ação – SMS (D+15)</h6>
-            <p>Enviar mensagem de valor real (link para agendamento)</p>
-          </div>
-
-          <div style="font-size: 10px; color: var(--text-muted); margin-top: 12px;">
-            * Todos os disparos são automáticos e incondicionais.
-          </div>
-        </div>
-
-        <!-- ============================================================
-        TEMPLATES REAIS – ONBOARDING
-        ============================================================ -->
-
-        <!-- 1. E-mail D+0 (Educação Avançada) -->
-        <div style="margin-top: 40px; border-top: 2px dashed var(--card-border); padding-top: 20px;">
-          <h3 style="font-size: 16px; color: var(--central-blue);">📧 1. E‑mail – D+0 (Educação Avançada)</h3>
-          <div class="email-browser-wrapper">
-            <div class="email-browser-header">
-              <strong>De:</strong> Dr. Central &lt;app@drcentral.com.br&gt;<br>
-              <strong>Assunto:</strong> Bem‑vindo ao app – sua saúde na palma da mão
-            </div>
-            <div class="tem-body">
-              <div style="overflow-y: auto; max-height: 650px; background: #f2f2f2; border-radius: 8px; padding: 10px;">
-                <div style="padding: 30px; text-align: center; color: #94a3b8; border: 2px dashed #cbd5e1; border-radius: 8px; min-height: 150px; display: flex; align-items: center; justify-content: center;">
-                  <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Régua Onboarding - E-mail 1</title>
-    <style type="text/css">
-        body { margin: 0; padding: 0; background: #f2f2f2; font-family: Arial, sans-serif; }
-        .email-container { max-width: 600px; margin: 0 auto; background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        .header { background: #6c3fa7; padding: 0; }
-        .header img { max-width: 540px; width: 100%; display: block; margin: 0 auto; }
-        .header-links { background: #5e2e91; color: #fff; font-size: 14px; padding: 12px 20px; text-align: center; }
-        .header-links a { color: #fff; text-decoration: none; margin: 0 8px; }
-        .main { padding: 40px 30px 30px 30px; }
-        .main h1 { color: #6c3fa7; font-size: 28px; margin: 0 0 10px 0; font-weight: 900; }
-        .main .emoji { font-size: 28px; vertical-align: middle; }
-        .main .welcome { font-size: 16px; color: #333; margin-bottom: 18px; }
-        .main .welcome strong { color: #6c3fa7; }
-        .main .highlight { background: #00e0d6; color: #333; padding: 2px 6px; border-radius: 3px; font-weight: 700; }
-        .feature-box { background: #6c3fa7; border-radius: 16px; margin-bottom: 18px; display: flex; align-items: flex-start; }
-        .feature-number { background: #00BCD4; color: #fff; font-size: 28px; font-weight: bold; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; margin: 18px 0 0 18px; flex-shrink: 0; }
-        .feature-content { color: #fff; padding: 18px 18px 18px 16px; }
-        .feature-content strong { color: #FDB930; display: block; font-size: 18px; margin-bottom: 4px; }
-        .feature-content .subtitle { color: #FDB930; font-weight: bold; }
-        .footer { background: #6c3fa7; color: #fff; padding: 18px 0 0 0; }
-        .footer-content { max-width: 600px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 0 30px 18px 30px; }
-        .footer-logo { font-size: 20px; font-weight: bold; color: #FDB930; }
-        .footer-logo span { display: block; font-size: 12px; color: #00BCD4; font-weight: 700; }
-        .footer-contact { font-size: 14px; color: #fff; display: flex; align-items: center; gap: 18px; }
-        .footer-contact img { vertical-align: middle; margin-right: 4px; }
-        @media screen and (max-width: 600px) {
-            .main { padding: 20px 8px 18px 8px; }
-            .footer-content { flex-direction: column; gap: 10px; padding: 0 10px 18px 10px; }
-        }
-    </style>
-</head>
-<body>
-    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0; padding: 0;">
-        <tr>
-            <td align="center" style="padding: 20px 10px;">
-                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container" style="max-width: 600px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background-color: #ffffff;">
-                    <!-- Header Section -->
-                    <tr>
-                        <td align="center" style="background-color: #5A3A8E; padding: 0px 30px 0px 30px;">
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                                <tr>
-                                    <td align="center">
-                                        <a href="https://drcentral.com.br/" target="_blank">
-                                            <img src="https://drcentral.com.br/wp-content/uploads/2025/10/header-1-e-mails-drctest.png" width="100%" style="max-width: 100%; height: auto; display: block;">
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="padding:12px 8px;background-color:#5e2e91;font-size: 14px; font-weight: 500;line-height:20px;color:#ffffff;">
-                                        <span style="color:#ffffff;">
-                                            <a href="https://drcentral.com.br/" target="_blank" style="color:#ffffff;text-decoration:none;">Dr. Central&nbsp;</a>|
-                                            <a href="https://centraldeconsultas.med.br/" target="_blank" style="color:#ffffff;text-decoration:none;">Central de Consultas&nbsp;&nbsp;</a>
-                                        </span>
-                                        <a href="https://wa.me/5551989772610?text=Ol%C3%A1%20Dr.%20Central!" target="_blank" style="color:#ffffff;text-decoration:none;">
-                                            <img src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-6.png" width="20px" valign="middle">&nbsp;Fale conosco
-                                        </a>
-                                        &nbsp;&nbsp;
-                                        <a href="tel:+555130926060" target="_blank" style="color:#ffffff;text-decoration:none;">
-                                            <img src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-5-1.png" width="20px" valign="middle">&nbsp;Ligue agora
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <!-- Conteúdo principal -->
-                    <tr>
-                        <td style="background-color: #fff; padding: 0;">
-                            <div class="main" style="padding: 40px 30px 30px 30px;">
-            <h1>Olá assinante,<span class="emoji">👋</span></h1>
-            <div class="welcome">
-                <strong>Bem vindo ao Aplicativo Dr. Central!</strong> Agora que você já está com o app instalado, queremos te mostrar como tirar o máximo dele no seu dia a dia para começar a <span class="highlight">usar o app como um especialista:</span>
-            </div>
-            <div class="feature-box">
-                <div class="feature-number">1</div>
-                <div class="feature-content">
-                    <strong>Descontos em Consultas</strong>
-                    Cuide da sua saúde sem pesar no bolso! Pelo app, você tem acesso ao agendamento de consultas com desconto em diversas especialidades. É só abrir a área de Agendamento e aproveitar.
-                </div>
-            </div>
-            <div class="feature-box">
-                <div class="feature-number">2</div>
-                <div class="feature-content">
-                    <strong class="subtitle">Consultas Online (Telemedicina)</strong>
-                    Faça sua consulta online com um médico direto pelo app, sem sair de casa. É seguro, acessível e você ainda recebe o atestado e receita digital.
-                </div>
-            </div>
-            <div class="feature-box">
-                <div class="feature-number">3</div>
-                <div class="feature-content">
-                    <strong>Cupons e Ofertas Exclusivas</strong>
-                    Economize nas suas compras online! No app Dr. Central você encontra cupons e ofertas exclusivas em sites parceiros. Aproveite agora!
-                </div>
-            </div>
-        </div>
-                        </td>
-                    </tr>
-                    <!-- Footer Section -->
-                    <tr>
-                        <td style="background-color: #7B4FA0; padding: 25px 30px; text-align: center; border-top: 2px solid #00BCD4;">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tbody><tr>
-                                <td width="35%" align="left" valign="middle">
-                                    <h3 style="margin: 0px; padding: 0px; color: rgb(253, 185, 48); font-size: 28px; font-weight: 900; letter-spacing: 0px;"><a href="https://drcentral.com.br/" target="_blank" style="color:rgb(253, 185, 48);text-decoration:none;">Dr.Central</a></h3>
-                                    <a href="https://drcentral.com.br/" target="_blank">
-                                    <div style="background-color: rgb(0, 188, 212); color: rgb(255, 255, 255); padding: 4px 10px; border-radius: 15px; font-size: 9px; font-weight: bold; text-align: center; margin-top: 5px; display: inline-block; letter-spacing: 0.5px;">CARTÃO DE SAÚDE</div></a>
-                                </td>
-                                <td width="65%" align="right" valign="middle">
-                                    <table cellspacing="0" cellpadding="0" border="0" align="right" style="white-space: nowrap;"><tbody>
-                                        <tr>
-                                            <td style="padding: 0px 5px; white-space: nowrap;">
-                                                <p style="margin: 0px; color: rgb(255, 255, 255); font-size: 12px; font-weight: 500; white-space: nowrap;">
-                                                <img src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-6.png" width="16px" valign="middle">
-                                                <a href="https://wa.me/5551989772610?text=Ol%C3%A1%20Dr.%20Central!" target="_blank" style="color:#ffffff;text-decoration:none;">&nbsp;(51) 98977-2610</a></p>
-                                            </td>
-                                            <td style="padding: 0px 5px; white-space: nowrap;">
-                                                <p style="margin: 0px; color: rgb(255, 255, 255); font-size: 12px; font-weight: 500; white-space: nowrap;">
-                                                <img src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-5-1.png" width="16px" valign="middle">
-                                                <a href="tel:+555130926060" target="_blank" style="color:#ffffff;text-decoration:none;">&nbsp;(51) 3092-6060</a></p>
-                                            </td>
-                                            <td style="padding: 0px 5px; white-space: nowrap;">
-                                                <p style="margin: 0px; color: rgb(255, 255, 255); font-size: 12px; font-weight: 500; white-space: nowrap;">
-                                                <img style="margin: 0px auto;" src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-4-1.png" width="16px" valign="middle">
-                                                <a href="https://drcentral.com.br/" target="_blank" style="color:#ffffff;text-decoration:none;">&nbsp;drcentral.com.br</a></p>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-</body>
-</html>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. E-mail D+3 (Reconhecimentos e Upskilling) -->
-        <div style="margin-top: 40px; border-top: 2px dashed var(--card-border); padding-top: 20px;">
-          <h3 style="font-size: 16px; color: var(--central-blue);">📧 2. E‑mail – D+3 (Reconhecimentos e Upskilling)</h3>
-          <div class="email-browser-wrapper">
-            <div class="email-browser-header">
-              <strong>De:</strong> Dr. Central &lt;app@drcentral.com.br&gt;<br>
-              <strong>Assunto:</strong> Você já está usando o app – veja como aproveitar ainda mais!
-            </div>
-            <div class="tem-body">
-              <div style="overflow-y: auto; max-height: 650px; background: #f2f2f2; border-radius: 8px; padding: 10px;">
-                <div style="padding: 30px; text-align: center; color: #94a3b8; border: 2px dashed #cbd5e1; border-radius: 8px; min-height: 150px; display: flex; align-items: center; justify-content: center;">
-                  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Régua Onboarding - E-mail 2</title>
-    <style type="text/css">
-        body { margin: 0; padding: 0; background-color: #f2f2f2; font-family: Arial, sans-serif; }
-        .main-title { background: #00BCD4; color: #fff; font-size: 28px; font-weight: 900; border-radius: 16px; padding: 12px 32px 12px 24px; display: inline-block; margin-bottom: 24px; }
-        .main-title .emoji { font-size: 28px; vertical-align: middle; }
-        .family-img { border-radius: 50%; width: 140px; height: 140px; object-fit: cover; border: 8px solid #00BCD4; background: #fff; }
-        .content-section { padding: 40px 30px 30px 30px; }
-        .content-section p { color: #6c3fa7; font-size: 20px; margin: 0 0 18px 0; font-weight: 400; }
-        .content-section .subtitle { color: #00BCD4; font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-        .content-section .highlight { background: #FDB930; color: #333; padding: 2px 6px; border-radius: 3px; font-weight: 700; }
-        .content-section .cta-btn { display: inline-block; background: #5A3A8E; color: #fff; text-decoration: none; padding: 16px 36px; border-radius: 30px; font-size: 18px; font-weight: 700; margin-top: 28px; box-shadow: 0 6px 20px rgba(0,188,212,0.2); transition: all 0.3s; }
-        .content-section .cta-btn:hover { background: #7B4FA0; }
-        .content-section .info { color: #00BCD4; font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-        .content-section .family { color: #6c3fa7; font-size: 20px; font-weight: 700; }
-        .content-section .parabens { color: #00BCD4; font-size: 16px; font-weight: 700; }
-        .content-section .mensal { color: #FDB930; font-size: 16px; font-weight: 700; }
-        @media screen and (max-width: 600px) {
-            .content-section { padding: 20px 8px 18px 8px; }
-            .main-title { font-size: 20px; padding: 10px 12px; }
-            .family-img { width: 90px; height: 90px; }
-        }
-    </style>
-</head>
-<body>
-    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0; padding: 0;">
-        <tr>
-            <td align="center" style="padding: 20px 10px;">
-                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container" style="max-width: 600px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background-color: #ffffff;">
-                    <!-- Cabeçalho -->
-                    <tr>
-                        <td align="center" style="background-color: #6c3fa7; padding: 0;">
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                <tr>
-                                    <td align="center" style="padding: 20px;">
-                                        <a href="https://drcentral.com.br/" target="_blank">
-                                            <img src="https://drcentral.com.br/wp-content/uploads/2025/10/header-1-e-mails-drctest.png" width="100%" style="max-width: 540px; height: auto; display: block;">
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="padding: 12px 20px; background-color: #5e2e91; font-size: 14px; font-weight: 500; line-height: 20px; color: #ffffff;">
-                                        <span style="color: #ffffff;">
-                                            <a href="https://drcentral.com.br/" target="_blank" style="color: #ffffff; text-decoration: none;">Dr. Central</a>&nbsp;|
-                                            <a href="https://centraldeconsultas.med.br/" target="_blank" style="color: #ffffff; text-decoration: none;">Central de Consultas</a>&nbsp;&nbsp;
-                                        </span>
-                                        <a href="https://wa.me/5551989772610?text=Ol%C3%A1%20Dr.%20Central!" target="_blank" style="color: #ffffff; text-decoration: none;">
-                                            <img src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-6.png" width="18" style="vertical-align: middle;">&nbsp;Fale conosco
-                                        </a>&nbsp;&nbsp;
-                                        <a href="tel:+555130926060" target="_blank" style="color: #ffffff; text-decoration: none;">
-                                            <img src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-5-1.png" width="18" style="vertical-align: middle;">&nbsp;Ligue agora
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <!-- Conteúdo principal -->
-                    <tr>
-                        <td style="background-color: #fff; padding: 0;">
-                            <div class="content-section">
-                                <div class="main-title">Olá assinante,<span class="emoji">👋</span></div>
-                                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 18px;">
-                                    <tr>
-                                        <td width="160" align="center" valign="top" style="padding-bottom: 10px;">
-                                            <div style="position: relative; width: 140px; height: 140px; display: inline-block;">
-                                                <div style="background: #00BCD4; border-radius: 50%; width: 140px; height: 140px; position: absolute; top: 0; left: 0;"></div>
-                                                <img src="https://drcentral.com.br/wp-content/uploads/2026/01/young-couple-with-baby-daughter-park-1.png" alt="Família Dr. Central" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; position: relative; z-index: 1;">
-                                            </div>
-                                        </td>
-                                        <td valign="middle" style="padding-left: 18px;">
-                                            <p style="color: #6c3fa7; font-size: 20px; font-weight: 400; margin: 0 0 8px 0;">Aqui no Dr. Central, acreditamos que cuidar da saúde é <span style="font-weight: 700; font-style: italic; color: #6c3fa7;">ainda melhor quando é em família.</span></p>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <p style="color: #00BCD4; font-size: 16px; font-weight: 700; margin-bottom: 8px;">Se você já faz parte do nosso Plano Familiar, parabéns!</p>
-                                <p style="color: #6c3fa7; font-size: 16px; margin-bottom: 8px;">Você e mais 3 pessoas têm acesso todos os meses a consultas, exames e benefícios exclusivos tudo pelo app.</p>
-                                <p style="background: #FDB930; color: #333; padding: 6px 10px; border-radius: 5px; font-size: 15px; font-weight: 700; display: inline-block; margin-bottom: 8px;">Ainda não faz parte? Então essa é a hora de dar o próximo passo.</p>
-                                <p style="color: #6c3fa7; font-size: 16px;">Com o Plano Mensal Familiar, você <span style="font-weight: 700;">investe em você e mais 3 pessoas</span>, garantindo cuidado acessível e prático para todos.</p>
-                                <a href="https://drcentral.com.br/#planos" class="cta-btn" target="_blank">Acesse e conheça o Plano Familiar &rarr;</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <!-- Rodapé -->
-                    <tr>
-                        <td style="background-color: #7B4FA0; padding: 25px 30px; text-align: center; border-top: 2px solid #00BCD4;">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tbody><tr>
-                                <td width="35%" align="left" valign="middle">
-                                    <h3 style="margin: 0px; padding: 0px; color: rgb(253, 185, 48); font-size: 28px; font-weight: 900; letter-spacing: 0px;"><a href="https://drcentral.com.br/" target="_blank" style="color:rgb(253, 185, 48);text-decoration:none;">Dr.Central</a></h3>
-                                    <a href="https://drcentral.com.br/" target="_blank">
-                                    <div style="background-color: rgb(0, 188, 212); color: rgb(255, 255, 255); padding: 4px 10px; border-radius: 15px; font-size: 9px; font-weight: bold; text-align: center; margin-top: 5px; display: inline-block; letter-spacing: 0.5px;">CARTÃO DE SAÚDE</div></a>
-                                </td>
-                                <td width="65%" align="right" valign="middle">
-                                    <table cellspacing="0" cellpadding="0" border="0" align="right" style="white-space: nowrap;"><tbody>
-                                        <tr>
-                                            <td style="padding: 0px 5px; white-space: nowrap;">
-                                                <p style="margin: 0px; color: rgb(255, 255, 255); font-size: 12px; font-weight: 500; white-space: nowrap;">
-                                                <img src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-6.png" width="16px" valign="middle">
-                                                <a href="https://wa.me/5551989772610?text=Ol%C3%A1%20Dr.%20Central!" target="_blank" style="color:#ffffff;text-decoration:none;">&nbsp;(51) 98977-2610</a></p>
-                                            </td>
-                                            <td style="padding: 0px 5px; white-space: nowrap;">
-                                                <p style="margin: 0px; color: rgb(255, 255, 255); font-size: 12px; font-weight: 500; white-space: nowrap;">
-                                                <img src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-5-1.png" width="16px" valign="middle">
-                                                <a href="tel:+555130926060" target="_blank" style="color:#ffffff;text-decoration:none;">&nbsp;(51) 3092-6060</a></p>
-                                            </td>
-                                            <td style="padding: 0px 5px; white-space: nowrap;">
-                                                <p style="margin: 0px; color: rgb(255, 255, 255); font-size: 12px; font-weight: 500; white-space: nowrap;">
-                                                <img style="margin: 0px auto;" src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-4-1.png" width="16px" valign="middle">
-                                                <a href="https://drcentral.com.br/" target="_blank" style="color:#ffffff;text-decoration:none;">&nbsp;drcentral.com.br</a></p>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-</body>
-</html>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. WhatsApp D+3 (Reconhecimentos) -->
-        <div style="margin-top: 40px; border-top: 2px dashed var(--card-border); padding-top: 20px;">
-          <h3 style="font-size: 16px; color: #25D366;">📱 3. WhatsApp – D+3 (Reconhecimentos e Upskilling)</h3>
-          <div class="whatsapp-container">
-            <div class="whatsapp-header"><span>Dr. Central</span><span>10:15</span></div>
-            <div class="whatsapp-bubble" style="white-space: pre-wrap;">
-Olá, {{nome}}!Cuide da sua saúde e de mais 3 pessoas com consultas, exames e benefícios todos os meses, direto pelo app com o plano familiar ❤️😊  
-
-              <span class="whatsapp-time">10:15</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. E-mail D+10 (Incentivo Direto) -->
-        <div style="margin-top: 40px; border-top: 2px dashed var(--card-border); padding-top: 20px;">
-          <h3 style="font-size: 16px; color: var(--central-blue);">📧 4. E‑mail – D+10 (Incentivo Direto)</h3>
-          <div class="email-browser-wrapper">
-            <div class="email-browser-header">
-              <strong>De:</strong> Dr. Central &lt;app@drcentral.com.br&gt;<br>
-              <strong>Assunto:</strong> Ofertas exclusivas esperando por você
-            </div>
-            <div class="tem-body">
-              <div style="overflow-y: auto; max-height: 650px; background: #f2f2f2; border-radius: 8px; padding: 10px;">
-                <div style="padding: 30px; text-align: center; color: #94a3b8; border: 2px dashed #cbd5e1; border-radius: 8px; min-height: 150px; display: flex; align-items: center; justify-content: center;">
-                  ag<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Régua Onboarding - E-mail 3</title>
-    <style type="text/css">
-        body { margin: 0; padding: 0; background: #f2f2f2; font-family: Arial, sans-serif; }
-        .email-container { max-width: 480px; margin: 0 auto; background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        .main { padding: 24px 14px 18px 14px; }
-        .main h1 { color: #6c3fa7; font-size: 22px; margin: 0 0 8px 0; font-weight: 900; }
-        .main .emoji { font-size: 22px; vertical-align: middle; }
-        .main .welcome { font-size: 13px; color: #333; margin-bottom: 14px; }
-        .main .welcome strong { color: #6c3fa7; }
-        .main .highlight { background: #00e0d6; color: #333; padding: 2px 6px; border-radius: 3px; font-weight: 700; }
-        .tele-box { background: #00BCD4; border-radius: 12px; margin-bottom: 14px; padding: 16px 12px; color: #fff; }
-        .tele-box strong { color: #fff; font-size: 15px; display: block; margin-bottom: 6px; }
-        .tele-box ul { padding-left: 14px; margin: 8px 0 0 0; }
-        .tele-box li { margin-bottom: 6px; font-size: 13px; }
-        .tele-box li strong { color: #FDB930; font-weight: bold; }
-        .cta-btn { display: inline-block; background: #6c3fa7; color: #fff; font-weight: bold; font-size: 14px; padding: 10px 22px; border-radius: 24px; text-decoration: none; margin-top: 18px; box-shadow: 0 2px 8px rgba(108,63,167,0.12); transition: background 0.2s; }
-        .cta-btn:hover { background: #512a7a; }
-        @media screen and (max-width: 600px) {
-            .main { padding: 12px 4px 10px 4px; }
-        }
-    </style>
-</head>
-<body>
-    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0; padding: 0;">
-        <tr>
-            <td align="center" style="padding: 20px 10px;">
-                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container" style="max-width: 600px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background-color: #ffffff;">
-                    <!-- Header Section -->
-                    <tr>
-                        <td align="center" style="background-color: #5A3A8E; padding: 0px 30px 0px 30px;">
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                                <tr>
-                                    <td align="center">
-                                        <a href="https://drcentral.com.br/" target="_blank">
-                                            <img src="https://drcentral.com.br/wp-content/uploads/2025/10/header-1-e-mails-drctest.png" width="100%" style="max-width: 100%; height: auto; display: block;">
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="padding:12px 8px;background-color:#5e2e91;font-size: 14px; font-weight: 500;line-height:20px;color:#ffffff;">
-                                        <span style="color:#ffffff;">
-                                            <a href="https://drcentral.com.br/" target="_blank" style="color:#ffffff;text-decoration:none;">Dr. Central&nbsp;</a>|
-                                            <a href="https://centraldeconsultas.med.br/" target="_blank" style="color:#ffffff;text-decoration:none;">Central de Consultas&nbsp;&nbsp;</a>
-                                        </span>
-                                        <a href="https://wa.me/5551989772610?text=Ol%C3%A1%20Dr.%20Central!" target="_blank" style="color:#ffffff;text-decoration:none;">
-                                            <img src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-6.png" width="20px" valign="middle">&nbsp;Fale conosco
-                                        </a>
-                                        &nbsp;&nbsp;
-                                        <a href="tel:+555130926060" target="_blank" style="color:#ffffff;text-decoration:none;">
-                                            <img src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-5-1.png" width="20px" valign="middle">&nbsp;Ligue agora
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <!-- Conteúdo principal -->
-                    <tr>
-                        <td style="background-color: #fff; padding: 0;">
-                            <div class="main" style="padding: 40px 30px 30px 30px;">
-                                <h1 style="text-align: center;">Olá assinante,<span class="emoji">👋</span></h1>
-                                <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto 32px auto;">
-                                    <tr>
-                                        <td style="vertical-align: top; text-align: center; padding-right: 18px;">
-                                            <img src="https://drcentral.com.br/wp-content/uploads/2026/01/1o-E-mail-Boas-Vindas-e-Confirmacao-Mulher.png" alt="Consulta Online" style="width: 180px; height: 180px; object-fit: cover; border-radius: 18px; display: block; box-shadow: 0 2px 12px rgba(0,0,0,0.13); margin: 0 auto;">
-                                        </td>
-                                        <td style="vertical-align: top; text-align: left;">
-                                            <div style="background: #11bfcf; border-radius: 14px; color: #fff; padding: 12px 16px 10px 16px; font-size: 15px; font-weight: bold; line-height: 1.4; margin-bottom: 10px; min-width: 180px; max-width: 260px;">
-                                                Sabia que você pode <span style="font-style:italic; font-weight: bold;">cuidar da sua saúde sem sair de casa</span> e ainda economizar tempo e dinheiro?
-                                            </div>
-                                            <div style="font-weight: bold; color: #00bfa3; font-size: 16px; margin-bottom: 8px; font-family: Arial, Helvetica, sans-serif;">Consulta Online pelo App</div>
-                                            <ul style="padding-left: 14px; margin: 0; font-size: 13px; line-height: 1.6; color: #333;">
-                                                <li><span style="color:#00bfa3;font-weight:bold;">Sem deslocamento:</span> evite trânsito e espera em filas.</li>
-                                                <li><span style="color:#00bfa3;font-weight:bold;">Rápido e prático:</span> agende e realize sua consulta em minutos, direto do celular.</li>
-                                                <li><span style="color:#00bfa3;font-weight:bold;">Economize dinheiro:</span> sem gastos com transporte e estacionamento.</li>
-                                                <li><span style="color:#00bfa3;font-weight:bold;">Receita e atestado digital:</span> receba tudo de forma digital sem precisar ir até a clínica.</li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <div class="welcome" style="margin-bottom: 28px; text-align: center;">
-                                    Com a telemedicina, cuidar da sua saúde ficou mais simples, rápido e econômico.<br>
-                                    <span style="color: #00bcd4; font-weight: bold;">Cuide de você de forma prática e inteligente.</span>
-                        
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <!-- Footer Section -->
-                    <tr>
-                        <td style="background-color: #7B4FA0; padding: 25px 30px; text-align: center; border-top: 2px solid #00BCD4;">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tbody><tr>
-                                <td width="35%" align="left" valign="middle">
-                                    <h3 style="margin: 0px; padding: 0px; color: rgb(253, 185, 48); font-size: 28px; font-weight: 900; letter-spacing: 0px;"><a href="https://drcentral.com.br/" target="_blank" style="color:rgb(253, 185, 48);text-decoration:none;">Dr.Central</a></h3>
-                                    <a href="https://drcentral.com.br/" target="_blank">
-                                    <div style="background-color: rgb(0, 188, 212); color: rgb(255, 255, 255); padding: 4px 10px; border-radius: 15px; font-size: 9px; font-weight: bold; text-align: center; margin-top: 5px; display: inline-block; letter-spacing: 0.5px;">CARTÃO DE SAÚDE</div></a>
-                                </td>
-                                <td width="65%" align="right" valign="middle">
-                                    <table cellspacing="0" cellpadding="0" border="0" align="right" style="white-space: nowrap;"><tbody>
-                                        <tr>
-                                            <td style="padding: 0px 5px; white-space: nowrap;">
-                                                <p style="margin: 0px; color: rgb(255, 255, 255); font-size: 12px; font-weight: 500; white-space: nowrap;">
-                                                <img src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-6.png" width="16px" valign="middle">
-                                                <a href="https://wa.me/5551989772610?text=Ol%C3%A1%20Dr.%20Central!" target="_blank" style="color:#ffffff;text-decoration:none;">&nbsp;(51) 98977-2610</a></p>
-                                            </td>
-                                            <td style="padding: 0px 5px; white-space: nowrap;">
-                                                <p style="margin: 0px; color: rgb(255, 255, 255); font-size: 12px; font-weight: 500; white-space: nowrap;">
-                                                <img src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-5-1.png" width="16px" valign="middle">
-                                                <a href="tel:+555130926060" target="_blank" style="color:#ffffff;text-decoration:none;">&nbsp;(51) 3092-6060</a></p>
-                                            </td>
-                                            <td style="padding: 0px 5px; white-space: nowrap;">
-                                                <p style="margin: 0px; color: rgb(255, 255, 255); font-size: 12px; font-weight: 500; white-space: nowrap;">
-                                                <img style="margin: 0px auto;" src="https://centraldeconsultas.med.br/wp-content/uploads/2025/10/Ativo-4-1.png" width="16px" valign="middle">
-                                                <a href="https://drcentral.com.br/" target="_blank" style="color:#ffffff;text-decoration:none;">&nbsp;drcentral.com.br</a></p>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-</body>
-</html>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. SMS D+15 (Reforçar Valor Real) -->
-        <div style="margin-top: 40px; border-top: 2px dashed var(--card-border); padding-top: 20px;">
-          <h3 style="font-size: 16px; color: #FF9800;">📱 5. SMS – D+15 (Reforçar Valor Real)</h3>
-          <div style="background: #f8fafc; border-radius: 12px; padding: 16px; max-width: 400px; border: 1px solid #e2e8f0; font-family: monospace; font-size: 14px;">
-Dr. Central:  Na Central de Consultas, todo paciente ganha no mês do aniversário uma aplicação de flúor. para mais Informações: 5132271515
-          </div>
-        </div>
-      </div>   <!-- FIM da div pagina-email-pre -->
-
+     
       
       <!-- ============================================================
       PÁGINA: FOLLOW UP (PAGAMENTO PENDENTE)
@@ -3238,6 +2730,660 @@ Dr. Central agradece o seu contato e fica à disposição
       </div>
       <!-- FIM FOLLOW UP -->
 
+
+<!-- ============================================================
+      PÁGINA: ONBOARDING DR CENTRAL
+      ============================================================ -->
+      <div id="pagina-onboarding" class="page-content">
+        <h1>Onboarding Dr Central</h1>
+        <p class="subtitle">Régua de acolhimento do novo assinante: <strong>5 comunicações em 5 dias</strong> (3 WhatsApps + 2 E-mails) após a contratação e pagamento da 1ª fatura.</p>
+
+        <!-- ARCHITECTURE HEADER -->
+        <div class="architecture-header">
+          <div class="arch-box welcome-teal-box">
+            <h5>🎯 Intuito da Régua</h5>
+            <p>Receber o novo assinante, apresentar os benefícios do cartão Dr. Central e estimular o uso dos serviços (consultas, telemedicina, descontos) nos primeiros dias.</p>
+          </div>
+          <div class="arch-box welcome-teal-box">
+            <h5>📱📧 Canais e Cadência</h5>
+            <p>5 comunicações em 5 dias — <strong>3 WhatsApps + 2 E-mails</strong>, começando imediatamente após o pagamento da 1ª fatura.</p>
+          </div>
+          <div class="arch-box welcome-teal-box" style="border-left-color: var(--success);">
+            <h5>🚀 Gatilho Inicial</h5>
+            <p>Contratação do plano + confirmação do pagamento da primeira fatura (D+0).</p>
+          </div>
+        </div>
+
+        <!-- FLUXOGRAMA -->
+        <div class="flowchart-wrapper">
+          <div class="flow-node trigger" style="border-color: var(--welcome-teal);">
+            <h6>1. Gatilho (Trigger)</h6>
+            <p>Contratação + pagamento da 1ª fatura confirmados</p>
+          </div>
+          <div class="flow-line"></div>
+          <div class="time-delay" style="background:#f0fdfa; color:var(--welcome-teal);">⚡ D+0 (Imediato)</div>
+          <div class="flow-line"></div>
+          <div class="flow-node welcome-node">
+            <h6>2. Comunicações 1 & 2 — D+0</h6>
+            <p>📱 WhatsApp (onboarding_crm1) + 📧 E-mail (email-boas-vindas-drcentral)</p>
+          </div>
+          <div class="flow-line"></div>
+          <div class="time-delay" style="background:#f0fdfa; color:var(--welcome-teal);">⏳ Aguarda 2 dias</div>
+          <div class="flow-line"></div>
+          <div class="flow-node welcome-node">
+            <h6>3. Comunicação 3 — D+2</h6>
+            <p>📱 WhatsApp (onboarding_crm2)</p>
+          </div>
+          <div class="flow-line"></div>
+          <div class="time-delay" style="background:#f0fdfa; color:var(--welcome-teal);">⏳ Aguarda 1 dia</div>
+          <div class="flow-line"></div>
+          <div class="flow-node welcome-node">
+            <h6>4. Comunicação 4 — D+3</h6>
+            <p>📧 E-mail (email-onboarding-2-drcentral)</p>
+          </div>
+          <div class="flow-line"></div>
+          <div class="time-delay" style="background:#f0fdfa; color:var(--welcome-teal);">⏳ Aguarda 2 dias</div>
+          <div class="flow-line"></div>
+          <div class="flow-node welcome-node">
+            <h6>5. Comunicação 5 — D+5</h6>
+            <p>📱 WhatsApp (onboarding_crm3)</p>
+          </div>
+          <div style="font-size: 10px; color: var(--text-muted); margin-top: 8px; text-align: center;">* Régua de acolhimento — não condicional. Todos os disparos ocorrem em sequência.</div>
+        </div>
+
+        <!-- ===================================================== -->
+        <!-- COMUNICAÇÃO 1 — WHATSAPP D+0                          -->
+        <!-- ===================================================== -->
+        <div style="margin-top: 40px; border-top: 2px dashed var(--card-border); padding-top: 24px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap;">
+            <h3 style="font-size: 16px; color: #25D366; margin: 0;">📱 Comunicação 1 · WhatsApp D+0</h3>
+            <span style="font-size: 10px; background: #dcfce7; color: #15803d; font-weight: 700; padding: 3px 10px; border-radius: 30px; letter-spacing: 0.3px;">ATIVO NO META · IALUI</span>
+          </div>
+          <p class="subtitle" style="margin-bottom: 16px;">Template: <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:12px;">onboarding_crm1</code> · Disparo imediato após o pagamento da 1ª fatura.</p>
+
+          <div class="whatsapp-container">
+            <div class="whatsapp-header"><span>Dr. Central</span><span>15:38</span></div>
+            <div class="whatsapp-bubble">
+              <div style="background: linear-gradient(135deg, #f0e6ff 0%, #e0f7fa 100%); margin: -12px -14px 12px -14px; padding: 16px; border-radius: 0 8px 0 0; text-align: center;">
+                <div style="font-weight: 900; color: #FFB300; font-size: 18px; letter-spacing: -0.3px;">Dr.Central</div>
+                <div style="background: #00BCD4; color: #fff; font-size: 9px; font-weight: 700; padding: 2px 10px; border-radius: 20px; display: inline-block; letter-spacing: 0.5px; margin-top: 2px;">CARTÃO DE SAÚDE</div>
+                <div style="font-family: 'Brush Script MT', cursive; font-size: 20px; color: #6c3fa7; margin-top: 8px;">Seja bem-vindo(a)</div>
+              </div>
+
+              Olá, {{nome}}!! 👋 Seja bem-vindo(a) ao Dr. Central!<br><br>
+
+              Sua assinatura já está ativa e agora você pode aproveitar todos os benefícios disponíveis para cuidar da sua saúde e também economizar. 💜<br><br>
+
+              O primeiro passo é acessar o app Dr. Central. Por lá, você encontra seus benefícios, descontos e serviços disponíveis.<br><br>
+
+              Para acessar o app é fácil 📱<br>
+              1. Baixe o aplicativo Dr. Central;<br>
+              2. Abra o app e selecione a opção Entrar;<br>
+              3. Informe seu CPF e data de nascimento para fazer o login;<br>
+              4. Pronto! Agora é só conferir seus benefícios. 🚀<br><br>
+
+              💬 <strong>Seu plano é Familiar?</strong><br>
+              Depois do primeiro acesso, não esqueça de cadastrar seus dependentes para que eles também possam aproveitar os benefícios:<br><br>
+
+              1. Acesse Perfil;<br>
+              2. Selecione Meus dependentes;<br>
+              3. Clique em Adicionar dependente;<br>
+              4. Preencha os dados solicitados;<br>
+              5. Clique em Salvar.<br><br>
+
+              Quer conhecer ainda melhor tudo o que faz parte da sua assinatura? Acesse também o Guia do Assinante e confira
+
+              <span class="whatsapp-time">15:38 ✓✓</span>
+            </div>
+            <div class="whatsapp-buttons">
+              <a href="#" class="whatsapp-btn whatsapp-btn-primary" onclick="return false;">📲 Baixar aplicativo</a>
+              <a href="#" class="whatsapp-btn" onclick="return false;">📖 Guia do Assinante</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================== -->
+        <!-- COMUNICAÇÃO 2 — E-MAIL D+0                            -->
+        <!-- ===================================================== -->
+        <div style="margin-top: 40px; border-top: 2px dashed var(--card-border); padding-top: 24px;">
+          <h3 style="font-size: 16px; color: var(--central-blue); margin-bottom: 6px;">📧 Comunicação 2 · E-mail D+0</h3>
+          <p class="subtitle" style="margin-bottom: 16px;">Template: <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:12px;">email-boas-vindas-drcentral</code> · Disparo imediato após o pagamento da 1ª fatura.</p>
+
+          <div class="email-browser-wrapper">
+            <div class="email-browser-header">
+              <strong>De:</strong> Dr. Central &lt;app@drcentral.com.br&gt;<br>
+              <strong>Assunto:</strong> Boas-vindas ao Dr. Central!
+            </div>
+            <div class="tem-body">
+              <div style="overflow-y: auto; max-height: 650px; background: #f2f2f2; border-radius: 8px; padding: 10px;">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Boas-vindas ao Dr. Central!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style type="text/css">
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #f2f2f2; font-family: 'Montserrat', Arial, sans-serif; }
+    u + #body a { color: inherit; text-decoration: none; font-size: inherit; font-family: inherit; font-weight: inherit; line-height: inherit; }
+    @media screen and (max-width: 600px) {
+      .email-container { width: 100% !important; max-width: 100% !important; }
+      .mobile-padding { padding: 20px 15px !important; }
+      .mobile-stack { display: block !important; width: 100% !important; max-width: 100% !important; }
+      .mobile-center { text-align: center !important; }
+      .mobile-img-full { width: 100% !important; height: auto !important; max-width: 100% !important; }
+      .mobile-mockup-padding { padding-top: 20px !important; }
+      .mobile-btn { display: block !important; width: 85% !important; margin: 0 auto !important; }
+    }
+  </style>
+</head>
+<body id="body" style="margin: 0; padding: 0; background-color: #eef1f5; font-family: 'Montserrat', Arial, sans-serif;">
+
+  <div style="display: none; max-height: 0px; overflow: hidden; mso-hide: all;">
+    Sua assinatura foi confirmada! Seja bem-vindo(a) ao Dr. Central e aproveite todos os seus benefícios em saúde.
+  </div>
+
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #eef1f5; margin: 0; padding: 0;">
+    <tr>
+      <td align="center" style="padding: 25px 10px;">
+        
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: none;">
+          
+          <tr>
+            <td align="center" style="background-color: #5A3A8E; padding: 24px 20px 12px 20px; line-height: 0; font-size: 0; text-align: center;">
+              <a href="https://drcentral.com.br/" target="_blank" style="text-decoration: none; display: inline-block;">
+                <img src="https://drcentral.com.br/wp-content/uploads/2025/08/Ativo-5.png" alt="Dr. Central - Cartão de Saúde" width="210" style="max-width: 210px; width: 100%; height: auto; display: block; margin: 0 auto; border: 0;" />
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="background-color: #5A3A8E; padding: 0; line-height: 0; font-size: 0; margin: 0;">
+              <a href="https://drcentral.com.br/" target="_blank" style="display: block; text-decoration: none; border: 0; margin: 0; padding: 0;">
+                <img src="https://drcentral.com.br/wp-content/uploads/2026/09/eye-exam-with-modern-ophthalmic-equipment-2026-03-25-03-22-14-utc-2.svg" alt="Atendimento Médico Online Dr. Central" width="600" class="mobile-img-full" style="width: 100%; max-width: 600px; height: auto; display: block; border: 0; margin: 0; padding: 0;" />
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" class="mobile-padding" style="background-color: #ffffff; padding: 28px 25px 18px 25px; text-align: center;">
+              <h1 style="margin: 0 0 6px 0; color: #623d8c; font-size: 32px; font-weight: 600; line-height: 1.2; font-family: 'Montserrat', Arial, sans-serif; letter-spacing: -0.5px;">
+                Olá, Yasmin!
+              </h1>
+              <h2 style="margin: 0; color: #f39200; font-size: 21px; font-weight: 700; line-height: 1.3; font-family: 'Montserrat', Arial, sans-serif;">
+                Boas-vindas ao <span style="font-weight: 800;">Dr. Central!</span>
+              </h2>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="background-color: #f39200; padding: 20px 24px; text-align: center;">
+              <p style="margin: 0; color: #4a2c68; font-size: 20px; font-weight: 700; line-height: 1.35; font-family: 'Montserrat', Arial, sans-serif; letter-spacing: -0.2px;">
+                Sua assinatura foi <span style="color: #ffffff; font-weight: 800;">confirmada</span> e<br />você já pode começar a aproveitar<br />seus benefícios.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="mobile-padding" style="background-color: #ffffff; padding: 30px 30px 25px 30px; text-align: center;">
+              
+              <p style="margin: 0 0 24px 0; color: #53336e; font-size: 18px; font-weight: 700; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif; max-width: 480px; display: inline-block;">
+                Com o Dr. Central, você tem acesso a <span style="color: #f39200; font-weight: 800;">condições especiais</span> para cuidar da sua saúde, como:
+              </p>
+
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="92%" style="max-width: 480px; width: 92%; margin: 0 auto 30px auto;">
+                <tr>
+                  <td style="background-color: #5A3A8E; padding: 22px 26px; border-radius: 22px; box-shadow: 0 6px 16px rgba(90, 58, 142, 0.25);">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td valign="middle" style="padding: 7px 0; color: #ffffff; font-size: 16px; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif;">
+                          <span style="font-size: 19px; margin-right: 8px; vertical-align: middle;">👤</span>
+                          <strong style="font-weight: 800;">Consultas</strong> com valores exclusivos;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="middle" style="padding: 7px 0; color: #ffffff; font-size: 16px; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif;">
+                          <span style="font-size: 19px; margin-right: 8px; vertical-align: middle;">🧪</span>
+                          <strong style="font-weight: 800;">Até 50% de desconto</strong> em exames;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="middle" style="padding: 7px 0; color: #ffffff; font-size: 16px; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif;">
+                          <span style="font-size: 19px; margin-right: 8px; vertical-align: middle;">🩺</span>
+                          <strong style="font-weight: 800;">Médico online 24hrs</strong> gratuito;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="middle" style="padding: 7px 0; color: #ffffff; font-size: 16px; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif;">
+                          <span style="font-size: 19px; margin-right: 8px; vertical-align: middle;">💊</span>
+                          <strong style="font-weight: 800;">Condições especiais</strong> em farmácias;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="middle" style="padding: 7px 0; color: #ffffff; font-size: 16px; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif;">
+                          <span style="font-size: 19px; margin-right: 8px; vertical-align: middle;">🎁</span>
+                          Descontos em mais de <strong style="font-weight: 800;">300 parceiros;</strong>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0 0 35px 0;">
+                <tr>
+                  <td align="center">
+                    <h3 style="margin: 0 0 16px 0; color: #53336e; font-size: 18px; font-weight: 800; font-family: 'Montserrat', Arial, sans-serif;">
+                      Baixe o aplicativo e acesse todos os serviços
+                    </h3>
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td align="center" style="background-color: #5A3A8E; border-radius: 25px; box-shadow: 0 4px 12px rgba(90, 58, 142, 0.35);">
+                          <a href="https://onelink.to/99ntq9" target="_blank" class="mobile-btn" style="display: inline-block; padding: 12px 36px; color: #ffffff; font-size: 16px; font-weight: 800; font-style: italic; text-decoration: none; font-family: 'Montserrat', Arial, sans-serif; letter-spacing: 0.5px;">
+                            Fazer download
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="background-color: #ffffff; padding: 10px 0 25px 0;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td class="mobile-stack" width="52%" valign="middle" style="padding: 0;">
+                    <div style="padding: 0 0 10px 25px; text-align: left;">
+                      <h3 style="margin: 0; color: #53336e; font-size: 21px; font-weight: 700; font-family: 'Montserrat', Arial, sans-serif; letter-spacing: -0.3px;">
+                        Como acessar o app?
+                      </h3>
+                    </div>
+                    <div style="background-color: #f39200; border-top-right-radius: 36px; border-bottom-right-radius: 36px; border-top-left-radius: 0; border-bottom-left-radius: 0; padding: 14px 16px 14px 25px; box-sizing: border-box;">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                          <td style="color: #ffffff; font-size: 14px; font-weight: 600; line-height: 1.35; font-family: 'Montserrat', Arial, sans-serif; padding-bottom: 7px;">
+                            <strong style="font-weight: 800;">1.</strong> Baixe o aplicativo Dr. Central;
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="color: #ffffff; font-size: 14px; font-weight: 600; line-height: 1.35; font-family: 'Montserrat', Arial, sans-serif; padding-bottom: 7px;">
+                            <strong style="font-weight: 800;">2.</strong> Abra o app e selecione a opção entrar;
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="color: #ffffff; font-size: 14px; font-weight: 600; line-height: 1.35; font-family: 'Montserrat', Arial, sans-serif; padding-bottom: 7px;">
+                            <strong style="font-weight: 800;">3.</strong> Informe seu CPF e data de nascimento para login;
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="color: #ffffff; font-size: 14px; font-weight: 600; line-height: 1.35; font-family: 'Montserrat', Arial, sans-serif;">
+                            <strong style="font-weight: 800;">4. Pronto!</strong> Agora é só conferir seus benefícios.
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+
+                  <td class="mobile-stack mobile-mockup-padding" width="48%" align="center" valign="middle" style="padding: 0 10px 0 0;">
+                    <a href="https://drcentral.com.br/" target="_blank" style="text-decoration: none; display: block;">
+                      <img src="https://drcentral.com.br/wp-content/uploads/2026/09/image-1.svg" alt="App Dr. Central Celulares" width="290" style="max-width: 100%; width: 290px; height: auto; display: block; margin: 0 auto; border: 0;" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="background-color: #5A3A8E; padding: 22px 20px; text-align: center;">
+              <p style="margin: 0 0 6px 0; color: #ffffff; font-size: 15px; font-style: italic; font-weight: 500; font-family: 'Montserrat', Arial, sans-serif;">
+                Acesse nosso site:
+              </p>
+              <p style="margin: 0; font-size: 18px; font-weight: 800; font-family: 'Montserrat', Arial, sans-serif;">
+                <a href="https://drcentral.com.br/" target="_blank" style="color: #FDB930; text-decoration: none;">
+                  https://drcentral.com.br/
+                </a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+        
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td align="center" style="padding: 15px 10px; font-size: 11px; color: #888888; font-family: 'Montserrat', Arial, sans-serif;">
+              Você recebeu este e-mail porque assinou o Cartão de Saúde Dr. Central.
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================== -->
+        <!-- COMUNICAÇÃO 3 — WHATSAPP D+2                          -->
+        <!-- ===================================================== -->
+        <div style="margin-top: 40px; border-top: 2px dashed var(--card-border); padding-top: 24px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap;">
+            <h3 style="font-size: 16px; color: #25D366; margin: 0;">📱 Comunicação 3 · WhatsApp D+2</h3>
+            <span style="font-size: 10px; background: #dcfce7; color: #15803d; font-weight: 700; padding: 3px 10px; border-radius: 30px; letter-spacing: 0.3px;">ATIVO NO META · IALUI</span>
+          </div>
+          <p class="subtitle" style="margin-bottom: 16px;">Template: <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:12px;">onboarding_crm2</code> · Disparo 2 dias após a contratação.</p>
+
+          <div class="whatsapp-container">
+            <div class="whatsapp-header"><span>Dr. Central</span><span>15:40</span></div>
+            <div class="whatsapp-bubble">
+              Olá, {{nome}}! Já começou a aproveitar seu Dr. Central? 💜<br><br>
+
+              Sua assinatura vai muito além de descontos em consultas. Você também conta com:<br><br>
+
+              🎫 Até 50% de desconto em exames<br>
+              💻 Médico Online 24h gratuito<br>
+              🎟️ Condições especiais em farmácias<br>
+              🎁 Descontos em mais de 300 parceiros<br><br>
+
+              Tudo isso já está disponível para você!<br><br>
+
+              E se quiser ajuda para entender como utilizar seus benefícios, podemos te ligar e explicar tudo. 🎯<br><br>
+
+              Acesse o app e confira seus benefícios!
+
+              <span class="whatsapp-time">15:40 ✓✓</span>
+            </div>
+            <div class="whatsapp-buttons">
+              <a href="#" class="whatsapp-btn whatsapp-btn-primary" onclick="return false;">📞 Quero receber uma ligação</a>
+              <a href="#" class="whatsapp-btn" onclick="return false;">🚀 Acessar o APP</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================== -->
+        <!-- COMUNICAÇÃO 4 — E-MAIL D+3                            -->
+        <!-- ===================================================== -->
+        <div style="margin-top: 40px; border-top: 2px dashed var(--card-border); padding-top: 24px;">
+          <h3 style="font-size: 16px; color: var(--central-blue); margin-bottom: 6px;">📧 Comunicação 4 · E-mail D+3</h3>
+          <p class="subtitle" style="margin-bottom: 16px;">Template: <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:12px;">email-onboarding-2-drcentral</code> · Disparo 3 dias após a contratação.</p>
+
+          <div class="email-browser-wrapper">
+            <div class="email-browser-header">
+              <strong>De:</strong> Dr. Central &lt;app@drcentral.com.br&gt;<br>
+              <strong>Assunto:</strong> E-mail 2 Dr Central (ONBOARDING)
+            </div>
+            <div class="tem-body">
+              <div style="overflow-y: auto; max-height: 650px; background: #f2f2f2; border-radius: 8px; padding: 10px;">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>E-mail 2 Dr Central (ONBOARDING)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style type="text/css">
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #eef1f5; font-family: 'Montserrat', Arial, sans-serif; }
+    u + #body a { color: inherit; text-decoration: none; font-size: inherit; font-family: inherit; font-weight: inherit; line-height: inherit; }
+    @media screen and (max-width: 600px) {
+      .email-container { width: 100% !important; max-width: 100% !important; }
+      .mobile-padding { padding: 20px 15px !important; }
+      .mobile-stack { display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
+      .mobile-spacer { height: 16px !important; display: block !important; }
+      .mobile-center { text-align: center !important; }
+      .mobile-img-full { width: 100% !important; height: auto !important; max-width: 100% !important; }
+      .mobile-btn { display: block !important; width: 85% !important; margin: 0 auto !important; }
+    }
+  </style>
+</head>
+<body id="body" style="margin: 0; padding: 0; background-color: #eef1f5; font-family: 'Montserrat', Arial, sans-serif;">
+
+  <div style="display: none; max-height: 0px; overflow: hidden; mso-hide: all;">
+    Você já faz parte do Dr. Central! Confira o guia rápido com os principais benefícios disponíveis para você.
+  </div>
+
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #eef1f5; margin: 0; padding: 0;">
+    <tr>
+      <td align="center" style="padding: 25px 10px;">
+        
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: none;">
+          
+          <tr>
+            <td align="center" style="background-color: #5A3A8E; padding: 24px 20px 14px 20px; line-height: 0; font-size: 0; text-align: center;">
+              <a href="https://drcentral.com.br/" target="_blank" style="text-decoration: none; display: inline-block;">
+                <img src="https://drcentral.com.br/wp-content/uploads/2025/08/Ativo-5.png" alt="Dr. Central - Cartão de Saúde" width="210" style="max-width: 210px; width: 100%; height: auto; display: block; margin: 0 auto; border: 0;" />
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="background-color: #5A3A8E; padding: 0; line-height: 0; font-size: 0; margin: 0;">
+              <a href="https://drcentral.com.br/" target="_blank" style="display: block; text-decoration: none; border: 0; margin: 0; padding: 0;">
+                <img src="https://drcentral.com.br/wp-content/uploads/2026/09/pexels-tima-miroshnichenko-5452300-1.svg" alt="Médico Dr. Central" width="600" class="mobile-img-full" style="width: 100%; max-width: 600px; height: auto; display: block; border: 0; margin: 0; padding: 0;" />
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" class="mobile-padding" style="background-color: #ffffff; padding: 32px 30px 20px 30px; text-align: center;">
+              <h1 style="margin: 0 0 16px 0; color: #623d8c; font-size: 32px; font-weight: 600; line-height: 1.2; font-family: 'Montserrat', Arial, sans-serif; letter-spacing: -0.5px;">
+                Olá, Yasmin!
+              </h1>
+              
+              <p style="margin: 0 0 16px 0; color: #53336e; font-size: 18px; font-weight: 600; line-height: 1.45; font-family: 'Montserrat', Arial, sans-serif;">
+                Você já faz parte do <strong style="color: #f39200; font-weight: 800;">Dr. Central</strong> e<br />queremos garantir que aproveite ao<br />máximo a sua assinatura. 🧡
+              </p>
+
+              <p style="margin: 0 0 15px 0; color: #53336e; font-size: 15px; font-weight: 600; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif;">
+                Por isso, preparamos um guia rápido com os<br />principais benefícios disponíveis para você.
+              </p>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td class="mobile-padding" style="background-color: #ffffff; padding: 10px 24px 30px 24px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                
+                <tr>
+                  <td class="mobile-stack" width="48%" valign="top" style="background-color: #f39200; border-radius: 24px; padding: 22px 18px; box-sizing: border-box; text-align: center;">
+                    <h3 style="margin: 0 0 10px 0; color: #4a2c68; font-size: 16px; font-weight: 800; line-height: 1.25; font-family: 'Montserrat', Arial, sans-serif;">
+                      Consultas com<br />valores<br />exclusivos
+                    </h3>
+                    <p style="margin: 0; color: #ffffff; font-size: 13.5px; font-weight: 600; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif;">
+                      Tenha acesso a consultas em diferentes especialidades com condições especiais para clientes Dr. Central.
+                    </p>
+                  </td>
+
+                  <td width="4%" class="mobile-spacer" style="font-size: 0; line-height: 0;">&nbsp;</td>
+
+                  <td class="mobile-stack" width="48%" valign="top" style="background-color: #f39200; border-radius: 24px; padding: 22px 18px; box-sizing: border-box; text-align: center;">
+                    <h3 style="margin: 0 0 10px 0; color: #4a2c68; font-size: 16px; font-weight: 800; line-height: 1.25; font-family: 'Montserrat', Arial, sans-serif;">
+                      Até 50% de<br />desconto em<br />exames
+                    </h3>
+                    <p style="margin: 0; color: #ffffff; font-size: 13.5px; font-weight: 600; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif;">
+                      Economize também na realização dos seus exames nas condições disponíveis para assinantes.
+                    </p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" height="18" style="font-size: 0; line-height: 0;">&nbsp;</td>
+                </tr>
+
+                <tr>
+                  <td class="mobile-stack" width="48%" valign="top" style="background-color: #f39200; border-radius: 24px; padding: 22px 18px; box-sizing: border-box; text-align: center;">
+                    <h3 style="margin: 0 0 10px 0; color: #4a2c68; font-size: 16px; font-weight: 800; line-height: 1.25; font-family: 'Montserrat', Arial, sans-serif;">
+                      Médico online<br />24 horas
+                    </h3>
+                    <p style="margin: 0; color: #ffffff; font-size: 13.5px; font-weight: 600; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif;">
+                      Precisou de atendimento sem sair de casa? Você conta com acesso a telemedicina 24 horas.
+                    </p>
+                  </td>
+
+                  <td width="4%" class="mobile-spacer" style="font-size: 0; line-height: 0;">&nbsp;</td>
+
+                  <td class="mobile-stack" width="48%" valign="top" style="background-color: #f39200; border-radius: 24px; padding: 22px 18px; box-sizing: border-box; text-align: center;">
+                    <h3 style="margin: 0 0 10px 0; color: #4a2c68; font-size: 16px; font-weight: 800; line-height: 1.25; font-family: 'Montserrat', Arial, sans-serif;">
+                      Condições<br />especiais em<br />farmácias
+                    </h3>
+                    <p style="margin: 0; color: #ffffff; font-size: 13.5px; font-weight: 600; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif;">
+                      Sua assinatura também ajuda você a economizar com condições especiais em farmácias parceiras.
+                    </p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" height="18" style="font-size: 0; line-height: 0;">&nbsp;</td>
+                </tr>
+
+                <tr>
+                  <td class="mobile-stack" width="48%" valign="top" style="background-color: #f39200; border-radius: 24px; padding: 22px 18px; box-sizing: border-box; text-align: center;">
+                    <h3 style="margin: 0 0 10px 0; color: #4a2c68; font-size: 16px; font-weight: 800; line-height: 1.25; font-family: 'Montserrat', Arial, sans-serif;">
+                      Mais de 300<br />parceiros
+                    </h3>
+                    <p style="margin: 0; color: #ffffff; font-size: 13.5px; font-weight: 600; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif;">
+                      Além da saúde, você encontra descontos em uma rede com mais de 300 parceiros.
+                    </p>
+                  </td>
+
+                  <td width="4%" class="mobile-spacer" style="font-size: 0; line-height: 0;">&nbsp;</td>
+
+                  <td class="mobile-stack" width="48%" valign="top" style="background-color: #f39200; border-radius: 24px; padding: 22px 18px; box-sizing: border-box; text-align: center;">
+                    <h3 style="margin: 0 0 10px 0; color: #4a2c68; font-size: 16px; font-weight: 800; line-height: 1.25; font-family: 'Montserrat', Arial, sans-serif;">
+                      Atendimento<br />prioritário
+                    </h3>
+                    <p style="margin: 0; color: #ffffff; font-size: 13.5px; font-weight: 600; line-height: 1.4; font-family: 'Montserrat', Arial, sans-serif;">
+                      Clientes Dr. Central contam ainda com atendimento prioritário nas clínicas participantes.
+                    </p>
+                  </td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="background-color: #5A3A8E; padding: 28px 30px; text-align: center;">
+              <h3 style="margin: 0 0 12px 0; color: #ffffff; font-size: 20px; font-weight: 800; line-height: 1.3; font-family: 'Montserrat', Arial, sans-serif;">
+                Tudo começa pelo app 📲
+              </h3>
+              <p style="margin: 0; color: #ffffff; font-size: 14.5px; font-weight: 500; line-height: 1.45; font-family: 'Montserrat', Arial, sans-serif; max-width: 480px;">
+                No aplicativo Dr. Central você pode consultar os benefícios disponíveis e encontrar as informações da sua assinatura sempre que precisar.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="background-color: #ffffff; padding: 30px 20px 30px 20px; text-align: center;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                <tr>
+                  <td align="center" style="background-color: #5A3A8E; border-radius: 25px; box-shadow: 0 4px 12px rgba(90, 58, 142, 0.35);">
+                    <a href="https://onelink.to/99ntq9" target="_blank" class="mobile-btn" style="display: inline-block; padding: 13px 38px; color: #ffffff; font-size: 16px; font-weight: 800; font-style: italic; text-decoration: none; font-family: 'Montserrat', Arial, sans-serif; letter-spacing: 0.5px;">
+                      Fazer download
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="background-color: #5A3A8E; padding: 22px 20px; text-align: center;">
+              <p style="margin: 0 0 6px 0; color: #ffffff; font-size: 15px; font-style: italic; font-weight: 500; font-family: 'Montserrat', Arial, sans-serif;">
+                Acesse nosso site:
+              </p>
+              <p style="margin: 0; font-size: 18px; font-weight: 800; font-family: 'Montserrat', Arial, sans-serif;">
+                <a href="https://drcentral.com.br/" target="_blank" style="color: #FDB930; text-decoration: none;">
+                  https://drcentral.com.br/
+                </a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+        
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td align="center" style="padding: 15px 10px; font-size: 11px; color: #888888; font-family: 'Montserrat', Arial, sans-serif;">
+              Você recebeu este e-mail porque assinou o Cartão de Saúde Dr. Central.
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================== -->
+        <!-- COMUNICAÇÃO 5 — WHATSAPP D+5                          -->
+        <!-- ===================================================== -->
+        <div style="margin-top: 40px; border-top: 2px dashed var(--card-border); padding-top: 24px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap;">
+            <h3 style="font-size: 16px; color: #25D366; margin: 0;">📱 Comunicação 5 · WhatsApp D+5</h3>
+            <span style="font-size: 10px; background: #dcfce7; color: #15803d; font-weight: 700; padding: 3px 10px; border-radius: 30px; letter-spacing: 0.3px;">ATIVO NO META · IALUI</span>
+          </div>
+          <p class="subtitle" style="margin-bottom: 16px;">Template: <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:12px;">onboarding_crm3</code> · Disparo 5 dias após a contratação.</p>
+
+          <div class="whatsapp-container">
+            <div class="whatsapp-header"><span>Dr. Central</span><span>15:40</span></div>
+            <div class="whatsapp-bubble">
+              Olá, {{nome}}, que tal começar a aproveitar seu Dr. Central? 💜<br><br>
+
+              Você já tem acesso a condições exclusivas para cuidar da sua saúde, e nossa equipe pode te ajudar a utilizar seus benefícios.<br><br>
+
+              📅 <strong>Precisa realizar um agendamento?</strong> Fale com a gente e ajudamos você a encontrar a melhor opção.<br><br>
+
+              💜 E pode ficar tranquilo(a): o desconto da sua assinatura é concedido no momento do pagamento.<br><br>
+
+              E lembre-se: sua assinatura também inclui Médico Online 24h, descontos em farmácias e em mais de 300 parceiros.
+
+              <span class="whatsapp-time">15:40 ✓✓</span>
+            </div>
+            <div class="whatsapp-buttons">
+              <a href="#" class="whatsapp-btn whatsapp-btn-primary" onclick="return false;">🗓 Agendar pelo site</a>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- FIM Onboarding Dr Central -->
+
+
+
+
+
+
+
+
       <!-- ============================================================
       PÁGINA: COBRANÇA (RECUPERAÇÃO DE FATURA)
       ============================================================ -->
@@ -3632,14 +3778,13 @@ Equipe Dr. Central
       { id: 'visao-geral', titulo: 'Visão Geral', categoria: 'Dashboard', icone: '🏠', status: '' },
 
       // --- Assinatura ---
-      { id: 'email-boas-vindas', titulo: 'Boas-vindas Dr.Central', categoria: 'Novo Assinante', icone: '📧', status: 'D+0' },
+ 
       { id: 'follow-up', titulo: 'Follow Up', categoria: 'Novo Assinante', icone: '📋', status: 'D+1' },
-      // SUBSTITUÍDO: a antiga régua de confirmação ("whats-confirma") foi substituída por "Pos Welcome"
       
 
       // --- Jornada ---
-      { id: 'email-pre', titulo: '1. Onboarding', categoria: 'Jornada', icone: '📧', status: 'D0 APP' },
-      { id: 'pos-welcome', titulo: 'Pos Welcome', categoria: 'Jornada', icone: '🎯', status: 'D+10 SEM APP' },
+      { id: 'onboarding', titulo: 'Onboarding Dr Central', categoria: 'Atração & Cadastro', icone: '🚀', status: 'D+0→D+5' },
+   
       
       
         // --- Recuperação --- 
