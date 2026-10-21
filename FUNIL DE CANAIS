@@ -993,8 +993,8 @@
   "2026-09": {
     "whats": {
       "atendimentos": 98132,
-      "agendamentos": 12709,
-      "agendaConsultas": 10689,
+      "agendamentos": 12706,
+      "agendaConsultas": 10686,
       "agendaExames": 1340,
       "agendaOdonto": 679
     },
@@ -1004,10 +1004,10 @@
       "perda": 3678,
       "ligacoes1515": 25611,
       "ligacoes6080": 11160,
-      "agendamentos": 12670,
-      "agendaConsultas": 6736,
-      "agendaExames": 5066,
-      "agendaOdonto": 773
+      "agendamentos": 12639,
+      "agendaConsultas": 6718,
+      "agendaExames": 5056,
+      "agendaOdonto": 772
     },
     "site": {
       "acessosTotal": 103291,
@@ -1017,43 +1017,43 @@
       "identificacao": 2674,
       "cadastro": 2056,
       "confirmado": 1917,
-      "agendamentos": 3450,
-      "agendaConsultas": 2877,
+      "agendamentos": 3431,
+      "agendaConsultas": 2859,
       "agendaExames": 326,
-      "agendaOdonto": 247
+      "agendaOdonto": 246
     }
   },
   "2026-10": {
     "whats": {
-      "atendimentos": 40910,
-      "agendamentos": 5729,
-      "agendaConsultas": 4705,
-      "agendaExames": 742,
-      "agendaOdonto": 282
+      "atendimentos": 59994,
+      "agendamentos": 8123,
+      "agendaConsultas": 6652,
+      "agendaExames": 1089,
+      "agendaOdonto": 382
     },
     "voz": {
-      "recebidas": 17626,
-      "atendidas": 15280,
-      "perda": 1441,
-      "ligacoes1515": 12531,
-      "ligacoes6080": 4958,
-      "agendamentos": 6031,
-      "agendaConsultas": 3337,
-      "agendaExames": 2325,
-      "agendaOdonto": 323
+      "recebidas": 25208,
+      "atendidas": 22029,
+      "perda": 1903,
+      "ligacoes1515": 18107,
+      "ligacoes6080": 6905,
+      "agendamentos": 8534,
+      "agendaConsultas": 4703,
+      "agendaExames": 3297,
+      "agendaOdonto": 454
     },
     "site": {
-      "acessosTotal": 48631,
-      "acessos": 18293,
-      "iniciado": 3574,
-      "agenda": 1536,
-      "identificacao": 1185,
-      "cadastro": 912,
-      "confirmado": 837,
-      "agendamentos": 1794,
-      "agendaConsultas": 1543,
-      "agendaExames": 152,
-      "agendaOdonto": 99
+      "acessosTotal": 68784,
+      "acessos": 24666,
+      "iniciado": 5277,
+      "agenda": 2242,
+      "identificacao": 1746,
+      "cadastro": 1409,
+      "confirmado": 1289,
+      "agendamentos": 2658,
+      "agendaConsultas": 2240,
+      "agendaExames": 259,
+      "agendaOdonto": 159
     }
   },
   "2026-11": {
@@ -1346,26 +1346,26 @@
         "drFlores47": 6454
     },
     "2026-09": {
-        "assisBrasil3277": 1383,
-        "centralMarcacoes": 12670,
-        "assisBrasil3224": 1347,
-        "azenha": 1295,
-        "gravatai": 871,
-        "alvorada": 1014,
-        "canoas": 3422,
-        "cachoeirinha": 2365,
-        "drFlores47": 6649
+        "assisBrasil3277": 1382,
+        "centralMarcacoes": 12639,
+        "assisBrasil3224": 1349,
+        "azenha": 1293,
+        "gravatai": 869,
+        "alvorada": 1012,
+        "canoas": 3419,
+        "cachoeirinha": 2360,
+        "drFlores47": 6629
     },
     "2026-10": {
-        "assisBrasil3277": 749,
-        "centralMarcacoes": 6031,
-        "assisBrasil3224": 676,
-        "azenha": 616,
-        "gravatai": 415,
-        "alvorada": 460,
-        "canoas": 1543,
-        "cachoeirinha": 1206,
-        "drFlores47": 2783
+        "assisBrasil3277": 1129,
+        "centralMarcacoes": 8534,
+        "assisBrasil3224": 997,
+        "azenha": 925,
+        "gravatai": 596,
+        "alvorada": 620,
+        "canoas": 2265,
+        "cachoeirinha": 1738,
+        "drFlores47": 4280
     },
     "2026-11": {
         "assisBrasil3277": 0,
