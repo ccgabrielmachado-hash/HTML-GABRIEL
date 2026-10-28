@@ -344,10 +344,10 @@
       "perda": 0,
       "ligacoes1515": 0,
       "ligacoes6080": 0,
-      "agendamentos": 16693,
-      "agendaConsultas": 9369,
-      "agendaExames": 5785,
-      "agendaOdonto": 1482
+      "agendamentos": 29596,
+      "agendaConsultas": 9097,
+      "agendaExames": 5678,
+      "agendaOdonto": 1416
     },
     "site": {
       "acessosTotal": 96260,
@@ -377,10 +377,10 @@
       "perda": 0,
       "ligacoes1515": 0,
       "ligacoes6080": 0,
-      "agendamentos": 14237,
-      "agendaConsultas": 7670,
-      "agendaExames": 5235,
-      "agendaOdonto": 1277
+      "agendamentos": 25826,
+      "agendaConsultas": 7459,
+      "agendaExames": 5107,
+      "agendaOdonto": 1189
     },
     "site": {
       "acessosTotal": 83382,
@@ -410,10 +410,10 @@
       "perda": 0,
       "ligacoes1515": 0,
       "ligacoes6080": 0,
-      "agendamentos": 16689,
-      "agendaConsultas": 9580,
-      "agendaExames": 5817,
-      "agendaOdonto": 1245
+      "agendamentos": 30079,
+      "agendaConsultas": 9308,
+      "agendaExames": 5677,
+      "agendaOdonto": 1197
     },
     "site": {
       "acessosTotal": 105279,
@@ -443,10 +443,10 @@
       "perda": 0,
       "ligacoes1515": 0,
       "ligacoes6080": 0,
-      "agendamentos": 17368,
-      "agendaConsultas": 10260,
-      "agendaExames": 5717,
-      "agendaOdonto": 1330
+      "agendamentos": 30939,
+      "agendaConsultas": 9917,
+      "agendaExames": 5560,
+      "agendaOdonto": 1270
     },
     "site": {
       "acessosTotal": 116512,
@@ -465,10 +465,10 @@
   "2025-05": {
     "whats": {
       "atendimentos": 0,
-      "agendamentos": 9934,
-      "agendaConsultas": 8581,
-      "agendaExames": 905,
-      "agendaOdonto": 448
+      "agendamentos": 9592,
+      "agendaConsultas": 8280,
+      "agendaExames": 874,
+      "agendaOdonto": 438
     },
     "voz": {
       "recebidas": 0,
@@ -476,10 +476,10 @@
       "perda": 0,
       "ligacoes1515": 0,
       "ligacoes6080": 0,
-      "agendamentos": 16804,
-      "agendaConsultas": 9633,
-      "agendaExames": 5904,
-      "agendaOdonto": 1217
+      "agendamentos": 30442,
+      "agendaConsultas": 9338,
+      "agendaExames": 5816,
+      "agendaOdonto": 1159
     },
     "site": {
       "acessosTotal": 125706,
@@ -489,19 +489,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 0,
-      "agendamentos": 2504,
-      "agendaConsultas": 2200,
-      "agendaExames": 149,
-      "agendaOdonto": 155
+      "agendamentos": 2410,
+      "agendaConsultas": 2112,
+      "agendaExames": 147,
+      "agendaOdonto": 151
     }
   },
   "2025-06": {
     "whats": {
       "atendimentos": 0,
-      "agendamentos": 10553,
-      "agendaConsultas": 8972,
-      "agendaExames": 1075,
-      "agendaOdonto": 505
+      "agendamentos": 10186,
+      "agendaConsultas": 8656,
+      "agendaExames": 1039,
+      "agendaOdonto": 490
     },
     "voz": {
       "recebidas": 0,
@@ -509,10 +509,10 @@
       "perda": 0,
       "ligacoes1515": 0,
       "ligacoes6080": 0,
-      "agendamentos": 14987,
-      "agendaConsultas": 8755,
-      "agendaExames": 5173,
-      "agendaOdonto": 1009
+      "agendamentos": 26947,
+      "agendaConsultas": 8485,
+      "agendaExames": 5122,
+      "agendaOdonto": 971
     },
     "site": {
       "acessosTotal": 102140,
@@ -522,19 +522,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 0,
-      "agendamentos": 2667,
-      "agendaConsultas": 2353,
-      "agendaExames": 161,
-      "agendaOdonto": 153
+      "agendamentos": 2580,
+      "agendaConsultas": 2277,
+      "agendaExames": 158,
+      "agendaOdonto": 145
     }
   },
   "2025-07": {
     "whats": {
       "atendimentos": 0,
-      "agendamentos": 12035,
-      "agendaConsultas": 9959,
-      "agendaExames": 1472,
-      "agendaOdonto": 604
+      "agendamentos": 11653,
+      "agendaConsultas": 9643,
+      "agendaExames": 1426,
+      "agendaOdonto": 584
     },
     "voz": {
       "recebidas": 0,
@@ -542,10 +542,10 @@
       "perda": 0,
       "ligacoes1515": 0,
       "ligacoes6080": 0,
-      "agendamentos": 16850,
-      "agendaConsultas": 9384,
-      "agendaExames": 6152,
-      "agendaOdonto": 1278
+      "agendamentos": 30278,
+      "agendaConsultas": 9099,
+      "agendaExames": 6043,
+      "agendaOdonto": 1231
     },
     "site": {
       "acessosTotal": 114794,
@@ -555,19 +555,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 0,
-      "agendamentos": 3482,
-      "agendaConsultas": 2988,
-      "agendaExames": 262,
-      "agendaOdonto": 232
+      "agendamentos": 3347,
+      "agendaConsultas": 2864,
+      "agendaExames": 259,
+      "agendaOdonto": 224
     }
   },
   "2025-08": {
     "whats": {
       "atendimentos": 0,
-      "agendamentos": 10782,
-      "agendaConsultas": 8781,
-      "agendaExames": 1447,
-      "agendaOdonto": 551
+      "agendamentos": 10444,
+      "agendaConsultas": 8500,
+      "agendaExames": 1401,
+      "agendaOdonto": 541
     },
     "voz": {
       "recebidas": 545,
@@ -575,10 +575,10 @@
       "perda": 25,
       "ligacoes1515": 0,
       "ligacoes6080": 0,
-      "agendamentos": 16656,
-      "agendaConsultas": 9350,
-      "agendaExames": 6023,
-      "agendaOdonto": 1216
+      "agendamentos": 29831,
+      "agendaConsultas": 9133,
+      "agendaExames": 6007,
+      "agendaOdonto": 1179
     },
     "site": {
       "acessosTotal": 104718,
@@ -588,19 +588,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 0,
-      "agendamentos": 3355,
-      "agendaConsultas": 2864,
-      "agendaExames": 267,
-      "agendaOdonto": 224
+      "agendamentos": 3270,
+      "agendaConsultas": 2787,
+      "agendaExames": 262,
+      "agendaOdonto": 221
     }
   },
   "2025-09": {
     "whats": {
       "atendimentos": 0,
-      "agendamentos": 11563,
-      "agendaConsultas": 9421,
-      "agendaExames": 1541,
-      "agendaOdonto": 601
+      "agendamentos": 11131,
+      "agendaConsultas": 9055,
+      "agendaExames": 1492,
+      "agendaOdonto": 584
     },
     "voz": {
       "recebidas": 42010,
@@ -608,10 +608,10 @@
       "perda": 1584,
       "ligacoes1515": 0,
       "ligacoes6080": 0,
-      "agendamentos": 17457,
-      "agendaConsultas": 10286,
-      "agendaExames": 6068,
-      "agendaOdonto": 1038
+      "agendamentos": 29796,
+      "agendaConsultas": 9949,
+      "agendaExames": 5958,
+      "agendaOdonto": 997
     },
     "site": {
       "acessosTotal": 110151,
@@ -621,19 +621,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 844,
-      "agendamentos": 3003,
-      "agendaConsultas": 2559,
-      "agendaExames": 258,
-      "agendaOdonto": 186
+      "agendamentos": 2911,
+      "agendaConsultas": 2478,
+      "agendaExames": 251,
+      "agendaOdonto": 182
     }
   },
   "2025-10": {
     "whats": {
       "atendimentos": 0,
-      "agendamentos": 11704,
-      "agendaConsultas": 9465,
-      "agendaExames": 1627,
-      "agendaOdonto": 609
+      "agendamentos": 11274,
+      "agendaConsultas": 9097,
+      "agendaExames": 1588,
+      "agendaOdonto": 587
     },
     "voz": {
       "recebidas": 43197,
@@ -641,10 +641,10 @@
       "perda": 3231,
       "ligacoes1515": 33207,
       "ligacoes6080": 5952,
-      "agendamentos": 18296,
-      "agendaConsultas": 10621,
-      "agendaExames": 6538,
-      "agendaOdonto": 1060
+      "agendamentos": 32259,
+      "agendaConsultas": 10235,
+      "agendaExames": 6485,
+      "agendaOdonto": 1026
     },
     "site": {
       "acessosTotal": 123502,
@@ -654,19 +654,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 1893,
-      "agendamentos": 3446,
-      "agendaConsultas": 2917,
-      "agendaExames": 293,
-      "agendaOdonto": 236
+      "agendamentos": 3313,
+      "agendaConsultas": 2793,
+      "agendaExames": 292,
+      "agendaOdonto": 228
     }
   },
   "2025-11": {
     "whats": {
       "atendimentos": 0,
-      "agendamentos": 9473,
-      "agendaConsultas": 7482,
-      "agendaExames": 1395,
-      "agendaOdonto": 595
+      "agendamentos": 9117,
+      "agendaConsultas": 7201,
+      "agendaExames": 1344,
+      "agendaOdonto": 571
     },
     "voz": {
       "recebidas": 33002,
@@ -674,10 +674,10 @@
       "perda": 3890,
       "ligacoes1515": 28600,
       "ligacoes6080": 4109,
-      "agendamentos": 12660,
-      "agendaConsultas": 7442,
-      "agendaExames": 4342,
-      "agendaOdonto": 798
+      "agendamentos": 22542,
+      "agendaConsultas": 7168,
+      "agendaExames": 4246,
+      "agendaOdonto": 758
     },
     "site": {
       "acessosTotal": 105931,
@@ -687,19 +687,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 307,
-      "agendamentos": 2707,
-      "agendaConsultas": 2228,
-      "agendaExames": 268,
-      "agendaOdonto": 211
+      "agendamentos": 2617,
+      "agendaConsultas": 2151,
+      "agendaExames": 260,
+      "agendaOdonto": 206
     }
   },
   "2025-12": {
     "whats": {
       "atendimentos": 0,
-      "agendamentos": 9030,
-      "agendaConsultas": 7042,
-      "agendaExames": 1357,
-      "agendaOdonto": 629
+      "agendamentos": 8685,
+      "agendaConsultas": 6770,
+      "agendaExames": 1313,
+      "agendaOdonto": 600
     },
     "voz": {
       "recebidas": 28913,
@@ -707,10 +707,10 @@
       "perda": 557,
       "ligacoes1515": 24068,
       "ligacoes6080": 4747,
-      "agendamentos": 12284,
-      "agendaConsultas": 7059,
-      "agendaExames": 4149,
-      "agendaOdonto": 1021
+      "agendamentos": 22185,
+      "agendaConsultas": 6819,
+      "agendaExames": 4066,
+      "agendaOdonto": 976
     },
     "site": {
       "acessosTotal": 88853,
@@ -720,19 +720,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 1169,
-      "agendamentos": 2688,
-      "agendaConsultas": 2198,
-      "agendaExames": 288,
-      "agendaOdonto": 202
+      "agendamentos": 2577,
+      "agendaConsultas": 2102,
+      "agendaExames": 280,
+      "agendaOdonto": 195
     }
   },
   "2026-01": {
     "whats": {
       "atendimentos": 0,
-      "agendamentos": 11226,
-      "agendaConsultas": 9145,
-      "agendaExames": 1414,
-      "agendaOdonto": 667
+      "agendamentos": 10758,
+      "agendaConsultas": 8757,
+      "agendaExames": 1366,
+      "agendaOdonto": 635
     },
     "voz": {
       "recebidas": 31718,
@@ -740,10 +740,10 @@
       "perda": 2048,
       "ligacoes1515": 26294,
       "ligacoes6080": 5256,
-      "agendamentos": 14240,
-      "agendaConsultas": 7742,
-      "agendaExames": 5334,
-      "agendaOdonto": 1084
+      "agendamentos": 27229,
+      "agendaConsultas": 7424,
+      "agendaExames": 5190,
+      "agendaOdonto": 1034
     },
     "site": {
       "acessosTotal": 104032,
@@ -753,19 +753,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 5981,
-      "agendamentos": 2573,
-      "agendaConsultas": 2186,
-      "agendaExames": 214,
-      "agendaOdonto": 173
+      "agendamentos": 2481,
+      "agendaConsultas": 2103,
+      "agendaExames": 208,
+      "agendaOdonto": 170
     }
   },
   "2026-02": {
     "whats": {
       "atendimentos": 0,
-      "agendamentos": 8730,
-      "agendaConsultas": 7251,
-      "agendaExames": 973,
-      "agendaOdonto": 504
+      "agendamentos": 8365,
+      "agendaConsultas": 6940,
+      "agendaExames": 944,
+      "agendaOdonto": 479
     },
     "voz": {
       "recebidas": 26800,
@@ -773,10 +773,10 @@
       "perda": 2953,
       "ligacoes1515": 23574,
       "ligacoes6080": 3122,
-      "agendamentos": 11692,
-      "agendaConsultas": 6249,
-      "agendaExames": 4262,
-      "agendaOdonto": 1119
+      "agendamentos": 21504,
+      "agendaConsultas": 6016,
+      "agendaExames": 4144,
+      "agendaOdonto": 1078
     },
     "site": {
       "acessosTotal": 94007,
@@ -786,19 +786,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 1836,
-      "agendamentos": 2803,
-      "agendaConsultas": 2279,
-      "agendaExames": 278,
-      "agendaOdonto": 246
+      "agendamentos": 2671,
+      "agendaConsultas": 2174,
+      "agendaExames": 259,
+      "agendaOdonto": 238
     }
   },
   "2026-03": {
     "whats": {
       "atendimentos": 0,
-      "agendamentos": 11785,
-      "agendaConsultas": 9772,
-      "agendaExames": 1383,
-      "agendaOdonto": 630
+      "agendamentos": 11352,
+      "agendaConsultas": 9394,
+      "agendaExames": 1349,
+      "agendaOdonto": 609
     },
     "voz": {
       "recebidas": 34154,
@@ -806,10 +806,10 @@
       "perda": 4518,
       "ligacoes1515": 30478,
       "ligacoes6080": 3566,
-      "agendamentos": 14922,
-      "agendaConsultas": 8338,
-      "agendaExames": 5487,
-      "agendaOdonto": 1005
+      "agendamentos": 29772,
+      "agendaConsultas": 7981,
+      "agendaExames": 5353,
+      "agendaOdonto": 956
     },
     "site": {
       "acessosTotal": 114125,
@@ -819,19 +819,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 2178,
-      "agendamentos": 3674,
-      "agendaConsultas": 3094,
-      "agendaExames": 323,
-      "agendaOdonto": 257
+      "agendamentos": 3520,
+      "agendaConsultas": 2967,
+      "agendaExames": 300,
+      "agendaOdonto": 253
     }
   },
   "2026-04": {
     "whats": {
       "atendimentos": 29648,
-      "agendamentos": 11482,
-      "agendaConsultas": 9291,
-      "agendaExames": 1501,
-      "agendaOdonto": 689
+      "agendamentos": 11134,
+      "agendaConsultas": 9010,
+      "agendaExames": 1448,
+      "agendaOdonto": 675
     },
     "voz": {
       "recebidas": 29754,
@@ -839,10 +839,10 @@
       "perda": 4939,
       "ligacoes1515": 26545,
       "ligacoes6080": 3098,
-      "agendamentos": 13618,
-      "agendaConsultas": 7245,
-      "agendaExames": 5295,
-      "agendaOdonto": 961
+      "agendamentos": 26644,
+      "agendaConsultas": 6777,
+      "agendaExames": 5104,
+      "agendaOdonto": 909
     },
     "site": {
       "acessosTotal": 59085,
@@ -852,19 +852,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 1810,
-      "agendamentos": 3507,
-      "agendaConsultas": 3174,
-      "agendaExames": 84,
-      "agendaOdonto": 249
+      "agendamentos": 3304,
+      "agendaConsultas": 2987,
+      "agendaExames": 80,
+      "agendaOdonto": 237
     }
   },
   "2026-05": {
     "whats": {
       "atendimentos": 84845,
-      "agendamentos": 10869,
-      "agendaConsultas": 8861,
-      "agendaExames": 1330,
-      "agendaOdonto": 676
+      "agendamentos": 10630,
+      "agendaConsultas": 8653,
+      "agendaExames": 1309,
+      "agendaOdonto": 666
     },
     "voz": {
       "recebidas": 25327,
@@ -872,10 +872,10 @@
       "perda": 1347,
       "ligacoes1515": 21581,
       "ligacoes6080": 3601,
-      "agendamentos": 14086,
-      "agendaConsultas": 7779,
-      "agendaExames": 5214,
-      "agendaOdonto": 998
+      "agendamentos": 24925,
+      "agendaConsultas": 7597,
+      "agendaExames": 5119,
+      "agendaOdonto": 974
     },
     "site": {
       "acessosTotal": 87877,
@@ -885,19 +885,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 2064,
-      "agendamentos": 2992,
-      "agendaConsultas": 2743,
+      "agendamentos": 2952,
+      "agendaConsultas": 2708,
       "agendaExames": 58,
-      "agendaOdonto": 191
+      "agendaOdonto": 186
     }
   },
   "2026-06": {
     "whats": {
       "atendimentos": 90102,
-      "agendamentos": 10544,
-      "agendaConsultas": 8879,
-      "agendaExames": 1102,
-      "agendaOdonto": 563
+      "agendamentos": 10330,
+      "agendaConsultas": 8697,
+      "agendaExames": 1085,
+      "agendaOdonto": 548
     },
     "voz": {
       "recebidas": 27440,
@@ -905,10 +905,10 @@
       "perda": 952,
       "ligacoes1515": 23583,
       "ligacoes6080": 3763,
-      "agendamentos": 14160,
-      "agendaConsultas": 7830,
-      "agendaExames": 5224,
-      "agendaOdonto": 984
+      "agendamentos": 24292,
+      "agendaConsultas": 7662,
+      "agendaExames": 5128,
+      "agendaOdonto": 962
     },
     "site": {
       "acessosTotal": 93531,
@@ -918,19 +918,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 2263,
-      "agendamentos": 2715,
-      "agendaConsultas": 2338,
-      "agendaExames": 202,
-      "agendaOdonto": 173
+      "agendamentos": 2673,
+      "agendaConsultas": 2298,
+      "agendaExames": 201,
+      "agendaOdonto": 172
     }
   },
   "2026-07": {
     "whats": {
       "atendimentos": 97619,
-      "agendamentos": 11497,
-      "agendaConsultas": 9625,
-      "agendaExames": 1170,
-      "agendaOdonto": 702
+      "agendamentos": 11253,
+      "agendaConsultas": 9422,
+      "agendaExames": 1145,
+      "agendaOdonto": 686
     },
     "voz": {
       "recebidas": 32016,
@@ -938,10 +938,10 @@
       "perda": 3720,
       "ligacoes1515": 27543,
       "ligacoes6080": 4383,
-      "agendamentos": 13696,
-      "agendaConsultas": 7727,
-      "agendaExames": 4991,
-      "agendaOdonto": 897
+      "agendamentos": 24920,
+      "agendaConsultas": 7539,
+      "agendaExames": 4904,
+      "agendaOdonto": 872
     },
     "site": {
       "acessosTotal": 102976,
@@ -951,19 +951,19 @@
       "identificacao": 0,
       "cadastro": 0,
       "confirmado": 2546,
-      "agendamentos": 3528,
-      "agendaConsultas": 3034,
-      "agendaExames": 252,
+      "agendamentos": 3452,
+      "agendaConsultas": 2964,
+      "agendaExames": 246,
       "agendaOdonto": 242
     }
   },
   "2026-08": {
     "whats": {
       "atendimentos": 102577,
-      "agendamentos": 12094,
-      "agendaConsultas": 10132,
-      "agendaExames": 1292,
-      "agendaOdonto": 670
+      "agendamentos": 11844,
+      "agendaConsultas": 9935,
+      "agendaExames": 1255,
+      "agendaOdonto": 654
     },
     "voz": {
       "recebidas": 35899,
@@ -971,10 +971,10 @@
       "perda": 4810,
       "ligacoes1515": 24906,
       "ligacoes6080": 10823,
-      "agendamentos": 12790,
-      "agendaConsultas": 6959,
-      "agendaExames": 4932,
-      "agendaOdonto": 790
+      "agendamentos": 24281,
+      "agendaConsultas": 6847,
+      "agendaExames": 4793,
+      "agendaOdonto": 778
     },
     "site": {
       "acessosTotal": 95355,
@@ -984,19 +984,19 @@
       "identificacao": 3274,
       "cadastro": 2818,
       "confirmado": 2647,
-      "agendamentos": 3709,
-      "agendaConsultas": 3183,
-      "agendaExames": 296,
-      "agendaOdonto": 230
+      "agendamentos": 3638,
+      "agendaConsultas": 3125,
+      "agendaExames": 288,
+      "agendaOdonto": 225
     }
   },
   "2026-09": {
     "whats": {
       "atendimentos": 98132,
-      "agendamentos": 12706,
-      "agendaConsultas": 10686,
-      "agendaExames": 1340,
-      "agendaOdonto": 679
+      "agendamentos": 12463,
+      "agendaConsultas": 10481,
+      "agendaExames": 1320,
+      "agendaOdonto": 661
     },
     "voz": {
       "recebidas": 36984,
@@ -1004,10 +1004,10 @@
       "perda": 3678,
       "ligacoes1515": 25611,
       "ligacoes6080": 11160,
-      "agendamentos": 12639,
-      "agendaConsultas": 6718,
-      "agendaExames": 5056,
-      "agendaOdonto": 772
+      "agendamentos": 21795,
+      "agendaConsultas": 6593,
+      "agendaExames": 4938,
+      "agendaOdonto": 752
     },
     "site": {
       "acessosTotal": 103291,
@@ -1017,43 +1017,43 @@
       "identificacao": 2674,
       "cadastro": 2056,
       "confirmado": 1917,
-      "agendamentos": 3431,
-      "agendaConsultas": 2859,
-      "agendaExames": 326,
-      "agendaOdonto": 246
+      "agendamentos": 3362,
+      "agendaConsultas": 2806,
+      "agendaExames": 315,
+      "agendaOdonto": 241
     }
   },
   "2026-10": {
     "whats": {
-      "atendimentos": 59994,
-      "agendamentos": 8123,
-      "agendaConsultas": 6652,
-      "agendaExames": 1089,
-      "agendaOdonto": 382
+      "atendimentos": 82577,
+      "agendamentos": 10689,
+      "agendaConsultas": 8721,
+      "agendaExames": 1494,
+      "agendaOdonto": 473
     },
     "voz": {
-      "recebidas": 25208,
-      "atendidas": 22029,
-      "perda": 1903,
-      "ligacoes1515": 18107,
-      "ligacoes6080": 6905,
-      "agendamentos": 8534,
-      "agendaConsultas": 4703,
-      "agendaExames": 3297,
-      "agendaOdonto": 454
+      "recebidas": 34764,
+      "atendidas": 29642,
+      "perda": 2628,
+      "ligacoes1515": 24761,
+      "ligacoes6080": 9767,
+      "agendamentos": 16722,
+      "agendaConsultas": 6082,
+      "agendaExames": 4373,
+      "agendaOdonto": 587
     },
     "site": {
-      "acessosTotal": 68784,
-      "acessos": 24666,
-      "iniciado": 5277,
-      "agenda": 2242,
-      "identificacao": 1746,
-      "cadastro": 1409,
-      "confirmado": 1289,
-      "agendamentos": 2658,
-      "agendaConsultas": 2240,
-      "agendaExames": 259,
-      "agendaOdonto": 159
+      "acessosTotal": 92260,
+      "acessos": 32479,
+      "iniciado": 7377,
+      "agenda": 3064,
+      "identificacao": 2399,
+      "cadastro": 2005,
+      "confirmado": 1857,
+      "agendamentos": 3529,
+      "agendaConsultas": 2964,
+      "agendaExames": 362,
+      "agendaOdonto": 203
     }
   },
   "2026-11": {
@@ -1126,246 +1126,246 @@
 
     const dadosClinicas = {
     "2025-01": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 16693,
-        "assisBrasil3224": 2516,
-        "azenha": 1841,
-        "gravatai": 1320,
-        "alvorada": 701,
-        "canoas": 5360,
-        "cachoeirinha": 1724,
-        "drFlores47": 5622
+        "assisBrasil3277": 3394,
+        "centralMarcacoes": 29596,
+        "assisBrasil3224": 4642,
+        "azenha": 5056,
+        "gravatai": 4445,
+        "alvorada": 4182,
+        "canoas": 13433,
+        "cachoeirinha": 6667,
+        "drFlores47": 21514
     },
     "2025-02": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 14237,
-        "assisBrasil3224": 1954,
-        "azenha": 1652,
-        "gravatai": 931,
-        "alvorada": 690,
-        "canoas": 4741,
-        "cachoeirinha": 2079,
-        "drFlores47": 4784
+        "assisBrasil3277": 3441,
+        "centralMarcacoes": 25826,
+        "assisBrasil3224": 2826,
+        "azenha": 5148,
+        "gravatai": 2974,
+        "alvorada": 3572,
+        "canoas": 11902,
+        "cachoeirinha": 7744,
+        "drFlores47": 17012
     },
     "2025-03": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 16689,
-        "assisBrasil3224": 1655,
-        "azenha": 1980,
-        "gravatai": 1304,
-        "alvorada": 606,
-        "canoas": 4466,
-        "cachoeirinha": 2390,
-        "drFlores47": 5290
+        "assisBrasil3277": 3414,
+        "centralMarcacoes": 30079,
+        "assisBrasil3224": 2225,
+        "azenha": 6030,
+        "gravatai": 4232,
+        "alvorada": 2813,
+        "canoas": 12032,
+        "cachoeirinha": 9638,
+        "drFlores47": 18732
     },
     "2025-04": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 17368,
-        "assisBrasil3224": 2067,
-        "azenha": 1678,
-        "gravatai": 1526,
-        "alvorada": 657,
-        "canoas": 4877,
-        "cachoeirinha": 2263,
-        "drFlores47": 5683
+        "assisBrasil3277": 2658,
+        "centralMarcacoes": 30939,
+        "assisBrasil3224": 3469,
+        "azenha": 5098,
+        "gravatai": 5617,
+        "alvorada": 2343,
+        "canoas": 13112,
+        "cachoeirinha": 9339,
+        "drFlores47": 19616
     },
     "2025-05": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 16804,
-        "assisBrasil3224": 2264,
-        "azenha": 2519,
-        "gravatai": 1521,
-        "alvorada": 1244,
-        "canoas": 4972,
-        "cachoeirinha": 2771,
-        "drFlores47": 6570
+        "assisBrasil3277": 1807,
+        "centralMarcacoes": 30442,
+        "assisBrasil3224": 3615,
+        "azenha": 6073,
+        "gravatai": 3649,
+        "alvorada": 2614,
+        "canoas": 10450,
+        "cachoeirinha": 7859,
+        "drFlores47": 18326
     },
     "2025-06": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 14987,
-        "assisBrasil3224": 2226,
-        "azenha": 2259,
-        "gravatai": 607,
-        "alvorada": 735,
-        "canoas": 4033,
-        "cachoeirinha": 2300,
-        "drFlores47": 6235
+        "assisBrasil3277": 626,
+        "centralMarcacoes": 26947,
+        "assisBrasil3224": 3208,
+        "azenha": 3595,
+        "gravatai": 1214,
+        "alvorada": 1020,
+        "canoas": 6210,
+        "cachoeirinha": 3632,
+        "drFlores47": 11019
     },
     "2025-07": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 16850,
-        "assisBrasil3224": 3259,
-        "azenha": 2336,
-        "gravatai": 1184,
-        "alvorada": 1140,
-        "canoas": 5208,
-        "cachoeirinha": 2120,
-        "drFlores47": 7323
+        "assisBrasil3277": 1263,
+        "centralMarcacoes": 30278,
+        "assisBrasil3224": 4687,
+        "azenha": 3631,
+        "gravatai": 2342,
+        "alvorada": 1534,
+        "canoas": 7861,
+        "cachoeirinha": 3017,
+        "drFlores47": 13027
     },
     "2025-08": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 16656,
-        "assisBrasil3224": 3144,
-        "azenha": 2264,
-        "gravatai": 986,
-        "alvorada": 1219,
-        "canoas": 4540,
-        "cachoeirinha": 2000,
-        "drFlores47": 6926
+        "assisBrasil3277": 1049,
+        "centralMarcacoes": 29831,
+        "assisBrasil3224": 4439,
+        "azenha": 3256,
+        "gravatai": 1985,
+        "alvorada": 1621,
+        "canoas": 7271,
+        "cachoeirinha": 3451,
+        "drFlores47": 12991
     },
     "2025-09": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 17457,
-        "assisBrasil3224": 2396,
-        "azenha": 2022,
-        "gravatai": 789,
-        "alvorada": 1388,
-        "canoas": 4422,
-        "cachoeirinha": 2830,
-        "drFlores47": 5649
+        "assisBrasil3277": 1628,
+        "centralMarcacoes": 29796,
+        "assisBrasil3224": 3279,
+        "azenha": 2675,
+        "gravatai": 1681,
+        "alvorada": 1832,
+        "canoas": 7378,
+        "cachoeirinha": 3826,
+        "drFlores47": 11522
     },
     "2025-10": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 18296,
-        "assisBrasil3224": 2027,
-        "azenha": 2057,
-        "gravatai": 1090,
-        "alvorada": 1137,
-        "canoas": 5081,
-        "cachoeirinha": 3050,
-        "drFlores47": 5826
+        "assisBrasil3277": 2360,
+        "centralMarcacoes": 32259,
+        "assisBrasil3224": 3258,
+        "azenha": 2860,
+        "gravatai": 2363,
+        "alvorada": 1837,
+        "canoas": 8990,
+        "cachoeirinha": 4290,
+        "drFlores47": 11789
     },
     "2025-11": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 12660,
-        "assisBrasil3224": 1331,
-        "azenha": 1841,
-        "gravatai": 809,
-        "alvorada": 1029,
-        "canoas": 3675,
-        "cachoeirinha": 2444,
-        "drFlores47": 4991
+        "assisBrasil3277": 1509,
+        "centralMarcacoes": 22542,
+        "assisBrasil3224": 2215,
+        "azenha": 3184,
+        "gravatai": 1483,
+        "alvorada": 1547,
+        "canoas": 6965,
+        "cachoeirinha": 3975,
+        "drFlores47": 10383
     },
     "2025-12": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 12284,
-        "assisBrasil3224": 1043,
-        "azenha": 1460,
-        "gravatai": 741,
-        "alvorada": 865,
-        "canoas": 2881,
-        "cachoeirinha": 1949,
-        "drFlores47": 4037
+        "assisBrasil3277": 2117,
+        "centralMarcacoes": 22185,
+        "assisBrasil3224": 2030,
+        "azenha": 3208,
+        "gravatai": 1521,
+        "alvorada": 1612,
+        "canoas": 7567,
+        "cachoeirinha": 4095,
+        "drFlores47": 9898
     },
     "2026-01": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 14240,
-        "assisBrasil3224": 1183,
-        "azenha": 1250,
-        "gravatai": 1065,
-        "alvorada": 1155,
-        "canoas": 3640,
-        "cachoeirinha": 2386,
-        "drFlores47": 4090
+        "assisBrasil3277": 1100,
+        "centralMarcacoes": 27229,
+        "assisBrasil3224": 1801,
+        "azenha": 2133,
+        "gravatai": 1734,
+        "alvorada": 1754,
+        "canoas": 7130,
+        "cachoeirinha": 3770,
+        "drFlores47": 8081
     },
     "2026-02": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 11692,
-        "assisBrasil3224": 1550,
-        "azenha": 641,
-        "gravatai": 716,
-        "alvorada": 1033,
-        "canoas": 3179,
-        "cachoeirinha": 2030,
-        "drFlores47": 3285
+        "assisBrasil3277": 835,
+        "centralMarcacoes": 21504,
+        "assisBrasil3224": 2188,
+        "azenha": 1134,
+        "gravatai": 1258,
+        "alvorada": 1562,
+        "canoas": 5956,
+        "cachoeirinha": 3569,
+        "drFlores47": 5899
     },
     "2026-03": {
-        "assisBrasil3277": 0,
-        "centralMarcacoes": 14922,
-        "assisBrasil3224": 1745,
-        "azenha": 994,
-        "gravatai": 975,
-        "alvorada": 1237,
-        "canoas": 4357,
-        "cachoeirinha": 2861,
-        "drFlores47": 4687
+        "assisBrasil3277": 1810,
+        "centralMarcacoes": 29772,
+        "assisBrasil3224": 2718,
+        "azenha": 1782,
+        "gravatai": 2096,
+        "alvorada": 1959,
+        "canoas": 8254,
+        "cachoeirinha": 4675,
+        "drFlores47": 8670
     },
     "2026-04": {
-        "assisBrasil3277": 374,
-        "centralMarcacoes": 13618,
-        "assisBrasil3224": 1416,
-        "azenha": 1037,
-        "gravatai": 789,
-        "alvorada": 999,
-        "canoas": 3771,
-        "cachoeirinha": 2569,
-        "drFlores47": 4291
+        "assisBrasil3277": 1705,
+        "centralMarcacoes": 26644,
+        "assisBrasil3224": 2149,
+        "azenha": 2037,
+        "gravatai": 1864,
+        "alvorada": 1545,
+        "canoas": 8451,
+        "cachoeirinha": 4209,
+        "drFlores47": 8419
     },
     "2026-05": {
-        "assisBrasil3277": 1765,
-        "centralMarcacoes": 14086,
-        "assisBrasil3224": 1146,
-        "azenha": 1003,
-        "gravatai": 663,
-        "alvorada": 1094,
-        "canoas": 3456,
-        "cachoeirinha": 1874,
-        "drFlores47": 4279
+        "assisBrasil3277": 2722,
+        "centralMarcacoes": 24925,
+        "assisBrasil3224": 2082,
+        "azenha": 1841,
+        "gravatai": 1723,
+        "alvorada": 2040,
+        "canoas": 7360,
+        "cachoeirinha": 3376,
+        "drFlores47": 8225
     },
     "2026-06": {
-        "assisBrasil3277": 1758,
-        "centralMarcacoes": 14160,
-        "assisBrasil3224": 1222,
-        "azenha": 937,
-        "gravatai": 559,
-        "alvorada": 888,
-        "canoas": 2983,
-        "cachoeirinha": 2204,
-        "drFlores47": 5384
+        "assisBrasil3277": 3223,
+        "centralMarcacoes": 24292,
+        "assisBrasil3224": 2278,
+        "azenha": 1610,
+        "gravatai": 1567,
+        "alvorada": 1311,
+        "canoas": 6943,
+        "cachoeirinha": 3723,
+        "drFlores47": 10536
     },
     "2026-07": {
-        "assisBrasil3277": 1786,
-        "centralMarcacoes": 13696,
-        "assisBrasil3224": 1846,
-        "azenha": 1247,
-        "gravatai": 960,
-        "alvorada": 1196,
-        "canoas": 3697,
-        "cachoeirinha": 2136,
-        "drFlores47": 6430
+        "assisBrasil3277": 3494,
+        "centralMarcacoes": 24920,
+        "assisBrasil3224": 2992,
+        "azenha": 2140,
+        "gravatai": 2259,
+        "alvorada": 1962,
+        "canoas": 8536,
+        "cachoeirinha": 3519,
+        "drFlores47": 11103
     },
     "2026-08": {
-        "assisBrasil3277": 1558,
-        "centralMarcacoes": 12790,
-        "assisBrasil3224": 1746,
-        "azenha": 1190,
-        "gravatai": 1054,
-        "alvorada": 1012,
-        "canoas": 3576,
-        "cachoeirinha": 1999,
-        "drFlores47": 6454
+        "assisBrasil3277": 3211,
+        "centralMarcacoes": 24281,
+        "assisBrasil3224": 2381,
+        "azenha": 1777,
+        "gravatai": 3059,
+        "alvorada": 1598,
+        "canoas": 8421,
+        "cachoeirinha": 4193,
+        "drFlores47": 11232
     },
     "2026-09": {
-        "assisBrasil3277": 1382,
-        "centralMarcacoes": 12639,
-        "assisBrasil3224": 1349,
-        "azenha": 1293,
-        "gravatai": 869,
-        "alvorada": 1012,
-        "canoas": 3419,
-        "cachoeirinha": 2360,
-        "drFlores47": 6629
+        "assisBrasil3277": 2645,
+        "centralMarcacoes": 21795,
+        "assisBrasil3224": 1751,
+        "azenha": 2409,
+        "gravatai": 2783,
+        "alvorada": 1593,
+        "canoas": 7402,
+        "cachoeirinha": 4546,
+        "drFlores47": 10877
     },
     "2026-10": {
-        "assisBrasil3277": 1129,
-        "centralMarcacoes": 8534,
-        "assisBrasil3224": 997,
-        "azenha": 925,
-        "gravatai": 596,
-        "alvorada": 620,
-        "canoas": 2265,
-        "cachoeirinha": 1738,
-        "drFlores47": 4280
+        "assisBrasil3277": 4033,
+        "centralMarcacoes": 16722,
+        "assisBrasil3224": 1640,
+        "azenha": 3029,
+        "gravatai": 2549,
+        "alvorada": 2330,
+        "canoas": 8101,
+        "cachoeirinha": 6466,
+        "drFlores47": 10896
     },
     "2026-11": {
         "assisBrasil3277": 0,
