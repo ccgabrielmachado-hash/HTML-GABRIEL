@@ -3853,12 +3853,19 @@ Equipe Dr. Central
     // ================================================================
     // PASSO 4: INICIALIZAR
     // ================================================================
-    document.addEventListener('DOMContentLoaded', () => {
-      gerarMenu();
-      // Garantir que a página inicial (Visão Geral) esteja ativa
-      const paginaInicial = document.getElementById('pagina-visao-geral');
-      if (paginaInicial) paginaInicial.classList.add('active');
-    });
+ function init() {
+  gerarMenu();
+  const paginaInicial = document.getElementById('pagina-visao-geral');
+  if (paginaInicial) paginaInicial.classList.add('active');
+}
+
+// Roda imediatamente se o DOM já estiver pronto (caso do htmlpreview),
+// senão espera o DOMContentLoaded (caso de abertura local normal).
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
 
     // ================================================================
     // COMO ADICIONAR UMA NOVA RÉGUA (INSTRUÇÕES RESUMIDAS):
